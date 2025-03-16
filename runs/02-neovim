@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+version="v0.10.4"
+if [ -n "$NVIM_VERSION" ]; then
+  version="$NVIM_VERSION"
+fi
+
+echo "version: \"$version\""
+
+# neovim btw
+if [ ! -d "$HOME"/personal/neovim ]; then
+  rm -rf "$HOME"/personal/neovim
+  git clone https://github.com/neovim/neovim.git "$HOME"/personal/neovim
+
+fi
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  sudo brew -y install cmake gettext lua5.1 liblua5.1-0-dev ripgrep fzf gcc xclip luajit
+else
+  sudo apt -y install cmake gettext lua5.1 liblua5.1-0-dev ripgrep fzf gcc xclip luajit
+fi
+
+cd "$HOME"/personal/neovim || exit 1
+
+git -C ~/neovim fetch --all
+
+git -C ~/neovim checkout "$version"
+
+make -C ~/personal/neovim clean
+make -C ~/personalneovim CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make -C ~/personal/neovim install
+
+wget https://luarocks.org/releases/luarocks-3.11.1.tar.gz
+tar zxpf luarocks-3.11.1.tar.gz
+cd luarocks-3.11.1 || exit
+./configure && make && sudo make install
+sudo luarocks install luacheck
+
+source ~/.zshrc

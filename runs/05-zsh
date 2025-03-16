@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  echo "Mac detected"
+  sudo brew -y install zsh
+else
+  echo "Linux detected"
+  sudo apt -y install zsh
+fi
+
+hash -r
+sudo chsh -s "$(which zsh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+cp -r env/.oh-my-zsh ~/
+cp env/.zshrc ~/.zshrc ~/
+cp env/.p10k.zsh ~/.p10k.zsh ~/
+
+source ~/.zshrc
+echo "source ~/.zshrc"

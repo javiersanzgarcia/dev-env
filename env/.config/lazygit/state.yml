@@ -1,0 +1,21 @@
+lastupdatecheck: 0
+recentrepos:
+    - /root/.config/nvim
+    - /root/workspace/configsBackUp
+    - /root/workspace/portfolio
+    - /root/workspace/vim-nav-playground
+    - /mnt/c/Users/prack/workspace/portfolio
+    - /mnt/c/Users/prack/workspace/GymControl
+    - /root/workspace/vue3/01-fundamentos
+    - /mnt/c/Users/prack/workspace/codember
+startuppopupversion: 5
+lastversion: 0.48.0
+customcommandshistory: []
+hidecommandlog: false
+ignorewhitespaceindiffview: false
+diffcontextsize: 3
+renamesimilaritythreshold: 50
+localbranchsortorder: recency
+remotebranchsortorder: alphabetical
+gitlogorder: topo-order
+gitlogshowgraph: always

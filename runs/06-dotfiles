@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+echo "Copying dotfiles"
+pwd
+
+cp -r env/.config ~/
+cp -r env/.oh-my-zsh ~/
+cp env/.zshrc ~/.zshrc ~/
+cp env/.p10k.zsh ~/.p10k.zsh ~/
+
+if [ ! -d "$HOME"/personal/nvim ]; then
+  rm -rf "$HOME"/personal/nvim
+  git clone https://github.com/javiersanzgarcia/LazyVim.git "$HOME"/personal/nvim
+fi
+
+rm -rf "$HOME"/.config/nvim
+cp -r "$HOME"/personal/nvim "$HOME"/.config
+chmod -R 777 "$HOME"/.config/nvim
+rm -rf "$HOME"/personal
+
+source ~/.zshrc
