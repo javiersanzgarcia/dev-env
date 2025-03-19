@@ -1,8 +1,4 @@
 font-family = CaskaydiaCove Nerd Font Mono
-#bold-font = auto
-#italic-font = auto
-#bold-italic-font = auto
-#enable-audio-bell = no
 font-size = 19.0
 window-padding-x = 25
 #cursor-trail = 1
