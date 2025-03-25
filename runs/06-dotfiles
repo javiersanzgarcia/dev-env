@@ -18,4 +18,6 @@ cp -r "$HOME"/personal/nvim "$HOME"/.config
 chmod -R 777 "$HOME"/.config/nvim
 rm -rf "$HOME"/personal
 
+git clone https://github.com/tmux-plugins/tpm "$HOME"/.tmux/plugins/tpm
+
 source ~/.zshrc
