@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  echo "Mac detected"
+  echo "Install from https://ghostty.org/download"
+else
+  echo "Linux detected"
+  sudo snap install ghostty --classic
+fi
