@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
 
-version="v0.10.4"
+version="v0.11.0"
 if [ -n "$NVIM_VERSION" ]; then
   version="$NVIM_VERSION"
 fi
 
 echo "version: \"$version\""
+
+rm /usr/local/bin/nvim
+rm -r /usr/local/share/nvim/
+mv ~/.local/share/nvim{,.bak}
+mv ~/.local/state/nvim{,.bak}
+mv ~/.cache/nvim{,.bak}
 
 # neovim btw
 if [ ! -d "$HOME"/personal/neovim ]; then
@@ -22,9 +28,9 @@ fi
 
 cd "$HOME"/personal/neovim || exit 1
 
-git -C ~/neovim fetch --all
+git -C ~/personal/neovim fetch --all
 
-git -C ~/neovim checkout "$version"
+git -C ~/personal/neovim checkout "$version"
 
 make -C ~/personal/neovim clean
 make -C ~/personalneovim CMAKE_BUILD_TYPE=RelWithDebInfo
