@@ -2,7 +2,7 @@
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Mac detected"
-  echo "Install from https://ghostty.org/download"
+  brew install ghostty
 else
   echo "Linux detected"
   sudo snap install ghostty --classic

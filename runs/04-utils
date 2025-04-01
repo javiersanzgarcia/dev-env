@@ -2,10 +2,10 @@
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Mac detected"
-  sudo brew -y install bat btop tldr
+  brew install bat btop tldr rust
 else
   echo "Linux detected"
-  sudo apt -y install bat btop tldr
+  sudo apt -y install bat btop tldr rust
 fi
 
 # install atuin, lsd and dust

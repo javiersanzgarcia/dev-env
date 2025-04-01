@@ -3,11 +3,11 @@
 if [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Mac detected"
   curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
-  sudo brew -y install curl git tar unzip neofetch kitty rofi wget gh tmux jq
+  brew install curl git tar unzip neofetch kitty wget gh tmux jq cmake
 
 else
   echo "Linux detected"
-  sudo apt -y install curl git tar unzip neofetch kitty rofi wget gh tmux jq
+  sudo apt -y install curl git tar unzip neofetch kitty rofi wget gh tmux jq cmake
 fi
 
 sh -c "$(git config --global alias.co checkout)"
@@ -17,3 +17,4 @@ sh -c "$(git config --global alias.br branch)"
 sh -c "$(git config --global alias.hi 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short')"
 sh -c "$(git config --global alias.p pull)"
 sh -c "$(git config --global alias.ps push)"
+

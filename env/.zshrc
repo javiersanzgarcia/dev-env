@@ -1,3 +1,4 @@
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -42,7 +43,9 @@ source $ZSH/oh-my-zsh.sh
 alias top="btop"
 alias man="tldr"
 alias du="dust"
-alias cat="batcat"
+alias cat="bat"
+# alias for Linux
+# alias cat="batcat"
 alias ls="lsd"
 alias ll="lsd -lah"
 alias lj="lsd -latGhr"
