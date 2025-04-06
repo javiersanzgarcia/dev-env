@@ -26,7 +26,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
-fast-syntax-highlighting
+# fast-syntax-highlighting
 zsh-autosuggestions
 copybuffer
 copyfile
@@ -35,6 +35,7 @@ history
 jsontools
 )
 
+source ~/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZSH/oh-my-zsh.sh
 
 # Example aliases
@@ -42,7 +43,7 @@ source $ZSH/oh-my-zsh.sh
 alias top="btop"
 alias man="tldr"
 alias du="dust"
-alias cat="batcat"
+alias cat="bat"
 alias ls="lsd"
 alias ll="lsd -lah"
 alias lj="lsd -latGhr"
@@ -77,8 +78,7 @@ export BUILDER_VERSION=randomVersionHash
 
 [[ -s "/root/.gvm/scripts/gvm" ]] && source "/root/.gvm/scripts/gvm"
 
-. "$HOME/.atuin/bin/env"
-
+# eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(atuin init zsh)"
 
 neofetch

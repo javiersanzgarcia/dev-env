@@ -24,7 +24,7 @@ dist=$(grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}')
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Mac detected"
-  sudo brew -y install cmake gettext lua5.1 liblua5.1-0-dev ripgrep fzf gcc xclip luajit
+  sudo brew install cmake gettext lua5.1 liblua5.1-0-dev ripgrep fzf gcc xclip luajit
 
 else
   echo "Linux detected"
@@ -45,7 +45,7 @@ git -C ~/personal/neovim checkout "$version"
 
 make -C ~/personal/neovim clean
 make -C ~/personalneovim CMAKE_BUILD_TYPE=RelWithDebInfo
-sudo make -C ~/personal/neovim install
+make -C ~/personal/neovim install
 
 wget https://luarocks.org/releases/luarocks-3.11.1.tar.gz
 tar zxpf luarocks-3.11.1.tar.gz
@@ -54,3 +54,4 @@ cd luarocks-3.11.1 || exit
 sudo luarocks install luacheck
 
 source ~/.zshrc
+

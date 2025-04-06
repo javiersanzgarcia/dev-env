@@ -4,7 +4,7 @@ dist=$(grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}')
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Mac detected"
-  sudo brew -y install zsh
+  brew y install zsh
 else
   echo "Linux detected"
   if [[ "$dist" == "Ubuntu" ]]; then
@@ -23,6 +23,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 cp -r env/.oh-my-zsh ~/
 cp env/.zshrc ~/.zshrc ~/
 cp env/.p10k.zsh ~/.p10k.zsh ~/
+
+git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/fast-syntax-highlighting
 
 source ~/.zshrc
 echo "source ~/.zshrc"

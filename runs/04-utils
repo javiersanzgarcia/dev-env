@@ -4,15 +4,15 @@ dist=$(grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}')
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Mac detected"
-  sudo brew -y install bat btop tldr
+  brew install bat btop tldr rust
 else
   echo "Linux detected"
   if [[ "$dist" == "Ubuntu" ]]; then
     echo "Ubuntu"
-    sudo apt -y install bat btop tldr
+    sudo apt -y install bat btop tldr rust
   else
     echo "Arch BTW"
-    sudo pacman -S --noconfirm bat btop tldr
+    sudo pacman -S --noconfirm bat btop tldr rust
   fi
 fi
 
@@ -35,3 +35,4 @@ sudo mv "$TEMP_DIR"/*.{ttf,otf} /usr/local/share/fonts/
 fc-cache -f -v
 
 rm -rf "$TEMP_DIR"
+

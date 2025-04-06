@@ -5,7 +5,7 @@ dist=$(grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}')
 if [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Mac detected"
   curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
-  sudo brew -y install curl git tar unzip neofetch kitty rofi wget gh tmux jq
+  sudo brew install curl git tar unzip neofetch kitty rofi wget gh tmux jq
 
 else
   echo "Linux detected"
@@ -14,7 +14,6 @@ else
     sudo apt -y install curl git tar unzip neofetch kitty rofi wget gh tmux jq
   else
     echo "Arch BTW"
-    sudo pacman -Syu --noconfirm
     sudo pacman -S --noconfirm curl git tar unzip neofetch kitty rofi wget gh tmux jq
   fi
 fi

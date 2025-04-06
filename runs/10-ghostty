@@ -3,8 +3,7 @@ dist=$(grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}')
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Mac detected"
-  sudo brew -y install zsh
-
+  brew install ghostty
 else
   echo "Linux detected"
   if [[ "$dist" == "Ubuntu" ]]; then
