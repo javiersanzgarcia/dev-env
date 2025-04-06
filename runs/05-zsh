@@ -4,7 +4,7 @@ dist=$(grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}')
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Mac detected"
-  brew y install zsh
+  brew install zsh
 else
   echo "Linux detected"
   if [[ "$dist" == "Ubuntu" ]]; then
