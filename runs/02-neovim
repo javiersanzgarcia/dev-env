@@ -20,10 +20,21 @@ if [ ! -d "$HOME"/personal/neovim ]; then
 
 fi
 
+dist=$(grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}')
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
+  echo "Mac detected"
   sudo brew -y install cmake gettext lua5.1 liblua5.1-0-dev ripgrep fzf gcc xclip luajit
+
 else
-  sudo apt -y install cmake gettext lua5.1 liblua5.1-0-dev ripgrep fzf gcc xclip luajit
+  echo "Linux detected"
+  if [[ "$dist" == "Ubuntu" ]]; then
+    echo "Ubuntu"
+    sudo apt -y install cmake gettext lua5.1 liblua5.1-0-dev ripgrep fzf gcc xclip luajit
+  else
+    echo "Arch BTW"
+    sudo pacman -S --noconfirm cmake gettext lua5.1 liblua5.1-0-dev ripgrep fzf gcc xclip luajit
+  fi
 fi
 
 cd "$HOME"/personal/neovim || exit 1

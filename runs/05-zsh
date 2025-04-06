@@ -1,11 +1,19 @@
 #!/usr/bin/env bash
 
+dist=$(grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}')
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Mac detected"
   sudo brew -y install zsh
 else
   echo "Linux detected"
-  sudo apt -y install zsh
+  if [[ "$dist" == "Ubuntu" ]]; then
+    echo "Ubuntu"
+    sudo apt -y install zsh
+  else
+    echo "Arch BTW"
+    sudo pacman -S --noconfirm zsh
+  fi
 fi
 
 hash -r

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+dist=$(grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}')
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Mac detected"
   curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
@@ -7,7 +9,14 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
 else
   echo "Linux detected"
-  sudo apt -y install curl git tar unzip neofetch kitty rofi wget gh tmux jq
+  if [[ "$dist" == "Ubuntu" ]]; then
+    echo "Ubuntu"
+    sudo apt -y install curl git tar unzip neofetch kitty rofi wget gh tmux jq
+  else
+    echo "Arch BTW"
+    sudo pacman -Syu --noconfirm
+    sudo pacman -S --noconfirm curl git tar unzip neofetch kitty rofi wget gh tmux jq
+  fi
 fi
 
 sh -c "$(git config --global alias.co checkout)"
