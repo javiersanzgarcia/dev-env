@@ -5,16 +5,16 @@ dist=$(grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}')
 if [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Mac detected"
   curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
-  sudo brew install curl git tar unzip neofetch kitty rofi wget gh tmux jq
+  sudo brew install curl git tar unzip neofetch kitty rofi wget gh tmux jq cmake gettext lua5.1 liblua5.1-0-dev ripgrep fzf gcc xclip luajit
 
 else
   echo "Linux detected"
   if [[ "$dist" == "Ubuntu" ]]; then
     echo "Ubuntu"
-    sudo apt -y install curl git tar unzip neofetch kitty rofi wget gh tmux jq
+    sudo apt -y install curl git tar unzip neofetch kitty rofi wget gh tmux jq cmake gettext lua5.1 liblua5.1-0-dev ripgrep fzf gcc xclip luajit
   else
     echo "Arch BTW"
-    sudo pacman -S --noconfirm curl git tar unzip neofetch kitty rofi wget gh tmux jq
+    sudo pacman -S --noconfirm curl git tar unzip neofetch kitty rofi wget gh tmux jq cmake gettext lua5.1 liblua5.1-0-dev ripgrep fzf gcc xclip luajit
   fi
 fi
 

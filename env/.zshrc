@@ -26,7 +26,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
-# fast-syntax-highlighting
+fast-syntax-highlighting
 zsh-autosuggestions
 copybuffer
 copyfile
@@ -35,7 +35,6 @@ history
 jsontools
 )
 
-source ~/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZSH/oh-my-zsh.sh
 
 # Example aliases
@@ -63,9 +62,7 @@ function openNvim {
   fi
 }
 
-export GRADLE_HOME=/opt/gradle/gradle-7.4.2
-export PATH=${GRADLE_HOME}/bin:${PATH}
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export PATH="$HOME/neovim/bin:$PATH"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

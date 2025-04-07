@@ -4,9 +4,6 @@ echo "Copying dotfiles"
 pwd
 
 cp -r env/.config ~/
-cp -r env/.oh-my-zsh ~/
-cp env/.zshrc ~/.zshrc ~/
-cp env/.p10k.zsh ~/.p10k.zsh ~/
 
 if [ ! -d "$HOME"/personal/nvim ]; then
   rm -rf "$HOME"/personal/nvim

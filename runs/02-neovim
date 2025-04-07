@@ -14,10 +14,9 @@ mv ~/.local/state/nvim{,.bak}
 mv ~/.cache/nvim{,.bak}
 
 # neovim btw
-if [ ! -d "$HOME"/personal/neovim ]; then
-  rm -rf "$HOME"/personal/neovim
-  git clone https://github.com/neovim/neovim.git "$HOME"/personal/neovim
-
+if [ ! -d "$HOME"/neovim ]; then
+  rm -rf "$HOME"/neovim
+  git clone https://github.com/neovim/neovim.git "$HOME"/neovim
 fi
 
 dist=$(grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}')
@@ -37,21 +36,23 @@ else
   fi
 fi
 
-cd "$HOME"/personal/neovim || exit 1
+cd "$HOME"/neovim || exit 1
 
-git -C ~/personal/neovim fetch --all
+git -C ~/neovim fetch --all
 
-git -C ~/personal/neovim checkout "$version"
+git -C ~/neovim checkout "$version"
 
-make -C ~/personal/neovim clean
-make -C ~/personalneovim CMAKE_BUILD_TYPE=RelWithDebInfo
-make -C ~/personal/neovim install
+make -C ~/neovim clean
+make -C ~/neovim CMAKE_BUILD_TYPE=Release
+make -C ~/neovim CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/neovim"
+sudo make -C ~/neovim install
 
 wget https://luarocks.org/releases/luarocks-3.11.1.tar.gz
 tar zxpf luarocks-3.11.1.tar.gz
 cd luarocks-3.11.1 || exit
 ./configure && make && sudo make install
-sudo luarocks install luacheck
+sudo luarocks install luacheck --force
 
-source ~/.zshrc
+rm -r ~/neovim/build/
 
+echo "Neovim installed, if this script is launched single, add export PATH="$HOME/neovim/bin:$PATH" and please reload .zshrc"
