@@ -14,6 +14,8 @@ You can also filter, for an specific file inside of runs directory, for example:
 ./run 02-neovim
 ```
 
+NOTE: TMUX Press the default key binding prefix + I to fetch- and install the plugin
+
 ## WIP in progress
 
 - Add wallpaper from bash script
