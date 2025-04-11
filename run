@@ -31,7 +31,7 @@ log() {
 }
 
 log "$script_dir -- $filter"
-
+# Check if the script is being run from the correct directory
 cd "$script_dir" || exit 1
 
 scripts=$(find runs -maxdepth 1 -mindepth 1 -type f)
