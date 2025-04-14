@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
-echo "Copying dotfiles"
+echo "Linking dotfiles"
 pwd
 
-cp -r env/.config ~/
+cd env/dotfiles || exit 1
+stow atuin
+cd ../.. || exit 1
+
+echo "Stowing dotfiles"
 
 if [ ! -d "$HOME"/personal/nvim ]; then
   rm -rf "$HOME"/personal/nvim
@@ -14,8 +18,5 @@ rm -rf "$HOME"/.config/nvim
 cp -r "$HOME"/personal/nvim "$HOME"/.config
 chmod -R 777 "$HOME"/.config/nvim
 rm -rf "$HOME"/personal
-
-git clone https://github.com/tmux-plugins/tpm "$HOME"/.tmux/plugins/tpm
-tmux source "$HOME"/.config/tmux/tmux.conf
 
 source ~/.zshrc

@@ -1,20 +1,7 @@
 #!/usr/bin/env bash
 
-dist=$(grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}')
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  echo "Mac detected"
-  brew install zsh
-else
-  echo "Linux detected"
-  if [[ "$dist" == "Ubuntu" ]]; then
-    echo "Ubuntu"
-    sudo apt -y install zsh fonts-powerline
-  else
-    echo "Arch BTW"
-    sudo pacman -S --noconfirm zsh
-  fi
-fi
+echo "Ubuntu"
+sudo apt -y install zsh fonts-powerline
 
 hash -r
 sudo chsh -s "$(which zsh)"
@@ -22,9 +9,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-ln -r env/.oh-my-zsh ~/
-ln env/.zshrc ~/.zshrc
-ln env/.p10k.zsh ~/.p10k.zsh
+ln -nf env/.oh-my-zsh ~/
+ln -nf env/clean.sh ~/
+ln -nf env/keyboard_permissions.sh ~/
+ln -nf env/.zshrc ~/.zshrc
+ln -nf env/.p10k.zsh ~/.p10k.zsh
 
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
