@@ -4,7 +4,14 @@ echo "Linking dotfiles"
 pwd
 
 cd env/dotfiles || exit 1
-stow atuin
+for i in *; do
+    if [ -d "$i" ]; then
+        echo "Stowing $i"
+        rm -fr "$HOME"/.config/$i
+stow --restow --target=$HOME $i
+    fi
+done
+
 cd ../.. || exit 1
 
 echo "Stowing dotfiles"
