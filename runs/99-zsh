@@ -22,9 +22,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-cp -r env/.oh-my-zsh ~/
-cp env/.zshrc ~/.zshrc
-cp env/.p10k.zsh ~/.p10k.zsh
+ln -r env/.oh-my-zsh ~/
+ln env/.zshrc ~/.zshrc
+ln env/.p10k.zsh ~/.p10k.zsh
 
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
