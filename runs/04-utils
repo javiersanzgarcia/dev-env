@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+dist=$(grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}')
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  echo "Mac detected"
+  brew install bat btop tldr rust
+else
+  echo "Linux detected"
+  if [[ "$dist" == "Ubuntu" ]]; then
+    echo "Ubuntu"
+    sudo apt -y install bat btop tldr rust
+  else
+    echo "Arch BTW"
+    sudo pacman -S --noconfirm bat btop tldr rust
+  fi
+fi
+
+# install atuin, lsd and dust
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+cargo install lsd
+cargo install du-dust
+
+# Install font
+
+TEMP_DIR=$(mktemp -d)
+
+wget -O "$TEMP_DIR/font.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.0/CascadiaCode.zip"
+
+unzip "$TEMP_DIR/font.zip" -d "$TEMP_DIR"
+
+sudo mv "$TEMP_DIR"/*.{ttf,otf} /usr/local/share/fonts/
+
+# Update the font cache
+fc-cache -f -v
+
+rm -rf "$TEMP_DIR"
+
