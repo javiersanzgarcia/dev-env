@@ -1,0 +1,29 @@
+[Info  - 12:11:53 PM] 2025/04/15 12:11:53 Created View (#1)
+	directory=/home/pracker/code/Fem_Go/go-fundamentals/InputOutput
+	view_type="GoMod"
+	root_dir="file:///home/pracker/code/Fem_Go/go-fundamentals/InputOutput"
+	go_version="go version go1.22.2 linux/amd64"
+	build_flags=[]
+	env={GOOS:linux GOARCH:amd64 GOCACHE:/home/pracker/.cache/go-build GOMODCACHE:/home/pracker/go/pkg/mod GOPATH:/home/pracker/go GOPRIVATE: GOFLAGS: GO111MODULE: GOTOOLCHAIN:auto GOROOT:/usr/lib/go-1.22 GoVersion:22 GoVersionOutput:go version go1.22.2 linux/amd64
+ ExplicitGOWORK: EffectiveGOPACKAGESDRIVER:}
+	env_overlay=[]
+
+[Info  - 12:11:53 PM] 2025/04/15 12:11:53 go/packages.Load #1
+	view_id="1"
+	snapshot=0
+	directory=/home/pracker/code/Fem_Go/go-fundamentals/InputOutput
+	query=[/home/pracker/code/Fem_Go/go-fundamentals/InputOutput/... builtin]
+	packages=3
+	duration=196.528359ms
+
+[Info  - 12:12:23 PM] 2025/04/15 12:12:23 background imports cache refresh starting
+
+[Info  - 12:12:23 PM] 2025/04/15 12:12:23 background refresh finished after 94.351331ms
+
+[Info  - 12:14:07 PM] 2025/04/15 12:14:07 background imports cache refresh starting
+
+[Info  - 12:14:07 PM] 2025/04/15 12:14:07 background refresh finished after 2.741911ms
+
+[Info  - 12:35:39 PM] 2025/04/15 12:35:39 Shutdown session
+	shutdown_session=1
+

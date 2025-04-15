@@ -21,3 +21,4 @@
 2025-04-14 16:10:09.090 [info] Added views:gitlens.views.drafts in workbench.view.extension.gitlens
 2025-04-14 16:10:09.658 [info] Added views:gitlens.views.graph,gitlens.views.graphDetails in workbench.view.extension.gitlensPanel
 2025-04-14 16:10:09.658 [info] Added views:gitlens.views.timeline in workbench.view.extension.gitlensInspect
+2025-04-14 16:11:31.743 [info] Removed views:workbench.scm.history from workbench.view.scm

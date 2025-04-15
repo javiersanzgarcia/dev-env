@@ -1,0 +1,432 @@
+2025-04-15 12:02:56.369 [info] Extension host with pid 18962 started
+2025-04-15 12:02:56.369 [info] Skipping acquiring lock for /home/pracker/.config/Windsurf/User/workspaceStorage/74e21c1aaa1a986dcc077b1065da9304.
+2025-04-15 12:02:56.584 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: false, activationEvent: '*', root cause: vscode.git
+2025-04-15 12:02:56.588 [info] ExtensionService#_doActivateExtension ms-vscode.test-adapter-converter, startup: false, activationEvent: '*', root cause: hbenl.vscode-test-explorer
+2025-04-15 12:02:56.599 [info] ExtensionService#_doActivateExtension vscode.git, startup: false, activationEvent: '*'
+2025-04-15 12:02:56.657 [info] ExtensionService#_doActivateExtension vscode.github, startup: false, activationEvent: '*'
+2025-04-15 12:02:56.679 [info] ExtensionService#_doActivateExtension hbenl.vscode-test-explorer, startup: false, activationEvent: '*'
+2025-04-15 12:02:56.825 [info] ExtensionService#_doActivateExtension codeium.windsurf, startup: false, activationEvent: '*'
+2025-04-15 12:03:02.602 [info] Eager extensions activated
+2025-04-15 12:03:02.658 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:02.659 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:02.675 [info] ExtensionService#_doActivateExtension Codeium.windsurf-dev-containers, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:02.678 [info] ExtensionService#_doActivateExtension dsznajder.es7-react-js-snippets, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:02.972 [info] ExtensionService#_doActivateExtension eamodio.gitlens, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:03.089 [info] ExtensionService#_doActivateExtension EditorConfig.EditorConfig, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:03.105 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:03.157 [info] ExtensionService#_doActivateExtension PKief.material-icon-theme, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:03.167 [info] ExtensionService#_doActivateExtension vscode-icons-team.vscode-icons, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:03.193 [info] ExtensionService#_doActivateExtension zhuangtongfa.material-theme, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:03.779 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-04-15 12:03:03.954 [info] ExtensionService#_doActivateExtension aaron-bond.better-comments, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:03.961 [info] ExtensionService#_doActivateExtension bierner.emojisense, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:03.968 [info] ExtensionService#_doActivateExtension bradlc.vscode-tailwindcss, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:03.999 [info] ExtensionService#_doActivateExtension cyrilletuzi.angular-schematics, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:04.357 [info] ExtensionService#_doActivateExtension dbaeumer.vscode-eslint, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:04.382 [info] ExtensionService#_doActivateExtension ecmel.vscode-html-css, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:04.383 [info] ExtensionService#_doActivateExtension Gruntfuggly.todo-tree, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:04.403 [info] ExtensionService#_doActivateExtension johnpapa.vscode-peacock, startup: false, activationEvent: '*'
+2025-04-15 12:03:04.408 [info] ExtensionService#_doActivateExtension kisstkondoros.vscode-gutter-preview, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:04.436 [info] ExtensionService#_doActivateExtension mhutchie.git-graph, startup: false, activationEvent: '*'
+2025-04-15 12:03:04.444 [info] ExtensionService#_doActivateExtension shardulm94.trailing-spaces, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:04.450 [info] ExtensionService#_doActivateExtension SonarSource.sonarlint-vscode, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:04.718 [info] ExtensionService#_doActivateExtension subframe7536.custom-ui-style, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:04.722 [info] ExtensionService#_doActivateExtension usernamehw.errorlens, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:04.727 [info] ExtensionService#_doActivateExtension waderyan.gitblame, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:03:04.729 [info] ExtensionService#_doActivateExtension wayou.vscode-todo-highlight, startup: false, activationEvent: '*'
+2025-04-15 12:03:04.729 [info] ExtensionService#_doActivateExtension Zignd.html-css-class-completion, startup: false, activationEvent: '*'
+2025-04-15 12:03:04.926 [error] Activating extension SonarSource.sonarlint-vscode failed due to an error:
+2025-04-15 12:03:04.926 [error] {"message":"The Java Runtime Environment can not be located. Please install a JRE, or configure its path with the\n      sonarlint.ls.javaHome property. You can also let SonarQube for VS Code download the JRE from AdoptOpenJDK. This JRE will be\n      used only by SonarQube for VS Code.","label":"Let SonarQube for VS Code download the JRE","command":"SonarLint.InstallManagedJre"}
+2025-04-15 12:04:03.885 [info] ExtensionService#_doActivateExtension mechatroner.rainbow-csv, startup: false, activationEvent: 'onLanguage:plaintext'
+2025-04-15 12:04:03.895 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-04-15 12:04:06.657 [info] Extension host terminating: renderer closed the MessagePort
+2025-04-15 12:04:06.673 [error] An error occurred when disposing the subscriptions for extension 'eamodio.gitlens':
+2025-04-15 12:04:06.681 [error] TypeError: Cannot read properties of undefined (reading 'dispose')
+    at Object.dispose (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:121769)
+    at x_.<anonymous> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:106:20087)
+    at x_.dispose (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:106:20183)
+    at Object.dispose (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:30:24001)
+    at /home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:301:15285
+    at Array.forEach (<anonymous>)
+    at Object.dispose (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:301:15267)
+    at Cs (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:701)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:15142
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:1011
+    at Object.dispose (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:8:705)
+    at dK.eb (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:12069)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10024
+    at Array.map (<anonymous>)
+    at dK.$ (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10012)
+    at dK.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10255)
+    at C7.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:1434)
+    at vn (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:15116)
+    at MessagePortMain.<anonymous> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:11656)
+    at MessagePortMain.emit (node:events:518:28)
+    at MessagePortMain.emit (node:domain:489:12)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949)
+2025-04-15 12:04:06.681 [error] An error occurred when disposing the subscriptions for extension 'Gruntfuggly.todo-tree':
+2025-04-15 12:04:06.682 [error] AggregateError: Encountered errors while disposing of store
+    at Cs (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:777)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:15142
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:1011
+    at Object.dispose (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:8:705)
+    at dK.eb (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:12069)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10024
+    at Array.map (<anonymous>)
+    at dK.$ (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10012)
+    at dK.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10255)
+    at C7.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:1434)
+    at vn (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:15116)
+    at MessagePortMain.<anonymous> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:11656)
+    at MessagePortMain.emit (node:events:518:28)
+    at MessagePortMain.emit (node:domain:489:12)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949)
+2025-04-15 12:04:06.690 [error] Canceled: Canceled
+    at new TF (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:111806)
+    at Jy.U (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116417)
+    at Proxy.n.<computed>.r.charCodeAt.n.<computed> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:113911)
+    at GS.g (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:32228)
+    at GS.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31732)
+    at i.registerCommand.description (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31062)
+    at GS.h (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:32748)
+    at GS.g (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31825)
+    at GS.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31732)
+    at Object.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:173:46382)
+    at w (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:365:3186)
+    at c (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1:64500)
+    at ActionRunners._updateContextKeys (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:30978)
+    at s (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:29422)
+    at RegisteredActionRunner.unregister (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:29565)
+    at RegisteredActionRunner.dispose (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:28225)
+    at Object.dispose (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:29659)
+    at Cs (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:701)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:15142
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:1011
+    at Object.dispose (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:8:705)
+    at dK.eb (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:12069)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10024
+    at Array.map (<anonymous>)
+    at dK.$ (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10012)
+    at dK.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10255)
+    at C7.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:1434)
+    at vn (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:15116)
+    at MessagePortMain.<anonymous> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:11656)
+    at MessagePortMain.emit (node:events:518:28)
+    at MessagePortMain.emit (node:domain:489:12)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949) setContext undefined
+2025-04-15 12:04:06.691 [error] Canceled: Canceled
+    at new TF (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:111806)
+    at Jy.U (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116417)
+    at Proxy.n.<computed>.r.charCodeAt.n.<computed> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:113911)
+    at GS.g (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:32228)
+    at GS.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31732)
+    at i.registerCommand.description (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31062)
+    at GS.h (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:32748)
+    at GS.g (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31825)
+    at GS.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31732)
+    at Object.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:173:46382)
+    at w (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:365:3186)
+    at c (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1:64500)
+    at ActionRunners._updateContextKeys (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:30978)
+    at s (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:29422)
+    at RegisteredActionRunner.unregister (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:29565)
+    at RegisteredActionRunner.dispose (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:28225)
+    at Object.dispose (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:29659)
+    at Cs (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:701)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:15142
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:1011
+    at Object.dispose (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:8:705)
+    at dK.eb (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:12069)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10024
+    at Array.map (<anonymous>)
+    at dK.$ (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10012)
+    at dK.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10255)
+    at C7.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:1434)
+    at vn (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:15116)
+    at MessagePortMain.<anonymous> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:11656)
+    at MessagePortMain.emit (node:events:518:28)
+    at MessagePortMain.emit (node:domain:489:12)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949) setContext undefined
+2025-04-15 12:04:06.691 [error] Canceled: Canceled
+    at new TF (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:111806)
+    at Jy.U (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116417)
+    at Proxy.n.<computed>.r.charCodeAt.n.<computed> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:113911)
+    at GS.g (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:32228)
+    at GS.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31732)
+    at i.registerCommand.description (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31062)
+    at GS.h (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:32748)
+    at GS.g (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31825)
+    at GS.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31732)
+    at Object.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:173:46382)
+    at w (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:365:3186)
+    at c (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1:64500)
+    at ActionRunners._updateContextKeys (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:30978)
+    at s (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:29422)
+    at RegisteredActionRunner.unregister (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:29565)
+    at RegisteredActionRunner.dispose (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:28225)
+    at Object.dispose (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:29659)
+    at Cs (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:701)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:15142
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:1011
+    at Object.dispose (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:8:705)
+    at dK.eb (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:12069)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10024
+    at Array.map (<anonymous>)
+    at dK.$ (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10012)
+    at dK.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10255)
+    at C7.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:1434)
+    at vn (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:15116)
+    at MessagePortMain.<anonymous> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:11656)
+    at MessagePortMain.emit (node:events:518:28)
+    at MessagePortMain.emit (node:domain:489:12)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949) setContext undefined
+2025-04-15 12:04:06.692 [error] Canceled: Canceled
+    at new TF (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:111806)
+    at Jy.U (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116417)
+    at Proxy.n.<computed>.r.charCodeAt.n.<computed> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:113911)
+    at GS.g (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:32228)
+    at GS.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31732)
+    at i.registerCommand.description (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31062)
+    at GS.h (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:32748)
+    at GS.g (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31825)
+    at GS.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31732)
+    at Object.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:173:46382)
+    at B.dispose (/home/pracker/.windsurf/extensions/ms-vscode.test-adapter-converter-0.2.1-universal/out/extension.js:9:458)
+    at Cs (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:701)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:15142
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:1011
+    at Object.dispose (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:8:705)
+    at dK.eb (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:12069)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10024
+    at Array.map (<anonymous>)
+    at dK.$ (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10012)
+    at dK.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10255)
+    at C7.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:1434)
+    at vn (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:15116)
+    at MessagePortMain.<anonymous> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:11656)
+    at MessagePortMain.emit (node:events:518:28)
+    at MessagePortMain.emit (node:domain:489:12)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949) setContext undefined
+2025-04-15 12:04:06.694 [error] Canceled: Canceled
+    at gl (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:7:1218)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:113258
+    at Array.forEach (<anonymous>)
+    at Jy.dispose (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:113198)
+    at dK.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10232)
+    at C7.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:1434)
+    at vn (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:15116)
+    at MessagePortMain.<anonymous> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:11656)
+    at MessagePortMain.emit (node:events:518:28)
+    at MessagePortMain.emit (node:domain:489:12)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949) windsurf.login {"value":"codeium.windsurf","_lower":"codeium.windsurf"}
+2025-04-15 12:04:06.696 [info] Extension host with pid 18962 exiting with code 0
+2025-04-15 12:04:07.134 [info] Extension host with pid 20635 started
+2025-04-15 12:04:07.134 [info] Skipping acquiring lock for /home/pracker/.config/Windsurf/User/workspaceStorage/74e21c1aaa1a986dcc077b1065da9304.
+2025-04-15 12:04:07.147 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: false, activationEvent: '*', root cause: vscode.git
+2025-04-15 12:04:07.150 [info] ExtensionService#_doActivateExtension ms-vscode.test-adapter-converter, startup: false, activationEvent: '*', root cause: hbenl.vscode-test-explorer
+2025-04-15 12:04:07.154 [info] ExtensionService#_doActivateExtension johnpapa.vscode-peacock, startup: false, activationEvent: '*'
+2025-04-15 12:04:07.158 [info] ExtensionService#_doActivateExtension mhutchie.git-graph, startup: false, activationEvent: '*'
+2025-04-15 12:04:07.167 [info] ExtensionService#_doActivateExtension wayou.vscode-todo-highlight, startup: false, activationEvent: '*'
+2025-04-15 12:04:07.169 [info] ExtensionService#_doActivateExtension Zignd.html-css-class-completion, startup: false, activationEvent: '*'
+2025-04-15 12:04:07.227 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-04-15 12:04:07.244 [info] ExtensionService#_doActivateExtension eamodio.gitlens, startup: false, activationEvent: 'onView:gitlens.views.home'
+2025-04-15 12:04:07.358 [info] ExtensionService#_doActivateExtension ecmel.vscode-html-css, startup: false, activationEvent: 'onCommand:vscode-html-css.validate'
+2025-04-15 12:04:07.359 [info] ExtensionService#_doActivateExtension SonarSource.sonarlint-vscode, startup: false, activationEvent: 'onView:SonarLint.IssueLocations'
+2025-04-15 12:04:07.631 [info] ExtensionService#_doActivateExtension mechatroner.rainbow-csv, startup: false, activationEvent: 'onLanguage:plaintext'
+2025-04-15 12:04:07.634 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-04-15 12:04:07.779 [info] ExtensionService#_doActivateExtension vscode.git, startup: false, activationEvent: '*'
+2025-04-15 12:04:07.825 [info] ExtensionService#_doActivateExtension vscode.github, startup: false, activationEvent: '*'
+2025-04-15 12:04:07.842 [info] ExtensionService#_doActivateExtension hbenl.vscode-test-explorer, startup: false, activationEvent: '*'
+2025-04-15 12:04:07.995 [info] ExtensionService#_doActivateExtension codeium.windsurf, startup: false, activationEvent: '*'
+2025-04-15 12:04:08.396 [error] Activating extension SonarSource.sonarlint-vscode failed due to an error:
+2025-04-15 12:04:08.396 [error] {"message":"The Java Runtime Environment can not be located. Please install a JRE, or configure its path with the\n      sonarlint.ls.javaHome property. You can also let SonarQube for VS Code download the JRE from AdoptOpenJDK. This JRE will be\n      used only by SonarQube for VS Code.","label":"Let SonarQube for VS Code download the JRE","command":"SonarLint.InstallManagedJre"}
+2025-04-15 12:04:10.363 [info] Eager extensions activated
+2025-04-15 12:04:10.407 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:04:10.408 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:04:10.421 [info] ExtensionService#_doActivateExtension Codeium.windsurf-dev-containers, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:04:10.424 [info] ExtensionService#_doActivateExtension aaron-bond.better-comments, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:04:10.427 [info] ExtensionService#_doActivateExtension bierner.emojisense, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:04:10.433 [info] ExtensionService#_doActivateExtension bradlc.vscode-tailwindcss, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:04:10.462 [info] ExtensionService#_doActivateExtension cyrilletuzi.angular-schematics, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:04:10.791 [info] ExtensionService#_doActivateExtension dbaeumer.vscode-eslint, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:04:10.814 [info] ExtensionService#_doActivateExtension dsznajder.es7-react-js-snippets, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:04:11.147 [info] ExtensionService#_doActivateExtension EditorConfig.EditorConfig, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:04:11.160 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:04:11.213 [info] ExtensionService#_doActivateExtension Gruntfuggly.todo-tree, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:04:11.233 [info] ExtensionService#_doActivateExtension kisstkondoros.vscode-gutter-preview, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:04:11.261 [info] ExtensionService#_doActivateExtension PKief.material-icon-theme, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:04:11.270 [info] ExtensionService#_doActivateExtension shardulm94.trailing-spaces, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:04:11.276 [info] ExtensionService#_doActivateExtension subframe7536.custom-ui-style, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:04:11.280 [info] ExtensionService#_doActivateExtension usernamehw.errorlens, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:04:11.285 [info] ExtensionService#_doActivateExtension vscode-icons-team.vscode-icons, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:04:11.309 [info] ExtensionService#_doActivateExtension waderyan.gitblame, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:04:11.311 [info] ExtensionService#_doActivateExtension zhuangtongfa.material-theme, startup: false, activationEvent: 'onStartupFinished'
+2025-04-15 12:06:10.400 [info] Extension host terminating: renderer closed the MessagePort
+2025-04-15 12:06:10.418 [error] An error occurred when disposing the subscriptions for extension 'eamodio.gitlens':
+2025-04-15 12:06:10.427 [error] TypeError: Cannot read properties of undefined (reading 'dispose')
+    at Object.dispose (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:121769)
+    at x_.<anonymous> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:106:20087)
+    at x_.dispose (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:106:20183)
+    at Object.dispose (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:30:24001)
+    at /home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:301:15285
+    at Array.forEach (<anonymous>)
+    at Object.dispose (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:301:15267)
+    at Cs (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:701)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:15142
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:1011
+    at Object.dispose (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:8:705)
+    at dK.eb (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:12069)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10024
+    at Array.map (<anonymous>)
+    at dK.$ (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10012)
+    at dK.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10255)
+    at C7.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:1434)
+    at vn (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:15116)
+    at MessagePortMain.<anonymous> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:11656)
+    at MessagePortMain.emit (node:events:518:28)
+    at MessagePortMain.emit (node:domain:489:12)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949)
+2025-04-15 12:06:10.429 [error] An error occurred when disposing the subscriptions for extension 'Gruntfuggly.todo-tree':
+2025-04-15 12:06:10.429 [error] AggregateError: Encountered errors while disposing of store
+    at Cs (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:777)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:15142
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:1011
+    at Object.dispose (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:8:705)
+    at dK.eb (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:12069)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10024
+    at Array.map (<anonymous>)
+    at dK.$ (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10012)
+    at dK.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10255)
+    at C7.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:1434)
+    at vn (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:15116)
+    at MessagePortMain.<anonymous> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:11656)
+    at MessagePortMain.emit (node:events:518:28)
+    at MessagePortMain.emit (node:domain:489:12)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949)
+2025-04-15 12:06:10.436 [error] Canceled: Canceled
+    at new TF (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:111806)
+    at Jy.U (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116417)
+    at Proxy.n.<computed>.r.charCodeAt.n.<computed> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:113911)
+    at GS.g (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:32228)
+    at GS.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31732)
+    at i.registerCommand.description (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31062)
+    at GS.h (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:32748)
+    at GS.g (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31825)
+    at GS.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31732)
+    at Object.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:173:46382)
+    at w (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:365:3186)
+    at c (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1:64500)
+    at ActionRunners._updateContextKeys (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:30978)
+    at s (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:29422)
+    at RegisteredActionRunner.unregister (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:29565)
+    at RegisteredActionRunner.dispose (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:28225)
+    at Object.dispose (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:29659)
+    at Cs (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:701)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:15142
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:1011
+    at Object.dispose (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:8:705)
+    at dK.eb (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:12069)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10024
+    at Array.map (<anonymous>)
+    at dK.$ (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10012)
+    at dK.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10255)
+    at C7.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:1434)
+    at vn (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:15116)
+    at MessagePortMain.<anonymous> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:11656)
+    at MessagePortMain.emit (node:events:518:28)
+    at MessagePortMain.emit (node:domain:489:12)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949) setContext undefined
+2025-04-15 12:06:10.439 [error] Canceled: Canceled
+    at new TF (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:111806)
+    at Jy.U (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116417)
+    at Proxy.n.<computed>.r.charCodeAt.n.<computed> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:113911)
+    at GS.g (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:32228)
+    at GS.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31732)
+    at i.registerCommand.description (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31062)
+    at GS.h (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:32748)
+    at GS.g (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31825)
+    at GS.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31732)
+    at Object.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:173:46382)
+    at w (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:365:3186)
+    at c (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1:64500)
+    at ActionRunners._updateContextKeys (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:30978)
+    at s (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:29422)
+    at RegisteredActionRunner.unregister (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:29565)
+    at RegisteredActionRunner.dispose (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:28225)
+    at Object.dispose (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:29659)
+    at Cs (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:701)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:15142
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:1011
+    at Object.dispose (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:8:705)
+    at dK.eb (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:12069)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10024
+    at Array.map (<anonymous>)
+    at dK.$ (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10012)
+    at dK.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10255)
+    at C7.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:1434)
+    at vn (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:15116)
+    at MessagePortMain.<anonymous> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:11656)
+    at MessagePortMain.emit (node:events:518:28)
+    at MessagePortMain.emit (node:domain:489:12)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949) setContext undefined
+2025-04-15 12:06:10.440 [error] Canceled: Canceled
+    at new TF (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:111806)
+    at Jy.U (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116417)
+    at Proxy.n.<computed>.r.charCodeAt.n.<computed> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:113911)
+    at GS.g (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:32228)
+    at GS.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31732)
+    at i.registerCommand.description (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31062)
+    at GS.h (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:32748)
+    at GS.g (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31825)
+    at GS.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31732)
+    at Object.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:173:46382)
+    at w (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:365:3186)
+    at c (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1:64500)
+    at ActionRunners._updateContextKeys (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:30978)
+    at s (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:29422)
+    at RegisteredActionRunner.unregister (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:29565)
+    at RegisteredActionRunner.dispose (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:28225)
+    at Object.dispose (/home/pracker/.windsurf/extensions/eamodio.gitlens-17.0.2-universal/dist/gitlens.js:1495:29659)
+    at Cs (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:701)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:15142
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:1011
+    at Object.dispose (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:8:705)
+    at dK.eb (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:12069)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10024
+    at Array.map (<anonymous>)
+    at dK.$ (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10012)
+    at dK.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10255)
+    at C7.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:1434)
+    at vn (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:15116)
+    at MessagePortMain.<anonymous> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:11656)
+    at MessagePortMain.emit (node:events:518:28)
+    at MessagePortMain.emit (node:domain:489:12)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949) setContext undefined
+2025-04-15 12:06:10.442 [error] Canceled: Canceled
+    at new TF (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:111806)
+    at Jy.U (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116417)
+    at Proxy.n.<computed>.r.charCodeAt.n.<computed> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:113911)
+    at GS.g (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:32228)
+    at GS.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31732)
+    at i.registerCommand.description (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31062)
+    at GS.h (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:32748)
+    at GS.g (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31825)
+    at GS.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:31732)
+    at Object.executeCommand (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:173:46382)
+    at B.dispose (/home/pracker/.windsurf/extensions/ms-vscode.test-adapter-converter-0.2.1-universal/out/extension.js:9:458)
+    at Cs (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:701)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:15142
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:25:1011
+    at Object.dispose (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:8:705)
+    at dK.eb (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:12069)
+    at file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10024
+    at Array.map (<anonymous>)
+    at dK.$ (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10012)
+    at dK.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:10255)
+    at C7.terminate (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:1434)
+    at vn (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:15116)
+    at MessagePortMain.<anonymous> (file:///usr/share/windsurf/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:191:11656)
+    at MessagePortMain.emit (node:events:518:28)
+    at MessagePortMain.emit (node:domain:489:12)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949) setContext undefined
+2025-04-15 12:06:10.442 [info] Extension host with pid 20635 exiting with code 0

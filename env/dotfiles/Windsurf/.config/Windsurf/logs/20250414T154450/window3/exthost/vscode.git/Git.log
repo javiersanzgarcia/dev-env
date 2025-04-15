@@ -24,3 +24,7 @@
 2025-04-14 16:10:09.103 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/debian/systems refs/remotes/debian/systems [8ms]
 2025-04-14 16:10:09.180 [info] > git status -z -uall [35ms]
 2025-04-14 16:10:09.183 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [30ms]
+2025-04-14 16:11:30.380 [info] > git config --get commit.template [9ms]
+2025-04-14 16:11:30.380 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/debian/systems refs/remotes/debian/systems [1ms]
+2025-04-14 16:11:30.394 [info] > git status -z -uall [7ms]
+2025-04-14 16:11:30.395 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [1ms]

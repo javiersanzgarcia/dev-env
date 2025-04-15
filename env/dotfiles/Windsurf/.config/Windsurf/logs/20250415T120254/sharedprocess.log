@@ -1,0 +1,6 @@
+2025-04-15 12:03:01.679 [info] Getting Manifest... sonarsource.sonarlint-vscode
+2025-04-15 12:03:02.362 [info] Installing extension: sonarsource.sonarlint-vscode {"productVersion":{"version":"1.97.0","date":"2025-04-14T02:02:52.752Z"},"pinned":false,"operation":3,"isApplicationScoped":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/pracker/.windsurf/extensions/extensions.json","path":"/home/pracker/.windsurf/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true}
+2025-04-15 12:03:22.992 [info] Extracted extension to file:///home/pracker/.windsurf/extensions/sonarsource.sonarlint-vscode-4.20.0-universal: sonarsource.sonarlint-vscode
+2025-04-15 12:03:23.017 [info] Renamed to /home/pracker/.windsurf/extensions/sonarsource.sonarlint-vscode-4.20.0-universal
+2025-04-15 12:03:23.031 [info] Marked extension as removed sonarsource.sonarlint-vscode-4.19.0
+2025-04-15 12:03:23.054 [info] Extension installed successfully: sonarsource.sonarlint-vscode vscode-userdata:/home/pracker/.windsurf/extensions/extensions.json

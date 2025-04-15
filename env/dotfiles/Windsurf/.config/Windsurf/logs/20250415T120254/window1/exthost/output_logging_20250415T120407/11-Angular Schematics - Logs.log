@@ -1,0 +1,17 @@
+[Info - 12:04:11 PM] Starting workspace configuration loading.
+[Info - 12:04:11 PM] 1 workspace folder(s) detected.
+[Info - 12:04:11 PM] Loading configuration of "InputOutput" workspace folder.
+[Info - 12:04:11 PM] Loading extension configuration
+[Info - 12:04:11 PM] Loading extension configuration from VS Code settings.
+[Info - 12:04:11 PM] Loading dependencies config from package.json.
+[Info - 12:04:11 PM] Found: /home/pracker/code/Fem_Go/go-fundamentals/InputOutput/package.json
+[Info - 12:04:11 PM] Found: /home/pracker/code/Fem_Go/go-fundamentals/package.json
+[Info - 12:04:11 PM] Found: /home/pracker/code/Fem_Go/package.json
+[Info - 12:04:11 PM] Found: /home/pracker/code/package.json
+[Info - 12:04:11 PM] Found: /home/pracker/package.json
+[Info - 12:04:11 PM] Found: /home/package.json
+[Info - 12:04:11 PM] Loading format configuration
+[Info - 12:04:11 PM] Loading schematics.
+[Info - 12:04:11 PM] 0 schematic(s) loaded.
+[Warning - 12:04:11 PM] No angular.json found
+[Info - 12:04:11 PM] Configuration of all workspace folders is now ready. Duration: 77ms

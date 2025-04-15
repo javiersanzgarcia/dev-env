@@ -1,0 +1,109 @@
+2025-04-15 12:07:08.006 [info] read schema from vscode: vscode://schemas/settings/default
+2025-04-15 12:07:08.117 [info] read schema from vscode: vscode://schemas/settings/resourceLanguage
+2025-04-15 12:07:08.128 [info] read schema from vscode: vscode://schemas/launch
+2025-04-15 12:07:08.128 [info] read schema from vscode: vscode://schemas/token-styling
+2025-04-15 12:07:08.128 [info] read schema from vscode: vscode://schemas/textmate-colors
+2025-04-15 12:07:08.129 [info] read schema from vscode: vscode://schemas/workbench-colors
+2025-04-15 12:07:08.252 [info] schema change detected vscode://schemas/settings/default
+2025-04-15 12:07:08.295 [info] cancelled
+2025-04-15 12:07:08.296 [info] read schema from vscode: vscode://schemas/settings/default
+2025-04-15 12:07:08.478 [info] cancelled
+2025-04-15 12:07:08.980 [info] schema change detected vscode://schemas/settings/default
+2025-04-15 12:07:08.982 [info] read schema from vscode: vscode://schemas/settings/default
+2025-04-15 12:07:18.217 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:07:19.285 [info] schema change detected vscode://schemas/settings/default
+2025-04-15 12:07:19.286 [info] schema change detected vscode://schemas/settings/user
+2025-04-15 12:07:19.287 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:07:19.481 [info] cancelled
+2025-04-15 12:07:23.347 [info] schema change detected vscode://schemas/launch
+2025-04-15 12:07:23.347 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:07:23.429 [info] read schema from vscode: vscode://schemas/launch
+2025-04-15 12:09:37.953 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:09:37.953 [info] cancelled
+2025-04-15 12:09:38.059 [info] read schema from vscode: vscode://schemas/settings/resourceLanguage
+2025-04-15 12:09:38.073 [info] read schema from vscode: vscode://schemas/launch
+2025-04-15 12:09:38.074 [info] read schema from vscode: vscode://schemas/token-styling
+2025-04-15 12:09:38.074 [info] read schema from vscode: vscode://schemas/textmate-colors
+2025-04-15 12:09:38.075 [info] read schema from vscode: vscode://schemas/workbench-colors
+2025-04-15 12:09:38.804 [info] schema change detected vscode://schemas/settings/resourceLanguage
+2025-04-15 12:09:38.823 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:09:39.087 [info] read schema from vscode: vscode://schemas/settings/resourceLanguage
+2025-04-15 12:09:39.166 [info] schema change detected vscode://schemas/settings/resourceLanguage
+2025-04-15 12:09:39.213 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:09:39.292 [info] read schema from vscode: vscode://schemas/settings/resourceLanguage
+2025-04-15 12:09:39.305 [info] schema change detected vscode://schemas/settings/user
+2025-04-15 12:09:39.400 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:09:42.725 [info] schema change detected vscode://schemas/launch
+2025-04-15 12:09:42.726 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:09:42.808 [info] read schema from vscode: vscode://schemas/launch
+2025-04-15 12:11:54.409 [info] schema change detected vscode://schemas/settings/user
+2025-04-15 12:11:54.410 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:11:58.395 [info] schema change detected vscode://schemas/launch
+2025-04-15 12:11:58.396 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:11:58.474 [info] read schema from vscode: vscode://schemas/launch
+2025-04-15 12:14:28.911 [info] schema change detected vscode://schemas/settings/user
+2025-04-15 12:14:28.913 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:14:45.631 [info] schema change detected vscode://schemas/settings/user
+2025-04-15 12:14:45.632 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:15:10.211 [info] schema change detected vscode://schemas/settings/user
+2025-04-15 12:15:10.212 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:15:20.712 [info] schema change detected vscode://schemas/settings/user
+2025-04-15 12:15:20.713 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:19:02.651 [info] read schema from vscode: vscode://schemas/keybindings
+2025-04-15 12:19:40.031 [info] schema change detected vscode://schemas/launch
+2025-04-15 12:19:40.033 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:19:40.219 [info] read schema from vscode: vscode://schemas/launch
+2025-04-15 12:21:03.264 [info] read schema from vscode: vscode://schemas/settings/default
+2025-04-15 12:32:54.330 [info] cancelled
+2025-04-15 12:33:19.564 [info] [Error - 12:33:19 PM] Error while computing hover for vscode://defaultsettings/keybindings.json: Maximum call stack size exceeded
+RangeError: Maximum call stack size exceeded
+    at Pt.merge (/usr/share/windsurf/resources/app/extensions/json-language-features/server/dist/node/875.jsonServerMain.js:1:61119)
+    at /usr/share/windsurf/resources/app/extensions/json-language-features/server/dist/node/875.jsonServerMain.js:1:64565
+    at It (/usr/share/windsurf/resources/app/extensions/json-language-features/server/dist/node/875.jsonServerMain.js:1:66907)
+    at At.getMatchingSchemas (/usr/share/windsurf/resources/app/extensions/json-language-features/server/dist/node/875.jsonServerMain.js:1:63791)
+    at /usr/share/windsurf/resources/app/extensions/json-language-features/server/dist/node/875.jsonServerMain.js:1:93313
+2025-04-15 12:35:41.440 [info] read schema from vscode: vscode://schemas/keybindings
+2025-04-15 12:35:41.441 [info] cancelled
+2025-04-15 12:35:42.653 [info] schema change detected vscode://schemas/keybindings
+2025-04-15 12:35:42.654 [info] read schema from vscode: vscode://schemas/keybindings
+2025-04-15 12:35:42.655 [info] schema change detected vscode://schemas/keybindings
+2025-04-15 12:35:42.683 [info] read schema from vscode: vscode://schemas/keybindings
+2025-04-15 12:35:42.883 [info] cancelled
+2025-04-15 12:35:47.280 [info] schema change detected vscode://schemas/keybindings
+2025-04-15 12:35:47.281 [info] read schema from vscode: vscode://schemas/keybindings
+2025-04-15 12:38:33.219 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:38:33.366 [info] read schema from vscode: vscode://schemas/settings/resourceLanguage
+2025-04-15 12:38:33.377 [info] read schema from vscode: vscode://schemas/launch
+2025-04-15 12:38:33.377 [info] read schema from vscode: vscode://schemas/token-styling
+2025-04-15 12:38:33.378 [info] read schema from vscode: vscode://schemas/textmate-colors
+2025-04-15 12:38:33.378 [info] read schema from vscode: vscode://schemas/workbench-colors
+2025-04-15 12:38:34.233 [info] schema change detected vscode://schemas/keybindings
+2025-04-15 12:38:34.234 [info] read schema from vscode: vscode://schemas/keybindings
+2025-04-15 12:38:34.287 [info] schema change detected vscode://schemas/settings/user
+2025-04-15 12:38:34.543 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:39:06.541 [info] read schema from vscode: vscode://schemas/settings/default
+2025-04-15 12:39:07.488 [info] schema change detected vscode://schemas/keybindings
+2025-04-15 12:39:07.543 [info] schema change detected vscode://schemas/settings/default
+2025-04-15 12:39:07.543 [info] schema change detected vscode://schemas/settings/user
+2025-04-15 12:39:08.606 [info] cancelled
+2025-04-15 12:39:08.607 [info] cancelled
+2025-04-15 12:39:08.608 [info] cancelled
+2025-04-15 12:39:08.608 [info] read schema from vscode: vscode://schemas/keybindings
+2025-04-15 12:39:08.608 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:39:08.668 [info] schema change detected vscode://schemas/keybindings
+2025-04-15 12:39:08.721 [info] schema change detected vscode://schemas/settings/default
+2025-04-15 12:39:08.721 [info] schema change detected vscode://schemas/settings/user
+2025-04-15 12:39:08.910 [info] read schema from vscode: vscode://schemas/keybindings
+2025-04-15 12:39:08.910 [info] cancelled
+2025-04-15 12:39:08.911 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:39:09.073 [info] cancelled
+2025-04-15 12:39:12.553 [info] schema change detected vscode://schemas/keybindings
+2025-04-15 12:39:12.554 [info] read schema from vscode: vscode://schemas/keybindings
+2025-04-15 12:39:12.620 [info] schema change detected vscode://schemas/settings/default
+2025-04-15 12:39:12.620 [info] schema change detected vscode://schemas/settings/user
+2025-04-15 12:39:12.873 [info] read schema from vscode: vscode://schemas/settings/user
+2025-04-15 12:39:40.214 [info] schema change detected vscode://schemas/keybindings
+2025-04-15 12:39:40.215 [info] read schema from vscode: vscode://schemas/keybindings
+2025-04-15 12:39:40.269 [info] schema change detected vscode://schemas/settings/default
+2025-04-15 12:39:40.269 [info] schema change detected vscode://schemas/settings/user
+2025-04-15 12:39:40.546 [info] read schema from vscode: vscode://schemas/settings/user

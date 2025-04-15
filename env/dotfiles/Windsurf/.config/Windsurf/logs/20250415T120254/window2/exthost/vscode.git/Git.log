@@ -1,0 +1,26 @@
+2025-04-15 12:02:57.317 [info] [main] Log level: Info
+2025-04-15 12:02:57.317 [info] [main] Validating found git in: "git"
+2025-04-15 12:02:57.317 [info] [main] Using git "2.43.0" from "git"
+2025-04-15 12:02:57.317 [info] [Model][doInitialScan] Initial repository scan started
+2025-04-15 12:02:57.317 [info] > git rev-parse --show-toplevel [7ms]
+2025-04-15 12:02:57.317 [info] > git rev-parse --git-dir --git-common-dir [1ms]
+2025-04-15 12:02:57.317 [info] [Model][openRepository] Opened repository: /home/pracker/code/dev-env
+2025-04-15 12:02:57.341 [info] > git rev-parse --show-toplevel [14ms]
+2025-04-15 12:02:57.341 [info] > git config --get commit.template [19ms]
+2025-04-15 12:02:57.403 [info] > git rev-parse --show-toplevel [41ms]
+2025-04-15 12:02:57.405 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-04-15 12:02:57.411 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/debian/systems refs/remotes/debian/systems [9ms]
+2025-04-15 12:02:57.422 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [1ms]
+2025-04-15 12:02:57.428 [info] > git status -z -uall [12ms]
+2025-04-15 12:02:57.451 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/debian/systems refs/remotes/debian/systems [6ms]
+2025-04-15 12:02:57.457 [info] > git config --get --local branch.debian/systems.vscode-merge-base [1ms]
+2025-04-15 12:02:57.462 [info] > git config --get commit.template [12ms]
+2025-04-15 12:02:57.482 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [20ms]
+2025-04-15 12:02:57.496 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/debian/systems refs/remotes/debian/systems [14ms]
+2025-04-15 12:02:57.508 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [3ms]
+2025-04-15 12:02:57.510 [info] > git status -z -uall [9ms]
+2025-04-15 12:02:57.941 [info] > git check-ignore -v -z --stdin [14ms]
+2025-04-15 12:02:59.507 [info] > git config --get commit.template [69ms]
+2025-04-15 12:02:59.524 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/debian/systems refs/remotes/debian/systems [5ms]
+2025-04-15 12:02:59.549 [info] > git status -z -uall [15ms]
+2025-04-15 12:02:59.549 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [8ms]

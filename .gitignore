@@ -1,2 +1,5 @@
 lazygit.tar.gz
 env/dotfiles/github-copilot/.config/github-copilot/apps.json
+env/dotfiles/Windsurf/.config/Windsurf/logs/
+env/dotfiles/Windsurf/.config/Windsurf/Cache/
+env/dotfiles/Windsurf/.config/Windsurf/CachedData/

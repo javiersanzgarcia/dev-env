@@ -6,12 +6,6 @@
         "workspaces": [],
         "folders": [
             {
-                "folderUri": "file:///home/pracker"
-            },
-            {
-                "folderUri": "file:///home/pracker/code/dev-env"
-            },
-            {
                 "folderUri": "file:///home/pracker/code/Fem_Go/go-fundamentals/InputOutput"
             }
         ],
@@ -53,8 +47,8 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 35,
             "activityBarWidth": 0,
-            "sideBarWidth": 270,
-            "auxiliarySideBarWidth": 425,
+            "sideBarWidth": 244,
+            "auxiliarySideBarWidth": 0,
             "statusBarHeight": 0,
             "windowBorder": false
         }
@@ -62,7 +56,7 @@
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
             "auxiliarySideBarWidth": [
-                425,
+                500,
                 [
                     "ab0fb2d21b7eb2863709d586b44ad57d",
                     "0a17a77af1608f8d947f5ac4fff2bbfa"
@@ -72,40 +66,17 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/pracker/code/dev-env",
-            "backupPath": "/home/pracker/.config/Windsurf/Backups/8e4be861b5419ddaabd508f4347832b6",
+            "folder": "file:///home/pracker/code/Fem_Go/go-fundamentals/InputOutput",
+            "backupPath": "/home/pracker/.config/Windsurf/Backups/328592d9c63dec73115674014eaddde3",
             "uiState": {
                 "mode": 1,
-                "x": 1523,
-                "y": 418,
-                "width": 1260,
-                "height": 751
+                "x": 0,
+                "y": 67,
+                "width": 1720,
+                "height": 1299
             }
         },
-        "openedWindows": [
-            {
-                "folder": "file:///home/pracker/code/Fem_Go/go-fundamentals/InputOutput",
-                "backupPath": "/home/pracker/.config/Windsurf/Backups/328592d9c63dec73115674014eaddde3",
-                "uiState": {
-                    "mode": 1,
-                    "x": 1421,
-                    "y": 284,
-                    "width": 1260,
-                    "height": 751
-                }
-            },
-            {
-                "folder": "file:///home/pracker/code/dev-env",
-                "backupPath": "/home/pracker/.config/Windsurf/Backups/8e4be861b5419ddaabd508f4347832b6",
-                "uiState": {
-                    "mode": 1,
-                    "x": 1523,
-                    "y": 418,
-                    "width": 1260,
-                    "height": 751
-                }
-            }
-        ]
+        "openedWindows": []
     },
     "lastKnownMenubarData": {
         "menus": {
@@ -157,22 +128,10 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor",
-                                    "enabled": false
+                                    "label": "&&Reopen Closed Editor"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
-                                },
-                                {
-                                    "id": "openRecentFolder",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/pracker/code/dev-env",
-                                        "path": "/home/pracker/code/dev-env",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/code/dev-env"
                                 },
                                 {
                                     "id": "openRecentFolder",
@@ -189,81 +148,12 @@
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///home/pracker/code/Fem_Go/go-fundamentals",
-                                        "path": "/home/pracker/code/Fem_Go/go-fundamentals",
+                                        "external": "file:///home/pracker/code/dev-env",
+                                        "path": "/home/pracker/code/dev-env",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
-                                    "label": "~/code/Fem_Go/go-fundamentals"
-                                },
-                                {
-                                    "id": "openRecentFolder",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/pracker/code/Fem_Go",
-                                        "path": "/home/pracker/code/Fem_Go",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/code/Fem_Go"
-                                },
-                                {
-                                    "id": "openRecentFolder",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///media/pracker/Archivo/Teclados/Madera%20y%20Blanco%20Ali",
-                                        "path": "/media/pracker/Archivo/Teclados/Madera y Blanco Ali",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/media/pracker/Archivo/Teclados/Madera y Blanco Ali"
-                                },
-                                {
-                                    "id": "openRecentFolder",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///etc/udev/rules.d",
-                                        "path": "/etc/udev/rules.d",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/etc/udev/rules.d"
-                                },
-                                {
-                                    "id": "openRecentFolder",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/pracker",
-                                        "path": "/home/pracker",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/home/pracker"
-                                },
-                                {
-                                    "id": "openRecentFolder",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/pracker/.config/nvim",
-                                        "path": "/home/pracker/.config/nvim",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/.config/nvim"
-                                },
-                                {
-                                    "id": "vscode.menubar.separator"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/pracker/code/Fem_Go/go-fundamentals/first.go",
-                                        "path": "/home/pracker/code/Fem_Go/go-fundamentals/first.go",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/code/Fem_Go/go-fundamentals/first.go"
+                                    "label": "~/code/dev-env"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -302,13 +192,11 @@
                     },
                     {
                         "id": "workbench.action.files.save",
-                        "label": "&&Save",
-                        "enabled": false
+                        "label": "&&Save"
                     },
                     {
                         "id": "workbench.action.files.saveAs",
-                        "label": "Save &&As...",
-                        "enabled": false
+                        "label": "Save &&As..."
                     },
                     {
                         "id": "saveAll",
@@ -323,13 +211,6 @@
                         "label": "Share",
                         "submenu": {
                             "items": [
-                                {
-                                    "id": "github.copyVscodeDevLinkFile",
-                                    "label": "Copy vscode.dev Link"
-                                },
-                                {
-                                    "id": "vscode.menubar.separator"
-                                },
                                 {
                                     "id": "workbench.profiles.actions.exportProfile",
                                     "label": "Export Profile (Default)..."
@@ -409,13 +290,11 @@
                     },
                     {
                         "id": "workbench.action.files.revert",
-                        "label": "Re&&vert File",
-                        "enabled": false
+                        "label": "Re&&vert File"
                     },
                     {
                         "id": "workbench.action.closeActiveEditor",
-                        "label": "&&Close Editor",
-                        "enabled": false
+                        "label": "&&Close Editor"
                     },
                     {
                         "id": "workbench.action.closeFolder",
@@ -464,13 +343,11 @@
                     },
                     {
                         "id": "actions.find",
-                        "label": "&&Find",
-                        "enabled": false
+                        "label": "&&Find"
                     },
                     {
                         "id": "editor.action.startFindReplaceAction",
-                        "label": "&&Replace",
-                        "enabled": false
+                        "label": "&&Replace"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -622,8 +499,7 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleAuxiliaryBar",
-                                    "label": "Secondary Si&&de Bar",
-                                    "checked": true
+                                    "label": "Secondary Si&&de Bar"
                                 },
                                 {
                                     "id": "workbench.action.toggleStatusbarVisibility",
@@ -631,7 +507,8 @@
                                 },
                                 {
                                     "id": "workbench.action.togglePanel",
-                                    "label": "&&Panel"
+                                    "label": "&&Panel",
+                                    "checked": true
                                 },
                                 {
                                     "id": "toggle.toggleCustomTitleBar",
@@ -937,6 +814,10 @@
                         "label": "E&&xtensions"
                     },
                     {
+                        "id": "workbench.view.extension.test",
+                        "label": "T&&esting"
+                    },
+                    {
                         "id": "vscode.menubar.separator"
                     },
                     {
@@ -961,7 +842,7 @@
                     {
                         "id": "editor.action.toggleWordWrap",
                         "label": "&&Word Wrap",
-                        "enabled": false
+                        "checked": true
                     }
                 ]
             },
@@ -969,8 +850,7 @@
                 "items": [
                     {
                         "id": "workbench.action.navigateBack",
-                        "label": "&&Back",
-                        "enabled": false
+                        "label": "&&Back"
                     },
                     {
                         "id": "workbench.action.navigateForward",
@@ -1300,8 +1180,7 @@
                     },
                     {
                         "id": "workbench.action.terminal.split",
-                        "label": "&&Split Terminal",
-                        "enabled": false
+                        "label": "&&Split Terminal"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1560,10 +1439,6 @@
                 "label": "Ctrl+D",
                 "userSettingsLabel": "ctrl+d"
             },
-            "editor.action.selectHighlights": {
-                "label": "Ctrl+Shift+L",
-                "userSettingsLabel": "ctrl+shift+l"
-            },
             "workbench.action.showCommands": {
                 "label": "Super+O Super+P",
                 "isNative": false,
@@ -1634,9 +1509,8 @@
                 "userSettingsLabel": "ctrl+shift+f"
             },
             "workbench.view.scm": {
-                "label": "Ctrl+Shift+G G",
-                "isNative": false,
-                "userSettingsLabel": "ctrl+shift+g g"
+                "label": "Ctrl+Shift+G",
+                "userSettingsLabel": "ctrl+shift+g"
             },
             "workbench.view.debug": {
                 "label": "Ctrl+Shift+D",
