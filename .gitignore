@@ -3,5 +3,6 @@ lazygit.tar.gz
 env/dotfiles/github-copilot/.config/github-copilot/apps.json
 
 env/dotfiles/Windsurf/.config/Windsurf/*
-!env/dotfiles/Windsurf/.config/Windsurf/User
+
+!env/dotfiles/Windsurf/.config/Windsurf/User/*
 
