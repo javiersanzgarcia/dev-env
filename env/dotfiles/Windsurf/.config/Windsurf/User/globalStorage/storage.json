@@ -7,6 +7,9 @@
         "folders": [
             {
                 "folderUri": "file:///home/pracker/code/Fem_Go/go-fundamentals/InputOutput"
+            },
+            {
+                "folderUri": "file:///home/pracker/code/dev-env"
             }
         ],
         "emptyWindows": []
@@ -48,7 +51,7 @@
             "titleBarHeight": 35,
             "activityBarWidth": 0,
             "sideBarWidth": 244,
-            "auxiliarySideBarWidth": 0,
+            "auxiliarySideBarWidth": 500,
             "statusBarHeight": 0,
             "windowBorder": false
         }
@@ -76,7 +79,30 @@
                 "height": 1299
             }
         },
-        "openedWindows": []
+        "openedWindows": [
+            {
+                "folder": "file:///home/pracker/code/Fem_Go/go-fundamentals/InputOutput",
+                "backupPath": "/home/pracker/.config/Windsurf/Backups/328592d9c63dec73115674014eaddde3",
+                "uiState": {
+                    "mode": 1,
+                    "x": 0,
+                    "y": 67,
+                    "width": 1720,
+                    "height": 1299
+                }
+            },
+            {
+                "folder": "file:///home/pracker/code/dev-env",
+                "backupPath": "/home/pracker/.config/Windsurf/Backups/8e4be861b5419ddaabd508f4347832b6",
+                "uiState": {
+                    "mode": 1,
+                    "x": 1254,
+                    "y": 67,
+                    "width": 1720,
+                    "height": 1299
+                }
+            }
+        ]
     },
     "lastKnownMenubarData": {
         "menus": {
@@ -137,23 +163,23 @@
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///home/pracker/code/Fem_Go/go-fundamentals/InputOutput",
-                                        "path": "/home/pracker/code/Fem_Go/go-fundamentals/InputOutput",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/code/Fem_Go/go-fundamentals/InputOutput"
-                                },
-                                {
-                                    "id": "openRecentFolder",
-                                    "uri": {
-                                        "$mid": 1,
                                         "external": "file:///home/pracker/code/dev-env",
                                         "path": "/home/pracker/code/dev-env",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
                                     "label": "~/code/dev-env"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/pracker/code/Fem_Go/go-fundamentals/InputOutput",
+                                        "path": "/home/pracker/code/Fem_Go/go-fundamentals/InputOutput",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/code/Fem_Go/go-fundamentals/InputOutput"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
