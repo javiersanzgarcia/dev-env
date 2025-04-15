@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-cd "$HOME" || exit 1
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
-
-source ~/.zshrc
-echo "nvm installed"
-nvm --version
