@@ -2,32 +2,6 @@ lazygit.tar.gz
 
 env/dotfiles/github-copilot/.config/github-copilot/apps.json
 
-env/dotfiles/Windsurf/.config/Windsurf/Backups/
+env/dotfiles/Windsurf/.config/Windsurf/*
+!env/dotfiles/Windsurf/.config/Windsurf/User
 
-env/dotfiles/Windsurf/.config/Windsurf/Cache/*
-
-env/dotfiles/Windsurf/.config/Windsurf/CachedData/*
-
-env/dotfiles/Windsurf/.config/Windsurf/CachedExtensionVSIXs/*
-
-env/dotfiles/Windsurf/.config/Windsurf/CachedProfilesData/*
-
-env/dotfiles/Windsurf/.config/Windsurf/Crashpad/*
-
-env/dotfiles/Windsurf/.config/Windsurf/DawnGraphiteCache/*
-
-env/dotfiles/Windsurf/.config/Windsurf/DawnWebGPUCache/*
-
-env/dotfiles/Windsurf/.config/Windsurf/GPUCache/*
-
-env/dotfiles/Windsurf/.config/Windsurf/Local Storage/*
-
-env/dotfiles/Windsurf/.config/Windsurf/Service Worker/*
-
-env/dotfiles/Windsurf/.config/Windsurf/Session Storage/*
-
-env/dotfiles/Windsurf/.config/Windsurf/User/*
-
-env/dotfiles/Windsurf/.config/Windsurf/WebStorage/*
-
-env/dotfiles/Windsurf/.config/Windsurf/logs/*
