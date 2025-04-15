@@ -438,7 +438,6 @@
     "command": "workbench.action.terminal.clear",
     "when": "terminalFocus"
   },
-
   {
     "key": "ctrl+shift+l",
     "command": "windsurf.prioritized.command.open"

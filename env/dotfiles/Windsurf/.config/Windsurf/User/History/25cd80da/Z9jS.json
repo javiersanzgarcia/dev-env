@@ -310,7 +310,7 @@
   "windsurf.enableTabToJump": false,
   "windsurf.explainAndFixInCurrentConversation": true,
   "editor.experimental.suppressSupercomplete": true,
-  
+
   "workbench.activityBar.location": "top",
   "workbench.colorCustomizations": {
     "[Aura Dracula Spirit (Soft)]": {
