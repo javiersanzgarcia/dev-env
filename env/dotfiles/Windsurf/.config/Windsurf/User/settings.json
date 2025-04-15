@@ -344,5 +344,8 @@
   "workbench.tree.enableStickyScroll": false,
   "workbench.tree.indent": 10,
   "workbench.tree.renderIndentGuides": "none",
-  "workbench.editor.wrapTabs": true
+  "workbench.editor.wrapTabs": true,
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  }
 }
