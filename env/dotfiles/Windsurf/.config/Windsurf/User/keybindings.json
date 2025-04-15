@@ -163,6 +163,16 @@
     "when": "editorFocus || terminalFocus || filesExplorerFocus || searchViewletFocus"
   },
   {
+    "key": "ctrl+down",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+up",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
     "key": "ctrl+k",
     "command": "workbench.action.terminal.clear",
     "when": "terminalFocus"
