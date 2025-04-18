@@ -3,6 +3,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -128,7 +131,7 @@
       "y": 16
     }
   },
-  "custom-ui-style.font.sansSerif": "Dank Mono",
+  "custom-ui-style.font.sansSerif": "CaskaydiaCove Nerd Font Mono",
   "custom-ui-style.stylesheet": {
     ".editor-widget.find-widget": "box-shadow: none; border-radius: 4px",
     ".monaco-action-bar.quick-input-inline-action-bar": "display: none",
@@ -161,7 +164,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.detectIndentation": false,
   "editor.experimental.": false,
-  "editor.fontFamily": "Cascadia Code",
+  "editor.experimental.suppressSupercomplete": true,
+  "editor.fontFamily": "CaskaydiaCove Nerd Font Mono",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.formatOnPaste": false,
@@ -309,7 +313,6 @@
   "windsurf.cascadeOpenOnReload": false,
   "windsurf.enableTabToJump": false,
   "windsurf.explainAndFixInCurrentConversation": true,
-  "editor.experimental.suppressSupercomplete": true,
   "workbench.activityBar.location": "top",
   "workbench.colorCustomizations": {
     "[Aura Dracula Spirit (Soft)]": {
@@ -335,6 +338,7 @@
   "workbench.editor.editorActionsLocation": "hidden",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.wrapTabs": true,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.preferredDarkColorTheme": "Night Owl",
   "workbench.sideBar.location": "right",
@@ -343,9 +347,5 @@
   "workbench.tips.enabled": false,
   "workbench.tree.enableStickyScroll": false,
   "workbench.tree.indent": 10,
-  "workbench.tree.renderIndentGuides": "none",
-  "workbench.editor.wrapTabs": true,
-  "[go]": {
-    "editor.defaultFormatter": "golang.go"
-  }
+  "workbench.tree.renderIndentGuides": "none"
 }

@@ -6,7 +6,7 @@ echo " "
 
 sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y &&
   echo " " && echo "#### Cleaning APT" && echo " " && sudo apt autoclean &&
-  sudo apt clean && sudo apt autoremove --purge
+  sudo apt clean && sudo apt autoremove --purge && sudo snap refresh
 
 echo " "
 echo "#### Clear systemd journal logs"
