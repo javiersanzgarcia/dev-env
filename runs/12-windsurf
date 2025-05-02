@@ -2,22 +2,13 @@
 
 # Install windsurf
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  echo "Mac detected"
-  brew install windsurf
-else
-  echo "Linux detected"
-  if [[ "$dist" == "Ubuntu" ]]; then
-    echo "Ubuntu"
-    curl -fsSL "https://windsurf-stable.codeiumdata.com/wVxQEIWkwPUEAGf3/windsurf.gpg" | sudo gpg --dearmor -o /usr/share/keyrings/windsurf-stable-archive-keyring.gpg
-    echo "deb [signed-by=/usr/share/keyrings/windsurf-stable-archive-keyring.gpg arch=amd64] https://windsurf-stable.codeiumdata.com/wVxQEIWkwPUEAGf3/apt stable main" | sudo tee /etc/apt/sources.list.d/windsurf.list >/dev/null
-    sudo apt-get update
-    sudo apt-get upgrade windsurf
-  else
-    echo "Arch BTW"
-  fi
-
-fi
+echo "Arch BTW"
+git clone https://aur.archlinux.org/yay.git
+cd yay || exit 1
+makepkg -si
+yay -S windsurf
+cd ..
+rm -rf yay
 
 windsurf --install-extension 1tontech.angular-material
 windsurf --install-extension aaron-bond.better-comments

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# TODO: Review this script in functional arch system
+
 echo " "
 echo "#### Updating and upgrading"
 echo " "

@@ -1,23 +1,10 @@
 #!/usr/bin/env bash
 
-dist=$(grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}')
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  echo "Mac detected"
-  brew install bat btop tldr rust
-else
-  echo "Linux detected"
-  if [[ "$dist" == "Ubuntu" ]]; then
-    echo "Ubuntu"
-    sudo apt -y install bat btop tldr rust
-  else
-    echo "Arch BTW"
-    sudo pacman -S --noconfirm bat btop tldr rust
-  fi
-fi
+echo "Arch BTW"
+sudo pacman -Sy bat btop tldr rust
 
 # install atuin, lsd and dust
-curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+cargo install atuin
 cargo install lsd
 cargo install du-dust
 
@@ -35,4 +22,3 @@ sudo mv "$TEMP_DIR"/*.{ttf,otf} /usr/local/share/fonts/
 fc-cache -f -v
 
 rm -rf "$TEMP_DIR"
-

@@ -1,16 +1,4 @@
 #!/usr/bin/env bash
-dist=$(grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}')
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  echo "Mac detected"
-  brew install ghostty
-else
-  echo "Linux detected"
-  if [[ "$dist" == "Ubuntu" ]]; then
-    echo "Ubuntu"
-    sudo apt -y install ghostty
-  else
-    echo "Arch BTW"
-    sudo pacman -S --noconfirm ghostty
-  fi
-fi
+echo "Arch BTW"
+sudo pacman -Sy ghostty

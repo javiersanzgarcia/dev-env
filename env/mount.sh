@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# TODO: Put this script in init arch system
 echo " "
 echo "#### Mounting exFAT partition"
 echo " "
