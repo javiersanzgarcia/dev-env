@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 sudo pacman -Sy curl git tar unzip neofetch kitty \
-  rofi wget gh tmux jq cmake gettext lua5.1 liblua5.1-0-dev \
+  rofi wget github-cli tmux jq cmake gettext lua5.1 liblua5.1-0-dev \
   ripgrep fzf gcc xclip luajit stow waybar
 
 sh -c "$(git config --global alias.co checkout)"
