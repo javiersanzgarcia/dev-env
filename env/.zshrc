@@ -63,6 +63,8 @@ function openNvim {
 }
 
 export PATH="$HOME/neovim/bin:$PATH"
+export PATH=$PATH:/home/pracker/.cargo/bin
+export PATH=$PATH:/usr/bin/xdg-open
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
