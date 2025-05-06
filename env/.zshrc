@@ -62,6 +62,9 @@ function openNvim {
   fi
 }
 
+export _JAVA_AWT_WM_NONREPARENTING=1
+export JAVA_HOME="/usr/lib/jvm/java-24-openjdk"
+export PATH=$JAVA_HOME/bin:$PATH
 export PATH="$HOME/neovim/bin:$PATH"
 export PATH=$PATH:/home/pracker/.cargo/bin
 export PATH=$PATH:/usr/bin/xdg-open
