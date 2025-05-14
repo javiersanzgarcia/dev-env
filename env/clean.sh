@@ -6,6 +6,8 @@ echo " "
 
 sudo pacman -Scc
 sudo pacman -Syyu
+sudo yay -Scc
+sudo yay -Syyu
 sudo snap refresh
 
 echo " "
@@ -18,7 +20,6 @@ snap list --all | awk '/disabled/{print $1, $3}' |
   while read snapname revision; do
     sudo snap remove "$snapname" --revision="$revision"
   done
-
 
 echo " "
 echo "#### Clear systemd journal logs"
