@@ -39,7 +39,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Example aliases
 
-alias top="btop"
+alias top="bashtop"
 alias man="tldr"
 alias du="dust"
 alias cat="bat"
