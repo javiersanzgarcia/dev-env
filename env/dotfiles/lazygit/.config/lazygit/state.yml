@@ -1,9 +1,10 @@
 lastupdatecheck: 0
 recentrepos:
+    - /home/pracker/code/portfolio
+    - /home/pracker/code/ecommerce
     - /home/pracker/.config/nvim
-    - /home/pracker/code/dev-env
 startuppopupversion: 5
-lastversion: 0.48.0
+lastversion: 0.50.0
 customcommandshistory: []
 hidecommandlog: false
 ignorewhitespaceindiffview: false

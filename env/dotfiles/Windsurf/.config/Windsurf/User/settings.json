@@ -124,36 +124,6 @@
   "breadcrumbs.showTypeParameters": false,
   "breadcrumbs.showVariables": false,
   "breadcrumbs.symbolPath": "off",
-  "custom-ui-style.electron": {
-    "titleBarStyle": "hiddenInset",
-    "trafficLightPosition": {
-      "x": 20,
-      "y": 16
-    }
-  },
-  "custom-ui-style.font.sansSerif": "CaskaydiaCove Nerd Font Mono",
-  "custom-ui-style.stylesheet": {
-    ".editor-widget.find-widget": "box-shadow: none; border-radius: 4px",
-    ".monaco-action-bar.quick-input-inline-action-bar": "display: none",
-    ".monaco-editor .cursors-layer .cursor": "background-image: linear-gradient(135deg, #ffaffc 10%, #DA70D6 100%)",
-    ".monaco-editor .scroll-decoration": "display: none",
-    ".monaco-list-row.focused": "outline: none !important",
-    ".monaco-scrollable-element > .shadow.top": "display: none",
-    ".monaco-workbench .monaco-list:not(.element-focused):focus:before": "outline: none !important",
-    ".monaco-workbench .part.editor > .content .editor-group-container > .title > .label-container > .title-label": "padding-left: 60px",
-    ".monaco-workbench .part.editor > .content .editor-group-container > .title.title-border-bottom:after": "display: none",
-    ".notification-toast": "box-shadow: none !important",
-    ".quick-input-list .scrollbar": "display: none",
-    ".quick-input-titlebar": "background: #100B15 !important",
-    ".quick-input-widget": "top: 25vh !important",
-    ".quick-input-widget.show-file-icons": "box-shadow: none !important",
-    ".sidebar": "border: none !important",
-    ".sidebar .title-label": "padding: 0 !important",
-    ".title .monaco-icon-label.file-icon": "margin: 0 60px",
-    ".title .monaco-icon-label:after": "margin-right: 0",
-    ".title-actions": "display: none !important",
-    ".title.show-file-icons .label-container .monaco-icon-label.file-icon": "justify-content: center; padding: 0 !important"
-  },
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.renderSideBySide": false,
   "editor.codeLens": false,
@@ -163,8 +133,6 @@
   "editor.cursorStyle": "block",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.detectIndentation": false,
-  "editor.experimental.": false,
-  "editor.experimental.suppressSupercomplete": true,
   "editor.fontFamily": "CaskaydiaCove Nerd Font Mono",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
@@ -314,64 +282,6 @@
   "windsurf.enableTabToJump": false,
   "windsurf.explainAndFixInCurrentConversation": true,
   "workbench.activityBar.location": "top",
-  "workbench.colorCustomizations": {
-    "[Aura Dracula Spirit (Soft)]": {
-      "editorSuggestWidget.selectedBackground": "#3A334B",
-      "sideBar.background": "#191521"
-    },
-    "editorCursor.background": "#000000",
-    "editorOverviewRuler.addedForeground": "#0000",
-    "editorOverviewRuler.border": "#0000",
-    "editorOverviewRuler.bracketMatchForeground": "#0000",
-    "editorOverviewRuler.deletedForeground": "#0000",
-    "editorOverviewRuler.errorForeground": "#0000",
-    "editorOverviewRuler.findMatchForeground": "#0000",
-    "editorOverviewRuler.infoForeground": "#0000",
-    "editorOverviewRuler.modifiedForeground": "#0000",
-    "editorOverviewRuler.rangeHighlightForeground": "#0000",
-    "editorOverviewRuler.selectionHighlightForeground": "#0000",
-    "editorOverviewRuler.warningForeground": "#0000",
-    "editorOverviewRuler.wordHighlightForeground": "#0000",
-    "editorOverviewRuler.wordHighlightStrongForeground": "#0000",
-    "[One Dark Pro]": {
-      "activityBar.background": "#282c34cc",
-      "breadcrumb.background": "#00000000",
-      "button.background": "#40475499",
-      "dropdown.background": "#21252b4d",
-      "dropdown.border": "#21252b4d",
-      "editor.background": "#282c3499",
-      "editor.lineHighlightBackground": "#2c313c4d",
-      "editorGroupHeader.tabsBackground": "#282c34cc",
-      "editorGutter.background": "#00000000",
-      "editorPane.background": "#00000000",
-      "input.background": "#1d1f234d",
-      "list.activeSelectionBackground": "#2c313a99",
-      "list.hoverBackground": "#2c313a99",
-      "list.inactiveSelectionBackground": "#32384299",
-      "menu.background": "#21252b99",
-      "multiDiffEditor.background": "#00000000",
-      "multiDiffEditor.headerBackground": "#00000000",
-      "notebook.cellEditorBackground": "#00000000",
-      "panel.background": "#282c34cc",
-      "peekViewEditorGutter.background": "#00000000",
-      "peekViewResult.background": "#22262b4d",
-      "peekViewTitle.background": "#2525264d",
-      "settings.focusedRowBackground": "#00000000",
-      "sideBar.background": "#21252bcc",
-      "sideBarSectionHeader.background": "#282c344d",
-      "sideBarStickyScroll.background": "#21252b66",
-      "sideBarTitle.background": "#00000000",
-      "statusBar.background": "#21252bcc",
-      "statusBar.noFolderBackground": "#21252bcc",
-      "tab.activeBackground": "#282c3499",
-      "tab.activeBorder": "#b4b4b499",
-      "tab.border": "#00000000",
-      "tab.inactiveBackground": "#00000000",
-      "terminal.background": "#00000000",
-      "welcomePage.tileBackground": "#21252b4d",
-      "welcomePage.tileHoverBackground": "#282c3499"
-    }
-  },
   "workbench.colorTheme": "Sweet Dracula",
   "workbench.editor.editorActionsLocation": "hidden",
   "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -381,11 +291,34 @@
   "workbench.preferredDarkColorTheme": "Night Owl",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
-  "workbench.statusBar.visible": false,
   "workbench.tips.enabled": false,
   "workbench.tree.enableStickyScroll": false,
   "workbench.tree.indent": 10,
   "workbench.tree.renderIndentGuides": "none",
   "windsurf.marketplaceExtensionGalleryServiceURL": "https://marketplace.visualstudio.com/_apis/public/gallery",
-  "windsurf.marketplaceGalleryItemURL": "https://marketplace.visualstudio.com/items"
+  "windsurf.marketplaceGalleryItemURL": "https://marketplace.visualstudio.com/items",
+  "editor.linkedEditing": true,
+  "editor.rulers": [
+    {
+      "column": 80,
+      "color": "#00FF0010"
+    },
+    {
+      "column": 100,
+      "color": "#BDB76B15"
+    },
+    {
+      "column": 120,
+      "color": "#FA807219"
+    }
+  ],
+  "editor.unicodeHighlight.includeComments": true,
+  "workbench.editor.revealIfOpen": true,
+  "emmet.variables": {
+    "lang": "en"
+  },
+  "trailing-spaces.backgroundColor": "rgba(255,0,0,0.1)",
+  "terminal.integrated.tabs.hideCondition": "never",
+  "terminal.integrated.enablePersistentSessions": false,
+  "git.autofetch": true
 }

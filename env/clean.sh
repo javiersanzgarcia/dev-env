@@ -4,11 +4,17 @@ echo " "
 echo "#### Clean Cache and Update"
 echo " "
 
-sudo pacman -Scc
-sudo pacman -Syyu
-sudo yay -Scc
-sudo yay -Syyu
+sudo pacman -Scc --noconfirm
+sudo pacman -Syyu --noconfirm
+yay -Scc
+yay -Syyu
 sudo snap refresh
+
+# List orphan packages (installed as [d]ependencies but not actually required by any package):
+sudo pacman -Qtdq --noconfirm
+
+# Remove packages that are no longer required:
+sudo pacman -Rns $(pacman -Qtdq) --noconfirm
 
 echo " "
 echo "Removes old revisions of snaps"
