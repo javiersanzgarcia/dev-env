@@ -1,7 +1,7 @@
 lastupdatecheck: 0
 recentrepos:
-    - /home/pracker/.config/nvim
     - /home/pracker/code/dev-env
+    - /home/pracker/.config/nvim
 startuppopupversion: 5
 lastversion: 0.48.0
 customcommandshistory: []

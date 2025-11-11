@@ -124,36 +124,6 @@
   "breadcrumbs.showTypeParameters": false,
   "breadcrumbs.showVariables": false,
   "breadcrumbs.symbolPath": "off",
-  "custom-ui-style.electron": {
-    "titleBarStyle": "hiddenInset",
-    "trafficLightPosition": {
-      "x": 20,
-      "y": 16
-    }
-  },
-  "custom-ui-style.font.sansSerif": "CaskaydiaCove Nerd Font Mono",
-  "custom-ui-style.stylesheet": {
-    ".editor-widget.find-widget": "box-shadow: none; border-radius: 4px",
-    ".monaco-action-bar.quick-input-inline-action-bar": "display: none",
-    ".monaco-editor .cursors-layer .cursor": "background-image: linear-gradient(135deg, #ffaffc 10%, #DA70D6 100%)",
-    ".monaco-editor .scroll-decoration": "display: none",
-    ".monaco-list-row.focused": "outline: none !important",
-    ".monaco-scrollable-element > .shadow.top": "display: none",
-    ".monaco-workbench .monaco-list:not(.element-focused):focus:before": "outline: none !important",
-    ".monaco-workbench .part.editor > .content .editor-group-container > .title > .label-container > .title-label": "padding-left: 60px",
-    ".monaco-workbench .part.editor > .content .editor-group-container > .title.title-border-bottom:after": "display: none",
-    ".notification-toast": "box-shadow: none !important",
-    ".quick-input-list .scrollbar": "display: none",
-    ".quick-input-titlebar": "background: #100B15 !important",
-    ".quick-input-widget": "top: 25vh !important",
-    ".quick-input-widget.show-file-icons": "box-shadow: none !important",
-    ".sidebar": "border: none !important",
-    ".sidebar .title-label": "padding: 0 !important",
-    ".title .monaco-icon-label.file-icon": "margin: 0 60px",
-    ".title .monaco-icon-label:after": "margin-right: 0",
-    ".title-actions": "display: none !important",
-    ".title.show-file-icons .label-container .monaco-icon-label.file-icon": "justify-content: center; padding: 0 !important"
-  },
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.renderSideBySide": false,
   "editor.codeLens": false,

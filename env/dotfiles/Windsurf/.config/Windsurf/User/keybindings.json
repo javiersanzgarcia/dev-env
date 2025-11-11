@@ -22,7 +22,7 @@
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+j",
+    "key": "ctrl+h",
     "command": "editor.action.copyLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
   },
@@ -55,7 +55,7 @@
     "command": "workbench.action.toggleMaximizedPanel"
   },
   {
-    "key": "Escape",
+    "key": "ctrl+m",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminalFocus"
   },
@@ -176,5 +176,10 @@
     "key": "ctrl+k",
     "command": "workbench.action.terminal.clear",
     "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.togglePanel",
+    "when": "editorTextFocus"
   }
 ]
