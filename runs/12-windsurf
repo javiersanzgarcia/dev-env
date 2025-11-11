@@ -93,7 +93,6 @@ windsurf --install-extension sonarsource.sonarlint-vscode
 windsurf --install-extension steoates.autoimport
 windsurf --install-extension stringham.move-ts
 windsurf --install-extension stuart.unique-window-colors
-windsurf --install-extension subframe7536.custom-ui-style
 windsurf --install-extension tomoki1207.pdf
 windsurf --install-extension usernamehw.errorlens
 windsurf --install-extension visualstudioexptteam.intellicode-api-usage-examples
