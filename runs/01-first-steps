@@ -2,7 +2,7 @@
 
 sudo apt -y install curl git tar unzip neofetch kitty \
   rofi wget gh tmux jq cmake gettext lua5.1 liblua5.1-0-dev \
-  ripgrep fzf gcc xclip luajit stow
+  ripgrep fzf gcc xclip luajit stow zoxide
 
 sh -c "$(git config --global alias.co checkout)"
 sh -c "$(git config --global alias.ci commit)"

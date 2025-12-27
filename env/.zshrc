@@ -62,6 +62,8 @@ function openNvim {
   fi
 }
 
+export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libdbus-1.so.3"
+
 export PATH="$HOME/neovim/bin:$PATH"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -77,5 +79,7 @@ export BUILDER_VERSION=randomVersionHash
 
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(atuin init zsh)"
+
+eval "$(zoxide init --hook prompt zsh)"
 
 neofetch
