@@ -33,7 +33,7 @@ Nothing currently in progress.
 | `09-windsurf`         | Install Windsurf + extensions                                            |
 | `10-wallpapers`       | GNOME wallpaper rotation via systemd user service (5min interval)        |
 | `11-opencode`         | Install opencode CLI                                                     |
-| `12-db-clients`       | Install DBeaver + MongoDB Compass                                        |
+| `12-db-clients`       | Install DBeaver + MongoDB Compass |
 | `13-api-client`       | Install Postman                                                          |
 | `14-git-tools`        | Install GitUI, git-delta, gh                                             |
 | `15-password-manager` | Install Bitwarden CLI, 1Password CLI, pass                               |
