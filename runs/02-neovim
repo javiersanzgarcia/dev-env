@@ -55,4 +55,4 @@ sudo luarocks install luacheck --force
 
 rm -r ~/neovim/build/
 
-echo "Neovim installed, if this script is launched single, add export PATH="$HOME/neovim/bin:$PATH" and please reload .zshrc"
+echo 'Neovim installed, if this script is launched single, add export PATH="$HOME/neovim/bin:$PATH" and please reload .zshrc'

@@ -9,17 +9,19 @@ else
   echo "Linux detected"
   if [[ "$dist" == "Ubuntu" ]]; then
     echo "Ubuntu"
-    sudo apt -y install bat btop tldr rust
+    sudo apt -y install bat btop
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
   else
     echo "Arch BTW"
     sudo pacman -S --noconfirm bat btop tldr rust
   fi
 fi
 
-# install atuin, lsd and dust
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+
+# install tldr, lsd and dust
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
-cargo install lsd
-cargo install du-dust
+cargo install tldr lsd du-dust
 
 # Install font
 
@@ -29,7 +31,7 @@ wget -O "$TEMP_DIR/font.zip" "https://github.com/ryanoasis/nerd-fonts/releases/d
 
 unzip "$TEMP_DIR/font.zip" -d "$TEMP_DIR"
 
-sudo mv "$TEMP_DIR"/*.{ttf,otf} /usr/local/share/fonts/
+sudo mv "$TEMP_DIR"/*.ttf /usr/local/share/fonts/
 
 # Update the font cache
 fc-cache -f -v
