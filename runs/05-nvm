@@ -2,6 +2,12 @@
 cd "$HOME" || exit 1
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
 
-source ~/.zshrc
+# Source NVM in bash if zsh is not yet installed
+if [ -f "$HOME/.bashrc" ]; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+elif [ -f "$HOME/.zshrc" ]; then
+  source ~/.zshrc
+fi
 echo "nvm installed"
 nvm --version

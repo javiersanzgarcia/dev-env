@@ -16,10 +16,8 @@ cd ../.. || exit 1
 
 echo "Stowing dotfiles"
 
-if [ ! -d "$HOME"/personal/nvim ]; then
-  rm -rf "$HOME"/personal/nvim
-  git clone https://github.com/javiersanzgarcia/LazyVim.git "$HOME"/personal/nvim
-fi
+rm -rf "$HOME"/personal/nvim
+git clone https://github.com/javiersanzgarcia/LazyVIM.git "$HOME"/personal/nvim
 
 rm -rf "$HOME"/.config/nvim
 cp -r "$HOME"/personal/nvim "$HOME"/.config
