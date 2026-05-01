@@ -2,24 +2,43 @@
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-echo "Ubuntu"
+echo "Installing zsh"
 sudo apt -y install zsh fonts-powerline
 
 hash -r
 chsh -s "$(which zsh)"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+else
+  echo "Oh My Zsh already installed, skipping"
+fi
 
-ln -nf "$script_dir/env/.oh-my-zsh" ~/
+if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]; then
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+else
+  echo "powerlevel10k already installed, skipping"
+fi
+
+if [ -d "$script_dir/env/.oh-my-zsh" ]; then
+  ln -nf "$script_dir/env/.oh-my-zsh" ~/
+fi
 ln -nf "$script_dir/env/clean.sh" ~/
 ln -nf "$script_dir/env/keyboard_permissions.sh" ~/
 ln -nf "$script_dir/env/mount.sh" ~/
 ln -nf "$script_dir/env/.zshrc" ~/
 ln -nf "$script_dir/env/.p10k.zsh" ~/
 
-git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/fast-syntax-highlighting" ]; then
+  git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
+else
+  echo "fast-syntax-highlighting already installed, skipping"
+fi
 
-source ~/.zshrc
-echo "source ~/.zshrc"
+if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+else
+  echo "zsh-autosuggestions already installed, skipping"
+fi
+
+echo "zsh setup complete. Restart your terminal or run: exec zsh"

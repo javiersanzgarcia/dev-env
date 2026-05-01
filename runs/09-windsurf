@@ -2,103 +2,74 @@
 
 # Install windsurf
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  echo "Mac detected"
-  brew install windsurf
-else
-  echo "Linux detected"
-  echo "Ubuntu"
-  curl -fsSL "https://windsurf-stable.codeiumdata.com/wVxQEIWkwPUEAGf3/windsurf.gpg" | sudo gpg --dearmor -o /usr/share/keyrings/windsurf-stable-archive-keyring.gpg
-  echo "deb [signed-by=/usr/share/keyrings/windsurf-stable-archive-keyring.gpg arch=amd64] https://windsurf-stable.codeiumdata.com/wVxQEIWkwPUEAGf3/apt stable main" | sudo tee /etc/apt/sources.list.d/windsurf.list >/dev/null
-  sudo apt-get update
-  sudo apt-get install -y windsurf
+echo "Installing Windsurf"
+curl -fsSL "https://windsurf-stable.codeiumdata.com/wVxQEIWkwPUEAGf3/windsurf.gpg" | sudo gpg --dearmor -o /usr/share/keyrings/windsurf-stable-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/windsurf-stable-archive-keyring.gpg arch=amd64] https://windsurf-stable.codeiumdata.com/wVxQEIWkwPUEAGf3/apt stable main" | sudo tee /etc/apt/sources.list.d/windsurf.list >/dev/null
+sudo apt-get update
+sudo apt-get install -y windsurf
 
-fi
+# Install extensions (errors are non-fatal)
+install_ext() {
+  windsurf --install-extension "$1" 2>/dev/null || echo "Failed to install $1, skipping"
+}
 
-windsurf --install-extension 1tontech.angular-material
-windsurf --install-extension aaron-bond.better-comments
-windsurf --install-extension alexiv.vscode-angular2-files
-windsurf --install-extension angular.ng-template
-windsurf --install-extension anseki.vscode-color
-windsurf --install-extension aykutsarac.jsoncrack-vscode
-windsurf --install-extension bierner.emojisense
-windsurf --install-extension bradlc.vscode-tailwindcss
-windsurf --install-extension chakrounanas.turbo-console-log
-windsurf --install-extension christian-kohler.npm-intellisense
-windsurf --install-extension codeium.windsurfpyright
-windsurf --install-extension cyrilletuzi.angular-schematics
-windsurf --install-extension davidanson.vscode-markdownlint
-windsurf --install-extension dbaeumer.vscode-eslint
-windsurf --install-extension deerawan.vscode-faker
-windsurf --install-extension docsmsft.docs-preview
-windsurf --install-extension donjayamanne.githistory
-windsurf --install-extension dracula-theme.theme-dracula
-windsurf --install-extension dsznajder.es7-react-js-snippets
-windsurf --install-extension eamodio.gitlens
-windsurf --install-extension ecmel.vscode-html-css
-windsurf --install-extension editorconfig.editorconfig
-windsurf --install-extension eliverlara.andromeda
-windsurf --install-extension equimper.react-native-react-redux
-windsurf --install-extension equinusocio.vsc-material-theme
-windsurf --install-extension equinusocio.vsc-material-theme-icons
-windsurf --install-extension esbenp.prettier-vscode
-windsurf --install-extension formulahendry.terminal
-windsurf --install-extension gerane.theme-monokai
-windsurf --install-extension glenn2223.live-sass
-windsurf --install-extension gruntfuggly.todo-tree
-windsurf --install-extension hbenl.vscode-test-explorer
-windsurf --install-extension humao.rest-client
-windsurf --install-extension ibm.output-colorizer
-windsurf --install-extension infinity1207.angular2-switcher
-windsurf --install-extension john-crowson.angular-file-changer
-windsurf --install-extension johnpapa.angular-essentials
-windsurf --install-extension johnpapa.angular2
-windsurf --install-extension johnpapa.vscode-peacock
-windsurf --install-extension johnpapa.winteriscoming
-windsurf --install-extension kisstkondoros.vscode-gutter-preview
-windsurf --install-extension loiane.angular-extension-pack
-windsurf --install-extension lucono.karma-test-explorer
-windsurf --install-extension mariusalchimavicius.json-to-ts
-windsurf --install-extension mechatroner.rainbow-csv
-windsurf --install-extension mhutchie.git-graph
-windsurf --install-extension michaelzhou.fleet-theme
-windsurf --install-extension mikael.angular-beastcode
-windsurf --install-extension mikestead.dotenv
-windsurf --install-extension ms-ceintl.vscode-language-pack-es
-windsurf --install-extension ms-python.debugpy
-windsurf --install-extension ms-python.python
-windsurf --install-extension ms-vscode.test-adapter-converter
-windsurf --install-extension ms-vscode.vscode-typescript-next
-windsurf --install-extension msjsdiag.vscode-react-native
-windsurf --install-extension natewallace.angular2-inline
-windsurf --install-extension natqe.reload
-windsurf --install-extension obenjiro.arrr
-windsurf --install-extension pflannery.vscode-versionlens
-windsurf --install-extension pkief.material-icon-theme
-windsurf --install-extension quicktype.quicktype
-windsurf --install-extension rctay.karma-problem-matcher
-windsurf --install-extension richie5um2.vscode-sort-json
-windsurf --install-extension rust-lang.rust-analyzer
-windsurf --install-extension rvest.vs-code-prettier-eslint
-windsurf --install-extension sdras.night-owl
-windsurf --install-extension segerdekort.angular-cli
-windsurf --install-extension shardulm94.trailing-spaces
-windsurf --install-extension shd101wyy.markdown-preview-enhanced
-windsurf --install-extension simontest.simontest
-windsurf --install-extension sonarsource.sonarlint-vscode
-windsurf --install-extension steoates.autoimport
-windsurf --install-extension stringham.move-ts
-windsurf --install-extension stuart.unique-window-colors
-windsurf --install-extension tomoki1207.pdf
-windsurf --install-extension usernamehw.errorlens
-windsurf --install-extension visualstudioexptteam.intellicode-api-usage-examples
-windsurf --install-extension vscode-icons-team.vscode-icons
-windsurf --install-extension waderyan.gitblame
-windsurf --install-extension wayou.vscode-todo-highlight
-windsurf --install-extension whizkydee.material-palenight-theme
-windsurf --install-extension wix.vscode-import-cost
-windsurf --install-extension xabikos.javascriptsnippets
-windsurf --install-extension yoavbls.pretty-ts-errors
-windsurf --install-extension yzhang.markdown-all-in-one
-windsurf --install-extension zhuangtongfa.material-theme
-windsurf --install-extension zignd.html-css-class-completion
+install_ext aaron-bond.better-comments
+install_ext angular.ng-template
+install_ext anseki.vscode-color
+install_ext bierner.emojisense
+install_ext bradlc.vscode-tailwindcss
+install_ext christian-kohler.npm-intellisense
+install_ext codeium.windsurfpyright
+install_ext cyrilletuzi.angular-schematics
+install_ext davidanson.vscode-markdownlint
+install_ext dbaeumer.vscode-eslint
+install_ext deerawan.vscode-faker
+install_ext donjayamanne.githistory
+install_ext dracula-theme.theme-dracula
+install_ext dsznajder.es7-react-js-snippets
+install_ext eamodio.gitlens
+install_ext ecmel.vscode-html-css
+install_ext editorconfig.editorconfig
+install_ext esbenp.prettier-vscode
+install_ext glenn2223.live-sass
+install_ext gruntfuggly.todo-tree
+install_ext hbenl.vscode-test-explorer
+install_ext humao.rest-client
+install_ext ibm.output-colorizer
+install_ext johnpapa.angular2
+install_ext johnpapa.vscode-peacock
+install_ext johnpapa.winteriscoming
+install_ext kisstkondoros.vscode-gutter-preview
+install_ext mechatroner.rainbow-csv
+install_ext mhutchie.git-graph
+install_ext michaelzhou.fleet-theme
+install_ext mikael.angular-beastcode
+install_ext mikestead.dotenv
+install_ext ms-ceintl.vscode-language-pack-es
+install_ext ms-python.debugpy
+install_ext ms-python.python
+install_ext ms-vscode.test-adapter-converter
+install_ext ms-vscode.vscode-typescript-next
+install_ext msjsdiag.vscode-react-native
+install_ext pflannery.vscode-versionlens
+install_ext pkief.material-icon-theme
+install_ext richie5um2.vscode-sort-json
+install_ext rust-lang.rust-analyzer
+install_ext rvest.vs-code-prettier-eslint
+install_ext sdras.night-owl
+install_ext shardulm94.trailing-spaces
+install_ext shd101wyy.markdown-preview-enhanced
+install_ext sonarsource.sonarlint-vscode
+install_ext steoates.autoimport
+install_ext tomoki1207.pdf
+install_ext usernamehw.errorlens
+install_ext vscode-icons-team.vscode-icons
+install_ext waderyan.gitblame
+install_ext wayou.vscode-todo-highlight
+install_ext whizkydee.material-palenight-theme
+install_ext wix.vscode-import-cost
+install_ext xabikos.javascriptsnippets
+install_ext yoavbls.pretty-ts-errors
+install_ext yzhang.markdown-all-in-one
+install_ext zhuangtongfa.material-theme
+install_ext zignd.html-css-class-completion

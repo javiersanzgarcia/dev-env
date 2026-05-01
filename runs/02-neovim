@@ -7,15 +7,14 @@ fi
 
 echo "version: \"$version\""
 
-rm /usr/local/bin/nvim
-rm -r /usr/local/share/nvim/
-mv ~/.local/share/nvim{,.bak}
-mv ~/.local/state/nvim{,.bak}
-mv ~/.cache/nvim{,.bak}
+rm -f /usr/local/bin/nvim
+rm -rf /usr/local/share/nvim/
+mv ~/.local/share/nvim{,.bak} 2>/dev/null || true
+mv ~/.local/state/nvim{,.bak} 2>/dev/null || true
+mv ~/.cache/nvim{,.bak} 2>/dev/null || true
 
 # neovim btw
 if [ ! -d "$HOME"/neovim ]; then
-  rm -rf "$HOME"/neovim
   git clone https://github.com/neovim/neovim.git "$HOME"/neovim
 fi
 
