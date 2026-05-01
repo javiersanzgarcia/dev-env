@@ -33,6 +33,7 @@ Nothing currently in progress.
 | `09-windsurf` | Install Windsurf + extensions |
 | `10-wallpapers` | GNOME wallpaper rotation via systemd user service (5min interval) |
 | `11-opencode` | Install opencode CLI |
+| `97-gnome-extensions` | Install and configure GNOME extensions (Ubuntu/Debian) |
 | `98-dotfiles` | Stow configs + install LazyVIM from fork |
 | `99-zsh` | Install zsh, oh-my-zsh, powerlevel10k, plugins + link dotfiles |
 
