@@ -35,6 +35,7 @@ Nothing currently in progress.
 | `11-opencode` | Install opencode CLI |
 | `58-dotfiles` | Stow configs + install LazyVIM from fork |
 | `59-zsh` | Install zsh, oh-my-zsh, powerlevel10k, plugins + link dotfiles |
+| `98-steam` | Install Steam (via apt) |
 | `99-gnome-extensions` | Install and configure GNOME extensions (Ubuntu/Debian) |
 
 ## Wallpapers
@@ -63,6 +64,24 @@ UUID=4870-BE1C /media/pracker/Archivo exfat defaults,uid=1000,gid=1000,umask=000
 - Comment all logs: alt + shift + c
 - Uncomment all logs: alt + shift + u
 - Delete all logs: alt + shift + d
+
+### Opendcode + Windsurf Integration
+
+To replace Cascade with opencode inside Windsurf:
+
+1. Open Windsurf's integrated terminal (`Ctrl+~`)
+2. Run `opencode` — the extension auto-installs automatically
+3. Reload Windsurf (`Ctrl+Shift+P` → "Developer: Reload Window")
+
+Once installed, use these shortcuts:
+
+| Shortcut | Action |
+|---|---|
+| `Ctrl+Esc` | Toggle opencode panel (replaces Cascade chat) |
+| `Ctrl+Shift+Esc` | Start a new opencode session |
+| `Alt+Ctrl+K` | Insert file reference (`@file`) |
+
+**Linux clipboard workaround:** If you get "Cannot read clipboard" error on paste, use `Ctrl+Shift+V` instead of `Ctrl+V`.
 
 ## License
 

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+echo "Installing Steam..."
+
+sudo apt -y update
+sudo apt -y install steam
+
+echo "Steam installed. Launch from applications menu or run: steam"
