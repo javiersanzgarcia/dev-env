@@ -16,7 +16,35 @@ You can also filter, for an specific file inside of runs directory, for example:
 
 ## WIP in progress
 
-- Add wallpaper from bash script
+Nothing currently in progress.
+
+## Run scripts
+
+| Script | Description |
+|---|---|
+| `01-first-steps` | Base packages (curl, git, tmux, fzf, ripgrep, zoxide...) + git aliases |
+| `02-neovim` | Compile Neovim from source + luarocks |
+| `03-lazygit` | Install lazygit from GitHub releases |
+| `04-utils` | Install bat, btop, tldr, rust, atuin, lsd, dust + CascadiaCode Nerd font |
+| `05-nvm` | Install NVM |
+| `06-node` | Install latest Node.js via NVM |
+| `07-ghostty` | Install Ghostty terminal |
+| `08-intellij` | Install IntelliJ Community Edition (snap or tarball) |
+| `09-windsurf` | Install Windsurf + extensions |
+| `10-wallpapers` | GNOME wallpaper rotation via systemd user service (5min interval) |
+| `98-dotfiles` | Stow configs + install LazyVIM from fork |
+| `99-zsh` | Install zsh, oh-my-zsh, powerlevel10k, plugins + link dotfiles |
+
+## Wallpapers
+
+Wallpapers in `env/wallpapers/` rotate automatically via `env/wallpapers/rotate.sh` as a systemd user service. Interval: 300s (configurable).
+
+To start/stop manually:
+
+```bash
+systemctl --user start wallpaper-rotate.service
+systemctl --user stop wallpaper-rotate.service
+```
 
 ### Info about Archivo partition
 

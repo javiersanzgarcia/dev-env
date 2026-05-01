@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+echo "Setting up wallpaper rotation"
+
+chmod +x "$script_dir/env/wallpapers/rotate.sh"
+
+cat > /tmp/wallpaper-rotate.service << EOF
+[Unit]
+Description=Rotate wallpapers
+After=graphical.target
+
+[Service]
+Type=simple
+ExecStart=$script_dir/env/wallpapers/rotate.sh
+Environment=DISPLAY=:0
+Environment=XDG_RUNTIME_DIR=/run/user/$(id -u)
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=graphical.target
+EOF
+
+sudo mv /tmp/wallpaper-rotate.service /etc/systemd/user/wallpaper-rotate.service
+systemctl --user daemon-reload
+systemctl --user enable wallpaper-rotate.service
+systemctl --user start wallpaper-rotate.service
+
+echo "Wallpaper rotation service started"

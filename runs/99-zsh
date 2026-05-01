@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
 echo "Ubuntu"
 sudo apt -y install zsh fonts-powerline
 
@@ -9,12 +11,12 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-ln -nf env/.oh-my-zsh ~/
-ln -nf env/clean.sh ~/
-ln -nf env/keyboard_permissions.sh ~/
-ln -nf env/mount.sh ~/
-ln -nf env/.zshrc ~/
-ln -nf env/.p10k.zsh ~/
+ln -nf "$script_dir/env/.oh-my-zsh" ~/
+ln -nf "$script_dir/env/clean.sh" ~/
+ln -nf "$script_dir/env/keyboard_permissions.sh" ~/
+ln -nf "$script_dir/env/mount.sh" ~/
+ln -nf "$script_dir/env/.zshrc" ~/
+ln -nf "$script_dir/env/.p10k.zsh" ~/
 
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
