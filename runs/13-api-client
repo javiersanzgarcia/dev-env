@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+echo "Installing Postman..."
+
+# Option 1: Install via snap (recommended for Ubuntu)
+if command -v snap &> /dev/null; then
+    sudo snap install postman --classic
+else
+    # Option 2: Install via direct download
+    wget -q https://dl.pstmn.io/download/latest/linux64 -O /tmp/postman.tar.gz
+    sudo tar -xzf /tmp/postman.tar.gz -C /opt/
+    sudo ln -sf /opt/Postman/Postman /usr/local/bin/postman
+    rm /tmp/postman.tar.gz
+fi
+
+echo "Postman installed. Run with: postman"

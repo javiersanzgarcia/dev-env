@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+echo "Installing Kubernetes tools..."
+
+# kubectl - Kubernetes CLI
+echo "Installing kubectl..."
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+rm kubectl
+
+# helm - Kubernetes package manager
+echo "Installing Helm..."
+curl -fsSL -o /tmp/helm-install https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod +x /tmp/helm-install
+sudo /tmp/helm-install
+rm /tmp/helm-install
+
+# k9s - Kubernetes CLI to manage clusters
+echo "Installing k9s..."
+curl -sS https://webinstall.dev/k9s | bash
+
+# minikube - Run Kubernetes locally
+echo "Installing minikube..."
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+rm minikube-linux-amd64
+
+# kubectx/kubens - Switch between clusters/namespaces
+echo "Installing kubectx..."
+sudo apt -y install kubectx 2>/dev/null || {
+    git clone https://github.com/ahmetb/kubectx.git /tmp/kubectx
+    sudo mv /tmp/kubectx/kubectx /usr/local/bin/
+    sudo mv /tmp/kubectx/kubens /usr/local/bin/
+    rm -rf /tmp/kubectx
+}
+
+echo "Kubernetes tools installed: kubectl, helm, k9s, minikube, kubectx"
