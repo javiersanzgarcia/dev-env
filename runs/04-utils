@@ -1,21 +1,7 @@
 #!/usr/bin/env bash
 
-dist=$(grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}')
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  echo "Mac detected"
-  brew install bat btop tldr rust
-else
-  echo "Linux detected"
-  if [[ "$dist" == "Ubuntu" ]]; then
-    echo "Ubuntu"
-    sudo apt -y install bat btop
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-  else
-    echo "Arch BTW"
-    sudo pacman -S --noconfirm bat btop tldr rust
-  fi
-fi
+sudo apt -y install bat btop
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 

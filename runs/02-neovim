@@ -19,22 +19,7 @@ if [ ! -d "$HOME"/neovim ]; then
   git clone https://github.com/neovim/neovim.git "$HOME"/neovim
 fi
 
-dist=$(grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}')
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  echo "Mac detected"
-  sudo brew install cmake gettext lua5.1 liblua5.1-0-dev ripgrep fzf gcc xclip luajit
-
-else
-  echo "Linux detected"
-  if [[ "$dist" == "Ubuntu" ]]; then
-    echo "Ubuntu"
-    sudo apt -y install cmake gettext lua5.1 liblua5.1-0-dev ripgrep fzf gcc xclip luajit
-  else
-    echo "Arch BTW"
-    sudo pacman -S --noconfirm cmake gettext lua5.1 liblua5.1-0-dev ripgrep fzf gcc xclip luajit
-  fi
-fi
+sudo apt -y install cmake gettext lua5.1 liblua5.1-0-dev ripgrep fzf gcc xclip luajit
 
 cd "$HOME"/neovim || exit 1
 
