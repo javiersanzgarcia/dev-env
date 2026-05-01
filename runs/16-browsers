@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+echo "Installing all browsers..."
+
+# Firefox
+echo "Installing Firefox..."
+sudo apt -y install firefox
+
+# Chromium
+echo "Installing Chromium..."
+sudo apt -y install chromium-browser
+
+# Google Chrome
+echo "Installing Google Chrome..."
+wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/chrome.deb
+sudo dpkg -i /tmp/chrome.deb || sudo apt-get -f install -y
+rm /tmp/chrome.deb
+
+# Brave
+echo "Installing Brave..."
+sudo apt -y install apt-transport-https curl
+curl -fsSL https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo gpg --dearmor -o /usr/share/keyrings/brave-core.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-core.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser.list
+sudo apt -y update
+sudo apt -y install brave-browser
+
+# Waterfox
+echo "Installing Waterfox..."
+wget -q https://download.waterfox.net/waterfox/releases/latest/linux/x86_64/Waterfox-latest-x86_64.tar.bz2 -O /tmp/waterfox.tar.bz2
+tar -xjf /tmp/waterfox.tar.bz2 -C /opt/
+sudo ln -sf /opt/waterfox/waterfox /usr/local/bin/waterfox
+rm /tmp/waterfox.tar.bz2
+
+# Vivaldi
+echo "Installing Vivaldi..."
+wget -q https://downloads.vivaldi.com/stable/vivaldi-stable_1.44.0.1145-1_amd64.deb -O /tmp/vivaldi.deb
+sudo dpkg -i /tmp/vivaldi.deb || sudo apt-get -f install -y
+rm /tmp/vivaldi.deb
+
+echo ""
+echo "All browsers installed:"
+echo "  - Firefox: firefox"
+echo "  - Chromium: chromium"
+echo "  - Chrome: google-chrome"
+echo "  - Brave: brave-browser"
+echo "  - Waterfox: waterfox"
+echo "  - Vivaldi: vivaldi"

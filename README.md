@@ -36,10 +36,11 @@ Nothing currently in progress.
 | `12-db-clients`       | Install DBeaver + MongoDB Compass |
 | `13-api-client`       | Install Postman                                                          |
 | `14-git-tools`        | Install GitUI, git-delta, gh                                             |
-| `15-password-manager` | Install Bitwarden CLI, 1Password CLI, pass                               |
-| `17-docker`           | Install Docker + docker-compose                                          |
-| `18-kubernetes`       | Install kubectl, helm, k9s, minikube, kubectx                            |
-| `19-cloud-cli`        | Install AWS, Azure, GCP CLIs + Terraform                                 |
+| `15-password-manager` | Install Bitwarden CLI, 1Password CLI, pass |
+| `16-browsers` | Install all browsers (Firefox, Chromium, Chrome, Brave, Waterfox, Vivaldi) |
+| `17-docker` | Install Docker + docker-compose |
+| `18-kubernetes` | Install kubectl, helm, k9s, minikube, kubectx |
+| `19-cloud-cli` | Install AWS, Azure, GCP CLIs + Terraform |
 | `58-dotfiles`         | Stow configs + install LazyVIM from fork                                 |
 | `59-zsh`              | Install zsh, oh-my-zsh, powerlevel10k, plugins + link dotfiles           |
 | `98-steam`            | Install Steam (via apt)                                                  |
