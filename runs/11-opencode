@@ -1,3 +1,29 @@
 #!/usr/bin/env bash
 
 curl -fsSL https://opencode.ai/install | bash
+
+# Add to PATH if not already there
+export PATH="$HOME/.opencode/bin:$PATH"
+
+# Add to shell configs persistently
+for rc in ~/.bashrc ~/.zshrc ~/.zshenv; do
+  if [ -f "$rc" ] && ! grep -q '\.opencode/bin' "$rc"; then
+    echo "" >> "$rc"
+    echo 'export PATH="$HOME/.opencode/bin:$PATH"' >> "$rc"
+    echo "Added opencode to $rc"
+  fi
+done
+
+echo ""
+echo "To use opencode inside Windsurf instead of Cascade:"
+echo "  1. Open Windsurf integrated terminal (Ctrl+~)"
+echo "  2. Run 'opencode' - extension auto-installs"
+echo ""
+echo "Shortcuts:"
+echo "  Ctrl+Esc     - Toggle opencode panel"
+echo "  Ctrl+Shift+Esc - New opencode session"
+echo "  Alt+Ctrl+K   - Insert file reference (@file)"
+echo ""
+echo "To use Windsurf models in opencode (requires Windsurf running + logged in):"
+echo "  Install: bun add -g opencode-windsurf-auth@beta"
+echo "  Docs:    https://github.com/rsvedant/opencode-windsurf-auth"

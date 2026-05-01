@@ -83,3 +83,5 @@ eval "$(atuin init zsh)"
 eval "$(zoxide init --hook prompt zsh)"
 
 neofetch
+
+export PATH="$HOME/.opencode/bin:$PATH"
