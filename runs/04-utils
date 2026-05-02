@@ -30,7 +30,7 @@ fi
 if ! command -v tldr &>/dev/null; then
   echo "[$SCRIPT_NAME] Installing tldr, lsd, dust..."
   curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
-  cargo install tldr lsd du-dust
+  cargo install tealdeer lsd du-dust
 else
   echo "[$SCRIPT_NAME] tldr/lsd/dust already installed, skipping."
 fi
