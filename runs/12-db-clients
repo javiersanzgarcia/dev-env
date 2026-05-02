@@ -7,20 +7,42 @@ echo "Installing DBeaver..."
 if command -v snap &> /dev/null; then
     sudo snap install dbeaver-ce --classic
 else
-    # Option 2: Install via apt
-    wget -O /tmp/dbeaver-ce-latest-stable.x86_64.zip https://dbeaver.io/files/dbeaver-ce-latest-stable.x86_64.zip
-    unzip -o /tmp/dbeaver-ce-latest-stable.x86_64.zip -d /opt/
-    sudo ln -sf /opt/dbeaver*/dbeaver /usr/local/bin/dbeaver
-    rm /tmp/dbeaver-ce-latest-stable.x86_64.zip
+    # Option 2: Install via GitHub releases
+    DBEAVER_VERSION=$(curl -s "https://api.github.com/repos/dbeaver/dbeaver/releases/latest" | grep -Po '"tag_name":\s*"\K[^"]*')
+    if [ -z "$DBEAVER_VERSION" ]; then
+        echo "Failed to get DBeaver version"
+        exit 1
+    fi
+    ARCH=$(uname -m)
+    if [ "$ARCH" = "x86_64" ]; then
+        wget -O /tmp/dbeaver-ce.tar.gz "https://github.com/dbeaver/dbeaver/releases/download/$DBEAVER_VERSION/dbeaver-ce-$DBEAVER_VERSION-linux-x86_64.tar.gz"
+        sudo tar -xzf /tmp/dbeaver-ce.tar.gz -C /opt/
+        sudo ln -sf /opt/dbeaver*/dbeaver /usr/local/bin/dbeaver
+        # Create desktop entry for GNOME
+        if [ -f /opt/dbeaver/dbeaver-ce.desktop ]; then
+            sudo cp /opt/dbeaver/dbeaver-ce.desktop /usr/share/applications/
+            sudo sed -i 's|/usr/share/dbeaver-ce/|/opt/dbeaver/|g' /usr/share/applications/dbeaver-ce.desktop
+        fi
+        rm /tmp/dbeaver-ce.tar.gz
+    else
+        echo "Unsupported architecture: $ARCH"
+        exit 1
+    fi
 fi
 
 echo "Installing NoSQL clients..."
 
 # MongoDB Compass (GUI for MongoDB)
 if ! command -v mongodb-compass &> /dev/null; then
-    wget -q https://downloads.mongodb.com/compass/mongodb-compass_1.44.8_amd64.deb -O /tmp/mongodb-compass.deb
-    sudo dpkg -i /tmp/mongodb-compass.deb || sudo apt-get -f install -y
-    rm /tmp/mongodb-compass.deb
+    echo "Installing MongoDB Compass..."
+    wget -q "https://downloads.mongodb.com/compass/mongodb-compass_1.45.0_amd64.deb" -O /tmp/mongodb-compass.deb || echo "Failed to download MongoDB Compass"
+    if [ -f /tmp/mongodb-compass.deb ]; then
+        sudo dpkg -i /tmp/mongodb-compass.deb || sudo apt-get -f install -y
+        rm -f /tmp/mongodb-compass.deb
+        echo "MongoDB Compass installed."
+    fi
+else
+    echo "MongoDB Compass already installed, skipping."
 fi
 
 echo "Database clients installed:"
