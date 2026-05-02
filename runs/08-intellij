@@ -27,6 +27,22 @@ else
 
   idea_dir=$(ls /opt/ | grep idea-IC | head -1)
   sudo ln -sf "/opt/$idea_dir/bin/idea.sh" /usr/local/bin/idea
+  # Create desktop entry for GNOME
+  sudo bash -c "cat > /usr/share/applications/intellij-idea-ce.desktop << 'EOF'
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Name=IntelliJ IDEA Community Edition
+GenericName=Java IDE
+Comment=IntelliJ IDEA Community Edition IDE
+Exec=/opt/$idea_dir/bin/idea.sh
+Icon=/opt/$idea_dir/bin/idea.svg
+Categories=Development;IDE;
+StartupWMClass=jetbrains-idea-ce
+StartupNotify=true
+Keywords=Java;IDE;Development;
+EOF"
 fi
 
 echo "IntelliJ Community installed. Run with: idea"
