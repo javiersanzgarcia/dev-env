@@ -1,18 +1,24 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "Installing Postman..."
+SCRIPT_NAME="$(basename "$0")"
 
-# Option 1: Install via snap (recommended for Ubuntu)
-if command -v snap &> /dev/null; then
-    sudo snap install postman --classic
+# Check if Postman already installed
+if command -v postman &> /dev/null; then
+    echo "[$SCRIPT_NAME] Postman already installed, skipping."
 else
-    # Option 2: Install via direct download
-    wget -q https://dl.pstmn.io/download/latest/linux64 -O /tmp/postman.tar.gz
-    sudo tar -xzf /tmp/postman.tar.gz -C /opt/
-    sudo ln -sf /opt/Postman/Postman /usr/local/bin/postman
-    # Create desktop entry for GNOME
-    sudo bash -c 'cat > /usr/share/applications/postman.desktop << "EOF"
+    echo "[$SCRIPT_NAME] Installing Postman..."
+
+    # Option1: Install via snap (recommended for Ubuntu)
+    if command -v snap &> /dev/null; then
+        sudo snap install postman --classic
+    else
+        # Option 2: Install via direct download
+        wget -q https://dl.pstmn.io/download/latest/linux64 -O /tmp/postman.tar.gz
+        sudo tar -xzf /tmp/postman.tar.gz -C /opt/
+        sudo ln -sf /opt/Postman/Postman /usr/local/bin/postman
+        # Create desktop entry for GNOME
+        sudo bash -c 'cat > /usr/share/applications/postman.desktop << "EOF"
 [Desktop Entry]
 Version=1.0
 Type=Application
@@ -27,7 +33,8 @@ StartupWMClass=Postman
 StartupNotify=true
 Keywords=API;REST;HTTP;JSON;
 EOF'
-    rm /tmp/postman.tar.gz
+        rm /tmp/postman.tar.gz
+    fi
 fi
 
 echo "Postman installed. Run with: postman"

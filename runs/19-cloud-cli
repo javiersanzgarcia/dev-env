@@ -13,8 +13,8 @@ if ! command -v aws &> /dev/null; then
 fi
 
 # Azure CLI
-echo "Installing Azure CLI..."
 if ! command -v az &> /dev/null; then
+    echo "Installing Azure CLI..."
     rm -f /tmp/packages.microsoft.gpg
     curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --yes --dearmor -o /tmp/packages.microsoft.gpg
     sudo install -o root -g root -m 644 /tmp/packages.microsoft.gpg /etc/apt/trusted.gpg.d/
@@ -28,6 +28,8 @@ if ! command -v az &> /dev/null; then
     sudo apt update
     sudo apt -y install azure-cli
     rm /tmp/packages.microsoft.gpg
+else
+    echo "Azure CLI already installed, skipping."
 fi
 
 # Google Cloud SDK

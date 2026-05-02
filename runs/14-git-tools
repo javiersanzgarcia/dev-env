@@ -1,37 +1,48 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "Installing Git tools..."
+SCRIPT_NAME="$(basename "$0")"
+echo "[$SCRIPT_NAME] Installing Git tools..."
 
 # GitUI - Terminal UI for Git
-echo "Installing GitUI..."
-cargo install gitui --locked 2>/dev/null || {
-    wget -q https://github.com/extrawurst/gitui/releases/download/v0.24.0/gitui-linux-x86_64.tar.gz -O /tmp/gitui.tar.gz
-    tar -xzf /tmp/gitui.tar.gz -C /tmp
-    sudo mv /tmp/gitui /usr/local/bin/
-    rm /tmp/gitui.tar.gz
-}
+if ! command -v gitui &> /dev/null; then
+    echo "[$SCRIPT_NAME] Installing GitUI..."
+    cargo install gitui --locked 2>/dev/null || {
+        wget -q https://github.com/extrawurst/gitui/releases/download/v0.24.0/gitui-linux-x86_64.tar.gz -O /tmp/gitui.tar.gz
+        tar -xzf /tmp/gitui.tar.gz -C /tmp
+        sudo mv /tmp/gitui /usr/local/bin/
+        rm /tmp/gitui.tar.gz
+    }
+else
+    echo "[$SCRIPT_NAME] GitUI already installed, skipping."
+fi
 
 # git-delta (difftastic) - Syntax highlighting git diff
-echo "Installing git-delta..."
-cargo install git-delta --locked 2>/dev/null || {
-    wget -q https://github.com/dandavison/delta/releases/download/0.18.0/delta-0.18.0-x86_64-unknown-linux-gnu.tar.gz -O /tmp/delta.tar.gz
-    tar -xzf /tmp/delta.tar.gz -C /tmp
-    sudo mv /tmp/delta /usr/local/bin/
-    rm /tmp/delta.tar.gz
-}
+if ! command -v delta &> /dev/null; then
+    echo "[$SCRIPT_NAME] Installing git-delta..."
+    cargo install git-delta --locked 2>/dev/null || {
+        wget -q https://github.com/dandavison/delta/releases/download/0.18.0/delta-0.18.0-x86_64-unknown-linux-gnu.tar.gz -O /tmp/delta.tar.gz
+        tar -xzf /tmp/delta.tar.gz -C /tmp
+        sudo mv /tmp/delta /usr/local/bin/
+        rm /tmp/delta.tar.gz
+    }
+else
+    echo "[$SCRIPT_NAME] git-delta already installed, skipping."
+fi
 
 # gh (GitHub CLI) - already in first-steps, but ensure it's installed
-echo "Ensuring GitHub CLI is installed..."
 if ! command -v gh &> /dev/null; then
+    echo "[$SCRIPT_NAME] Installing GitHub CLI..."
     curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list
     sudo apt update
     sudo apt -y install gh
+else
+    echo "[$SCRIPT_NAME] GitHub CLI already installed, skipping."
 fi
 
 # Configure delta as git pager
 git config --global core.pager "delta --theme=Dracula"
 git config --global interactive.diffFilter "delta --color-only"
 
-echo "Git tools installed: gitui, delta (git-delta), gh"
+echo "[$SCRIPT_NAME] Git tools installed: gitui, delta (git-delta), gh"

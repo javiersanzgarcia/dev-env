@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+SCRIPT_NAME="$(basename "$0")"
+
+# Check if already installed
+if [ -f "$HOME/.opencode/bin/opencode" ]; then
+    echo "[$SCRIPT_NAME] opencode already installed, skipping."
+    exit 0
+fi
+
 curl -fsSL https://opencode.ai/install | bash
 
 # Add to PATH if not already there

@@ -1,18 +1,41 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "Installing DBeaver..."
+SCRIPT_NAME="$(basename "$0")"
 
-# Option 1: Install via snap (recommended for Ubuntu)
-if command -v snap &> /dev/null; then
-    sudo snap install dbeaver-ce --classic
+# Check if DBeaver already installed
+if command -v dbeaver &> /dev/null; then
+    echo "[$SCRIPT_NAME] DBeaver already installed, skipping."
 else
-    # Option 2: Install via GitHub releases
-    DBEAVER_VERSION=$(curl -s "https://api.github.com/repos/dbeaver/dbeaver/releases/latest" | grep -Po '"tag_name":\s*"\K[^"]*')
-    if [ -z "$DBEAVER_VERSION" ]; then
-        echo "Failed to get DBeaver version"
-        exit 1
+    echo "[$SCRIPT_NAME] Installing DBeaver..."
+
+    # Option1: Install via snap (recommended for Ubuntu)
+    if command -v snap &> /dev/null; then
+        sudo snap install dbeaver-ce --classic
+    else
+        # Option 2: Install via GitHub releases
+        DBEAVER_VERSION=$(curl -s "https://api.github.com/repos/dbeaver/dbeaver/releases/latest" | grep -Po '"tag_name":\s*"\K[^"]*')
+        if [ -z "$DBEAVER_VERSION" ]; then
+            echo "[$SCRIPT_NAME] Failed to get DBeaver version"
+            exit 1
+        fi
+        ARCH=$(uname -m)
+        if [ "$ARCH" = "x86_64" ]; then
+            wget -O /tmp/dbeaver-ce.tar.gz "https://github.com/dbeaver/dbeaver/releases/download/$DBEAVER_VERSION/dbeaver-ce-$DBEAVER_VERSION-linux-x86_64.tar.gz"
+            sudo tar -xzf /tmp/dbeaver-ce.tar.gz -C /opt/
+            sudo ln -sf /opt/dbeaver*/dbeaver /usr/local/bin/dbeaver
+            # Create desktop entry for GNOME
+            if [ -f /opt/dbeaver/dbeaver-ce.desktop ]; then
+                sudo cp /opt/dbeaver/dbeaver-ce.desktop /usr/share/applications/
+                sudo sed -i 's|/usr/share/dbeaver-ce/|/opt/dbeaver/|g' /usr/share/applications/dbeaver-ce.desktop
+            fi
+            rm /tmp/dbeaver-ce.tar.gz
+        else
+            echo "[$SCRIPT_NAME] Unsupported architecture: $ARCH"
+            exit 1
+        fi
     fi
+fi
     ARCH=$(uname -m)
     if [ "$ARCH" = "x86_64" ]; then
         wget -O /tmp/dbeaver-ce.tar.gz "https://github.com/dbeaver/dbeaver/releases/download/$DBEAVER_VERSION/dbeaver-ce-$DBEAVER_VERSION-linux-x86_64.tar.gz"

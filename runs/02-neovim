@@ -1,12 +1,25 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+SCRIPT_NAME="$(basename "$0")"
+
 version="v0.12.0"
 if [ -n "${NVIM_VERSION:-}" ]; then
   version="$NVIM_VERSION"
 fi
 
-echo "version: \"$version\""
+echo "[$SCRIPT_NAME] version: \"$version\""
+
+# Check if already installed with same version
+if command -v nvim &>/dev/null; then
+  CURRENT_VERSION=$(nvim --version 2>/dev/null | head -1 | grep -oP 'v[0-9]+\.[0-9]+\.[0-9]+' || echo "unknown")
+  if [ "$CURRENT_VERSION" = "$version" ]; then
+    echo "[$SCRIPT_NAME] Neovim $version already installed, skipping."
+    exit 0
+  else
+    echo "[$SCRIPT_NAME] Neovim $CURRENT_VERSION installed, upgrading to $version..."
+  fi
+fi
 
 sudo rm -f /usr/local/bin/nvim
 sudo rm -rf /usr/local/share/nvim/
@@ -40,4 +53,4 @@ sudo luarocks install luacheck --force
 
 rm -rf ~/neovim/build/
 
-echo 'Neovim installed, if this script is launched single, add export PATH="$HOME/neovim/bin:$PATH" and please reload .zshrc'
+echo "[$SCRIPT_NAME] Neovim installed, please reload shell or run: export PATH=\"\$HOME/neovim/bin:\$PATH\""

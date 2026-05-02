@@ -1,9 +1,23 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "Installing Steam..."
+SCRIPT_NAME="$(basename "$0")"
+
+# Check if already installed
+if command -v steam &>/dev/null; then
+    echo "[$SCRIPT_NAME] Steam already installed, skipping."
+    exit 0
+fi
+
+echo "[$SCRIPT_NAME] Installing Steam..."
+
+# Enable non-free repo if not already enabled
+if ! grep -q "non-free" /etc/apt/sources.list /etc/apt/sources.list.d/*.list 2>/dev/null; then
+    echo "[$SCRIPT_NAME] Enabling non-free repository..."
+    sudo sed -i 's/main$/main non-free/' /etc/apt/sources.list 2>/dev/null || true
+fi
 
 sudo apt -y update
 sudo apt -y install steam
 
-echo "Steam installed. Launch from applications menu or run: steam"
+echo "[$SCRIPT_NAME] Steam installed. Launch from applications menu or run: steam"

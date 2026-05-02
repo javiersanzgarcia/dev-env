@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+SCRIPT_NAME="$(basename "$0")"
+
+echo "[$SCRIPT_NAME] Installing base packages..."
 sudo apt -y install curl git tar unzip kitty \
   rofi wget gh tmux jq cmake gettext lua5.1 liblua5.1-0-dev \
   ripgrep fzf gcc xclip luajit stow zoxide
 
+echo "[$SCRIPT_NAME] Configuring git aliases..."
 sh -c "$(git config --global alias.co checkout)"
 sh -c "$(git config --global alias.ci commit)"
 sh -c "$(git config --global alias.st status)"
@@ -14,8 +18,13 @@ sh -c "$(git config --global alias.p pull)"
 sh -c "$(git config --global alias.ps push)"
 
 # Install neofetch from source
-if [ ! -d "$HOME/neofetch" ]; then
-  git clone https://github.com/dylanaraps/neofetch.git "$HOME/neofetch"
+if [ ! -f /usr/local/bin/neofetch ]; then
+  echo "[$SCRIPT_NAME] Installing neofetch..."
+  if [ ! -d "$HOME/neofetch" ]; then
+    git clone https://github.com/dylanaraps/neofetch.git "$HOME/neofetch"
+  fi
+  cd "$HOME/neofetch" || exit
+  sudo make install
+else
+  echo "[$SCRIPT_NAME] neofetch already installed, skipping."
 fi
-cd "$HOME/neofetch" || exit
-sudo make install

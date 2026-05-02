@@ -1,38 +1,59 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "Installing Kubernetes tools..."
+SCRIPT_NAME="$(basename "$0")"
+echo "[$SCRIPT_NAME] Installing Kubernetes tools..."
 
 # kubectl - Kubernetes CLI
-echo "Installing kubectl..."
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-rm kubectl
+if ! command -v kubectl &> /dev/null; then
+    echo "[$SCRIPT_NAME] Installing kubectl..."
+    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+    rm kubectl
+else
+    echo "[$SCRIPT_NAME] kubectl already installed, skipping."
+fi
 
 # helm - Kubernetes package manager
-echo "Installing Helm..."
-curl -fsSL -o /tmp/helm-install https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-chmod +x /tmp/helm-install
-sudo /tmp/helm-install
-rm /tmp/helm-install
+if ! command -v helm &> /dev/null; then
+    echo "[$SCRIPT_NAME] Installing Helm..."
+    curl -fsSL -o /tmp/helm-install https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+    chmod +x /tmp/helm-install
+    sudo /tmp/helm-install
+    rm /tmp/helm-install
+else
+    echo "[$SCRIPT_NAME] Helm already installed, skipping."
+fi
 
 # k9s - Kubernetes CLI to manage clusters
-echo "Installing k9s..."
-curl -sS https://webinstall.dev/k9s | bash
+if ! command -v k9s &> /dev/null; then
+    echo "[$SCRIPT_NAME] Installing k9s..."
+    curl -sS https://webinstall.dev/k9s | bash
+else
+    echo "[$SCRIPT_NAME] k9s already installed, skipping."
+fi
 
 # minikube - Run Kubernetes locally
-echo "Installing minikube..."
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-sudo install minikube-linux-amd64 /usr/local/bin/minikube
-rm minikube-linux-amd64
+if ! command -v minikube &> /dev/null; then
+    echo "[$SCRIPT_NAME] Installing minikube..."
+    curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    sudo install minikube-linux-amd64 /usr/local/bin/minikube
+    rm minikube-linux-amd64
+else
+    echo "[$SCRIPT_NAME] minikube already installed, skipping."
+fi
 
 # kubectx/kubens - Switch between clusters/namespaces
-echo "Installing kubectx..."
-sudo apt -y install kubectx 2>/dev/null || {
-    git clone https://github.com/ahmetb/kubectx.git /tmp/kubectx
-    sudo mv /tmp/kubectx/kubectx /usr/local/bin/
-    sudo mv /tmp/kubectx/kubens /usr/local/bin/
-    rm -rf /tmp/kubectx
-}
+if ! command -v kubectx &> /dev/null; then
+    echo "[$SCRIPT_NAME] Installing kubectx..."
+    sudo apt -y install kubectx 2>/dev/null || {
+        git clone https://github.com/ahmetb/kubectx.git /tmp/kubectx
+        sudo mv /tmp/kubectx/kubectx /usr/local/bin/
+        sudo mv /tmp/kubectx/kubens /usr/local/bin/
+        rm -rf /tmp/kubectx
+    }
+else
+    echo "[$SCRIPT_NAME] kubectx already installed, skipping."
+fi
 
-echo "Kubernetes tools installed: kubectl, helm, k9s, minikube, kubectx"
+echo "[$SCRIPT_NAME] Kubernetes tools installed: kubectl, helm, k9s, minikube, kubectx"
