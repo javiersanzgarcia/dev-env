@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "Installing additional applications..."
+
+# Ensure Archivo partition is mounted
+ARCHIVO_MOUNT="/media/pracker/Archivo"
+if [ ! -d "$ARCHIVO_MOUNT" ] || [ ! -w "$ARCHIVO_MOUNT" ]; then
+  echo "Mounting Archivo partition..."
+  sudo mkdir -p "$ARCHIVO_MOUNT"
+  sudo mount -o uid=1000,gid=1000,umask=0000 -t exfat UUID="4870-BE1C" "$ARCHIVO_MOUNT" 2>/dev/null || true
+fi
+
+# Calibre - E-book manager
+echo "Installing Calibre..."
+sudo apt -y install calibre
+
+CALIBRE_LIBRARY="/media/pracker/Archivo/Biblioteca"
+if [ -d "$CALIBRE_LIBRARY" ] && [ -f "$CALIBRE_LIBRARY/metadata.db" ]; then
+  echo "Calibre library found at: $CALIBRE_LIBRARY"
+  mkdir -p ~/.config/calibre
+  if [ ! -L ~/.config/calibre/library ] && [ ! -d ~/.config/calibre/library ]; then
+    ln -sf "$CALIBRE_LIBRARY" ~/.config/calibre/library
+  fi
+  echo "Calibre configured to use: $CALIBRE_LIBRARY"
+fi
+
+# Telegram Desktop
+echo "Installing Telegram..."
+sudo apt -y install telegram-desktop
+
+# Spotify
+echo "Installing Spotify..."
+if ! command -v spotify &>/dev/null; then
+  curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor -o /usr/share/keyrings/spotify.gpg
+  echo "deb [signed-by=/usr/share/keyrings/spotify.gpg] https://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+  sudo apt update
+  sudo apt -y install spotify-client
+fi
+
+# Whatsie - WhatsApp desktop client
+echo "Installing Whatsie..."
+WHATSIE_VERSION=$(curl -s "https://api.github.com/repos/whatsie/whatsie/releases/latest" | grep -Po '"tag_name": *"v\K[^"]*')
+curl -Lo /tmp/whatsie.deb "https://github.com/whatsie/whatsie/releases/download/v${WHATSIE_VERSION}/whatsie_${WHATSIE_VERSION}_linux_amd64.deb"
+sudo apt install -y /tmp/whatsie.deb
+rm -f /tmp/whatsie.deb
+
+echo "All extra applications installed."
