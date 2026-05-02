@@ -5,39 +5,48 @@ SCRIPT_NAME="$(basename "$0")"
 echo "[$SCRIPT_NAME] Starting..."
 
 # Check if already installed
-if command -v docker &>/dev/null && systemctl --user is-active --quiet docker-desktop 2>/dev/null; then
+if [ -f /opt/docker-desktop/bin/docker-desktop ] && systemctl --user is-active --quiet docker-desktop 2>/dev/null; then
   echo "[$SCRIPT_NAME] Docker Desktop already installed and running, skipping."
+  exit 0
+elif [ -f /opt/docker-desktop/bin/docker-desktop ]; then
+  echo "[$SCRIPT_NAME] Docker Desktop already installed, skipping."
   exit 0
 fi
 
-echo "[$SCRIPT_NAME] Installing Docker Desktop..."
+echo "[$SCRIPT_NAME] Installing Docker Desktop following official instructions..."
 
 # Install dependencies (non-interactive)
 export DEBIAN_FRONTEND=noninteractive
 sudo apt-get update -qq
-sudo apt-get install -y -qq ca-certificates curl gnupg lsb-release qemu-kvm libvirt-daemon-system libvirt-clients virtinst
+sudo apt-get install -y -qq ca-certificates curl gnupg lsb-release qemu-kvm libvirt-daemon-system libvirt-clients virtinst gnome-terminal
 
-# Get latest Docker Desktop version
-DOCKER_DESKTOP_VERSION=$(curl -s "https://api.github.com/repos/docker/desktop/releases/latest" | grep -oP '"tag_name":\s*"\K[^"]*' | sed 's/^v//')
-if [ -z "$DOCKER_DESKTOP_VERSION" ]; then
-  echo "[$SCRIPT_NAME] Failed to get latest version, using fallback 4.41.2"
-  DOCKER_DESKTOP_VERSION="4.41.2"
-fi
+# Step 1: Set up Docker's apt repository (as per official docs)
+echo "[$SCRIPT_NAME] Setting up Docker's apt repository..."
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
 
-# Download Docker Desktop
-DOCKER_DESKTOP_URL="https://desktop.docker.com/linux/main/amd64/docker-desktop-${DOCKER_DESKTOP_VERSION}-amd64.deb"
-echo "[$SCRIPT_NAME] Downloading from: $DOCKER_DESKTOP_URL"
-wget -q "$DOCKER_DESKTOP_URL" -O /tmp/docker-desktop.deb || {
-  echo "[$SCRIPT_NAME] Failed to download Docker Desktop"
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update -qq
+
+# Step 2: Download Docker Desktop DEB package (using link from official docs)
+DOCKER_DESKTOP_URL="https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb"
+echo "[$SCRIPT_NAME] Downloading Docker Desktop from $DOCKER_DESKTOP_URL..."
+curl -L -A "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36" -o /tmp/docker-desktop.deb "$DOCKER_DESKTOP_URL" || {
+  echo "[$SCRIPT_NAME] Failed to download Docker Desktop. Please download manually from:"
+  echo "[$SCRIPT_NAME] $DOCKER_DESKTOP_URL"
+  echo "[$SCRIPT_NAME] Then install with: sudo apt-get install ./docker-desktop-amd64.deb"
   exit 1
 }
 
-# Install Docker Desktop
-sudo dpkg -i /tmp/docker-desktop.deb || sudo apt-get -f install -y
+# Step 3: Install the package
+echo "[$SCRIPT_NAME] Installing Docker Desktop..."
+sudo apt-get install -y /tmp/docker-desktop.deb || sudo dpkg -i /tmp/docker-desktop.deb && sudo apt-get -f install -y
 rm -f /tmp/docker-desktop.deb
 
 # Create desktop entry if not exists
-if [ ! -f /usr/share/applications/docker-desktop.desktop ] && [ -f /opt/docker-desktop/docker-desktop ]; then
+if [ ! -f /usr/share/applications/docker-desktop.desktop ] && [ -f /opt/docker-desktop/bin/docker-desktop ]; then
+  echo "[$SCRIPT_NAME] Creating desktop entry..."
   sudo bash -c 'cat > /usr/share/applications/docker-desktop.desktop << EOF
 [Desktop Entry]
 Version=1.0
@@ -54,4 +63,9 @@ StartupNotify=true
 EOF'
 fi
 
-echo "[$SCRIPT_NAME] Done. Run 'systemctl --user start docker-desktop' to start Docker Desktop."
+# Add user to docker group
+sudo usermod -aG docker "${USER}" 2>/dev/null || true
+
+echo "[$SCRIPT_NAME] Docker Desktop installed successfully."
+echo "[$SCRIPT_NAME] Start with: systemctl --user start docker-desktop"
+echo "[$SCRIPT_NAME] Or launch from your applications menu."
