@@ -37,10 +37,10 @@ fi
 # Brave
 if ! command -v brave-browser &>/dev/null; then
   echo "[$SCRIPT_NAME] Installing Brave..."
-  sudo apt-get install -y curl
+  sudo apt-get install -y apt-transport-https curl
   sudo curl -fsSL https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo gpg --dearmor -o /usr/share/keyrings/brave-browser-archive-keyring.gpg
   echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser.list
-  sudo apt-get update
+  sudo apt-get update || true
   sudo apt-get install -y brave-browser
 else
   echo "[$SCRIPT_NAME] Brave already installed, skipping."
@@ -49,10 +49,32 @@ fi
 # Waterfox
 if ! command -v waterfox &>/dev/null; then
   echo "[$SCRIPT_NAME] Installing Waterfox..."
-  wget -q https://download.waterfox.net/waterfox/releases/latest/linux/x86_64/Waterfox-latest-x86_64.tar.bz2 -O /tmp/waterfox.tar.bz2
-  tar -xjf /tmp/waterfox.tar.bz2 -C /opt/
-  sudo ln -sf /opt/waterfox/waterfox /usr/local/bin/waterfox
-  rm /tmp/waterfox.tar.bz2
+  WATERFOX_VERSION=$(curl -s "https://api.github.com/repos/BrowserWorks/Waterfox/releases/latest" | grep -oP '"tag_name":\s*"\K[^"]*')
+  if [ -z "$WATERFOX_VERSION" ]; then
+    echo "Failed to get Waterfox version"
+  else
+    wget -q "https://cdn1.waterfox.net/waterfox/releases/${WATERFOX_VERSION}/Linux_x86_64/waterfox-${WATERFOX_VERSION}.tar.bz2" -O /tmp/waterfox.tar.bz2 || echo "Failed to download Waterfox"
+  if [ -f /tmp/waterfox.tar.bz2 ]; then
+      sudo tar -xjf /tmp/waterfox.tar.bz2 -C /opt/
+      sudo ln -sf /opt/waterfox/waterfox /usr/local/bin/waterfox
+      # Create desktop entry
+      sudo bash -c 'cat > /usr/share/applications/waterfox.desktop << EOF
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Name=Waterfox
+GenericName=Web Browser
+Comment=Waterfox Web Browser
+Exec=/opt/waterfox/waterfox %u
+Icon=/opt/waterfox/browser/chrome/icons/default/default128.png
+Categories=Network;WebBrowser;
+StartupWMClass=Waterfox
+StartupNotify=true
+EOF'
+      rm /tmp/waterfox.tar.bz2
+  fi
+  fi
 else
   echo "[$SCRIPT_NAME] Waterfox already installed, skipping."
 fi
@@ -60,11 +82,25 @@ fi
 # Vivaldi
 if ! command -v vivaldi &>/dev/null; then
   echo "[$SCRIPT_NAME] Installing Vivaldi..."
-  VIVALDI_VERSION=$(curl -s "https://repo.vivaldi.com/stable/dists/stable/Release" | grep -Po 'Version: \K[0-9.]+')
-  VIVALDI_URL="https://downloads.vivaldi.com/stable/vivaldi-stable_${VIVALDI_VERSION}_amd64.deb"
-  wget -q "$VIVALDI_URL" -O /tmp/vivaldi.deb
-  sudo dpkg -i /tmp/vivaldi.deb || sudo apt-get -f install -y
-  rm /tmp/vivaldi.deb
+  # Get download URL from vivaldi.com
+  VIVALDI_URL=$(curl -s "https://vivaldi.com/download/" | grep -oP 'href="\Khttps://downloads\.vivaldi\.com/stable/vivaldi-stable[^"]+amd64\.deb' | head -1)
+  if [ -z "$VIVALDI_URL" ]; then
+    # Fallback to known version
+    VIVALDI_URL="https://downloads.vivaldi.com/stable/vivaldi-stable_7.9.3970.60-1_amd64.deb"
+  fi
+  wget -q "$VIVALDI_URL" -O /tmp/vivaldi.deb || echo "Failed to download Vivaldi"
+  if [ -f /tmp/vivaldi.deb ]; then
+    sudo dpkg -i /tmp/vivaldi.deb || sudo apt-get -f install -y
+    rm /tmp/vivaldi.deb
+  fi
+else
+  echo "[$SCRIPT_NAME] Vivaldi already installed, skipping."
+fi
+  wget -q "https://downloads.vivaldi.com/stable/vivaldi-stable_${VIVALDI_VERSION}_amd64.deb" -O /tmp/vivaldi.deb || echo "Failed to download Vivaldi"
+  if [ -f /tmp/vivaldi.deb ]; then
+    sudo dpkg -i /tmp/vivaldi.deb || sudo apt-get -f install -y
+    rm /tmp/vivaldi.deb
+  fi
 else
   echo "[$SCRIPT_NAME] Vivaldi already installed, skipping."
 fi
@@ -73,11 +109,21 @@ fi
 if ! command -v helium &>/dev/null; then
   echo "[$SCRIPT_NAME] Installing Helium..."
   HELIUM_VERSION=$(curl -s "https://api.github.com/repos/imputnet/helium-linux/releases/latest" | grep -Po '"tag_name":\s*"\K[^"]*')
-  HELIUM_DEB="helium-bin_${HELIUM_VERSION#v}-1_amd64.deb"
-  HELIUM_URL="https://github.com/imputnet/helium-linux/releases/download/${HELIUM_VERSION}/${HELIUM_DEB}"
-  wget -q "$HELIUM_URL" -O /tmp/helium.deb
-  sudo dpkg -i /tmp/helium.deb || sudo apt-get -f install -y
-  rm /tmp/helium.deb
+  if [ -z "$HELIUM_VERSION" ]; then
+    echo "Failed to get Helium version"
+  else
+    HELIUM_DEB="helium-bin_${HELIUM_VERSION#v}-1_amd64.deb"
+    HELIUM_URL="https://github.com/imputnet/helium-linux/releases/download/${HELIUM_VERSION}/${HELIUM_DEB}"
+    wget -q "$HELIUM_URL" -O /tmp/helium.deb || echo "Failed to download Helium"
+    if [ -f /tmp/helium.deb ]; then
+      sudo dpkg -i /tmp/helium.deb || sudo apt-get -f install -y
+      # Create desktop entry for Helium
+      if [ -f /usr/share/applications/helium.desktop ]; then
+        sudo cp /usr/share/applications/helium.desktop /usr/share/applications/helium.desktop 2>/dev/null || true
+      fi
+      rm /tmp/helium.deb
+    fi
+  fi
 else
   echo "[$SCRIPT_NAME] Helium already installed, skipping."
 fi
