@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_NAME="$(basename "$0")"
+echo "[$SCRIPT_NAME] Starting cleanup..."
+
+echo "[$SCRIPT_NAME] Removing temporary files..."
+rm -f /tmp/*.deb /tmp/*.tar.* /tmp/*.zip 2>/dev/null || true
+rm -f ~/.cache/wget 2>/dev/null || true
+
+echo "[$SCRIPT_NAME] Cleaning apt cache..."
+sudo apt clean
+sudo apt autoremove -y
+
+echo "[$SCRIPT_NAME] Removing downloaded installers in home..."
+rm -f ~/downloads/*.deb ~/downloads/*.tar.* 2>/dev/null || true
+
+echo "[$SCRIPT_NAME] Cleanup complete."

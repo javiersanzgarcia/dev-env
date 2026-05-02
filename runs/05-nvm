@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
 set -euo pipefail
-cd "$HOME" || exit 1
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
 
-# Source NVM in bash if zsh is not yet installed
-if [ -f "$HOME/.bashrc" ]; then
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-elif [ -f "$HOME/.zshrc" ]; then
-  source ~/.zshrc
+SCRIPT_NAME="$(basename "$0")"
+echo "[$SCRIPT_NAME] Starting..."
+
+export NVM_DIR="$HOME/.nvm"
+
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+  echo "[$SCRIPT_NAME] NVM already installed, skipping."
+else
+  echo "[$SCRIPT_NAME] Installing NVM..."
+  cd "$HOME" || exit 1
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
 fi
-echo "nvm installed"
-nvm --version
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+echo "[$SCRIPT_NAME] NVM version: $(nvm --version 2>/dev/null || echo 'available')"
+echo "[$SCRIPT_NAME] Done."

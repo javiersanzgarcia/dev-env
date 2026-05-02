@@ -1,56 +1,86 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "Installing all browsers..."
+SCRIPT_NAME="$(basename "$0")"
+echo "[$SCRIPT_NAME] Starting..."
 
 # Firefox
-echo "Installing Firefox..."
-sudo apt -y install firefox
+if ! command -v firefox &>/dev/null; then
+  echo "[$SCRIPT_NAME] Installing Firefox..."
+  sudo apt -y install firefox
+else
+  echo "[$SCRIPT_NAME] Firefox already installed, skipping."
+fi
 
 # Chromium
-echo "Installing Chromium..."
-sudo apt -y install chromium-browser
+if ! command -v chromium &>/dev/null; then
+  echo "[$SCRIPT_NAME] Installing Chromium..."
+  sudo apt -y install chromium-browser
+else
+  echo "[$SCRIPT_NAME] Chromium already installed, skipping."
+fi
 
 # Google Chrome
-echo "Installing Google Chrome..."
-wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/chrome.deb
-sudo dpkg -i /tmp/chrome.deb || sudo apt-get -f install -y
-rm /tmp/chrome.deb
+if ! command -v google-chrome &>/dev/null; then
+  echo "[$SCRIPT_NAME] Installing Google Chrome..."
+  CHROME_URL=$(curl -s "https://dl.google.com/linux/direct/direct_linux.deb" -w "%{url_effective}" -o /dev/null)
+  wget -q "$CHROME_URL" -O /tmp/chrome.deb
+  sudo dpkg -i /tmp/chrome.deb || sudo apt-get -f install -y
+  rm /tmp/chrome.deb
+else
+  echo "[$SCRIPT_NAME] Chrome already installed, skipping."
+fi
 
 # Brave
-echo "Installing Brave..."
-sudo apt -y install apt-transport-https curl
-curl -fsSL https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo gpg --dearmor -o /usr/share/keyrings/brave-core.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-core.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser.list
-sudo apt -y update
-sudo apt -y install brave-browser
+if ! command -v brave-browser &>/dev/null; then
+  echo "[$SCRIPT_NAME] Installing Brave..."
+  sudo apt -y install apt-transport-https curl
+  curl -fsSL https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo gpg --dearmor -o /usr/share/keyrings/brave-core.gpg
+  echo "deb [signed-by=/usr/share/keyrings/brave-core.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser.list
+  sudo apt -y update
+  sudo apt -y install brave-browser
+else
+  echo "[$SCRIPT_NAME] Brave already installed, skipping."
+fi
 
 # Waterfox
-echo "Installing Waterfox..."
-wget -q https://download.waterfox.net/waterfox/releases/latest/linux/x86_64/Waterfox-latest-x86_64.tar.bz2 -O /tmp/waterfox.tar.bz2
-tar -xjf /tmp/waterfox.tar.bz2 -C /opt/
-sudo ln -sf /opt/waterfox/waterfox /usr/local/bin/waterfox
-rm /tmp/waterfox.tar.bz2
+if ! command -v waterfox &>/dev/null; then
+  echo "[$SCRIPT_NAME] Installing Waterfox..."
+  wget -q https://download.waterfox.net/waterfox/releases/latest/linux/x86_64/Waterfox-latest-x86_64.tar.bz2 -O /tmp/waterfox.tar.bz2
+  tar -xjf /tmp/waterfox.tar.bz2 -C /opt/
+  sudo ln -sf /opt/waterfox/waterfox /usr/local/bin/waterfox
+  rm /tmp/waterfox.tar.bz2
+else
+  echo "[$SCRIPT_NAME] Waterfox already installed, skipping."
+fi
 
 # Vivaldi
-echo "Installing Vivaldi..."
-wget -q https://downloads.vivaldi.com/stable/vivaldi-stable_1.44.0.1145-1_amd64.deb -O /tmp/vivaldi.deb
-sudo dpkg -i /tmp/vivaldi.deb || sudo apt-get -f install -y
-rm /tmp/vivaldi.deb
+if ! command -v vivaldi &>/dev/null; then
+  echo "[$SCRIPT_NAME] Installing Vivaldi..."
+  VIVALDI_VERSION=$(curl -s "https://repo.vivaldi.com/stable/dists/stable/Release" | grep -Po 'Version: \K[0-9.]+')
+  VIVALDI_URL="https://downloads.vivaldi.com/stable/vivaldi-stable_${VIVALDI_VERSION}_amd64.deb"
+  wget -q "$VIVALDI_URL" -O /tmp/vivaldi.deb
+  sudo dpkg -i /tmp/vivaldi.deb || sudo apt-get -f install -y
+  rm /tmp/vivaldi.deb
+else
+  echo "[$SCRIPT_NAME] Vivaldi already installed, skipping."
+fi
 
 # Helium
-echo "Installing Helium..."
 if ! command -v helium &>/dev/null; then
+  echo "[$SCRIPT_NAME] Installing Helium..."
   HELIUM_VERSION=$(curl -s "https://api.github.com/repos/imputnet/helium-linux/releases/latest" | grep -Po '"tag_name":\s*"\K[^"]*')
   HELIUM_DEB="helium-bin_${HELIUM_VERSION#v}-1_amd64.deb"
   HELIUM_URL="https://github.com/imputnet/helium-linux/releases/download/${HELIUM_VERSION}/${HELIUM_DEB}"
   wget -q "$HELIUM_URL" -O /tmp/helium.deb
   sudo dpkg -i /tmp/helium.deb || sudo apt-get -f install -y
   rm /tmp/helium.deb
+else
+  echo "[$SCRIPT_NAME] Helium already installed, skipping."
 fi
 
 echo ""
-echo "All browsers installed:"
+echo "[$SCRIPT_NAME] All browsers installed:"
 echo "  - Firefox: firefox"
 echo "  - Chromium: chromium"
 echo "  - Chrome: google-chrome"
@@ -58,3 +88,4 @@ echo "  - Brave: brave-browser"
 echo "  - Waterfox: waterfox"
 echo "  - Vivaldi: vivaldi"
 echo "  - Helium: helium"
+echo "[$SCRIPT_NAME] Done."

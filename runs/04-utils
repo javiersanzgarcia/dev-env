@@ -1,27 +1,51 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-sudo apt -y install bat btop
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+SCRIPT_NAME="$(basename "$0")"
+echo "[$SCRIPT_NAME] Starting..."
+
+if ! command -v bat &>/dev/null; then
+  echo "[$SCRIPT_NAME] Installing bat..."
+  sudo apt -y install bat
+else
+  echo "[$SCRIPT_NAME] bat already installed, skipping."
+fi
+
+if ! command -v btop &>/dev/null; then
+  echo "[$SCRIPT_NAME] Installing btop..."
+  sudo apt -y install btop
+else
+  echo "[$SCRIPT_NAME] btop already installed, skipping."
+fi
+
+if ! command -v rustc &>/dev/null; then
+  echo "[$SCRIPT_NAME] Installing Rust..."
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+else
+  echo "[$SCRIPT_NAME] Rust already installed, skipping."
+fi
 
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
-# install tldr, lsd and dust
-curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
-cargo install tldr lsd du-dust
+if ! command -v tldr &>/dev/null; then
+  echo "[$SCRIPT_NAME] Installing tldr, lsd, dust..."
+  curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+  cargo install tldr lsd du-dust
+else
+  echo "[$SCRIPT_NAME] tldr/lsd/dust already installed, skipping."
+fi
 
-# Install font
+if ! fc-list | grep -qi "cascadia"; then
+  echo "[$SCRIPT_NAME] Installing Cascadia Code Nerd Font..."
+  TEMP_DIR=$(mktemp -d)
+  wget -O "$TEMP_DIR/font.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.0/CascadiaCode.zip"
+  unzip -o "$TEMP_DIR/font.zip" -d "$TEMP_DIR"
+  sudo mv "$TEMP_DIR"/*.otf /usr/local/share/fonts/ 2>/dev/null || true
+  fc-cache -f -v
+  rm -rf "$TEMP_DIR"
+else
+  echo "[$SCRIPT_NAME] Cascadia fonts already installed, skipping."
+fi
 
-TEMP_DIR=$(mktemp -d)
-
-wget -O "$TEMP_DIR/font.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.0/CascadiaCode.zip"
-
-unzip "$TEMP_DIR/font.zip" -d "$TEMP_DIR"
-
-sudo mv "$TEMP_DIR"/*.otf /usr/local/share/fonts/
-
-# Update the font cache
-fc-cache -f -v
-
-rm -rf "$TEMP_DIR"
+echo "[$SCRIPT_NAME] Done."
 
