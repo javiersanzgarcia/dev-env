@@ -27,7 +27,7 @@ fi
 echo "[$SCRIPT_NAME] Starting..."
 
 # Ensure Archivo partition is mounted
-ARCHIVO_MOUNT="/media/packer/Archivo"
+ARCHIVO_MOUNT="/media/pracker/Archivo"
 if [ ! -d "$ARCHIVO_MOUNT" ] || [ ! -w "$ARCHIVO_MOUNT" ]; then
   echo "[$SCRIPT_NAME] Mounting Archivo partition..."
   sudo mkdir -p "$ARCHIVO_MOUNT"
@@ -42,7 +42,7 @@ else
   echo "[$SCRIPT_NAME] Calibre already installed, skipping."
 fi
 
-CALIBRE_LIBRARY="/media/packer/Archivo/Biblioteca"
+CALIBRE_LIBRARY="/media/pracker/Archivo/Biblioteca"
 if [ -d "$CALIBRE_LIBRARY" ] && [ -f "$CALIBRE_LIBRARY/metadata.db" ]; then
   echo "[$SCRIPT_NAME] Calibre library found at $CALIBRE_LIBRARY"
   mkdir -p ~/.config/calibre
@@ -52,37 +52,14 @@ if [ -d "$CALIBRE_LIBRARY" ] && [ -f "$CALIBRE_LIBRARY/metadata.db" ]; then
   echo "[$SCRIPT_NAME] Calibre configured to use: $CALIBRE_LIBRARY"
 fi
 
-# Telegram Desktop
-if ! command -v telegram-desktop &>/dev/null && ! dpkg -l | grep -q telegram-desktop; then
+# Telegram Desktop (using flatpak)
+if ! command -v telegram-desktop &>/dev/null && ! dpkg -l | grep -q telegram-desktop && ! flatpak list | grep -q org.telegram.desktop 2>/dev/null; then
   echo "[$SCRIPT_NAME] Installing Telegram..."
-  sudo apt-get update -qq
-  # Try flatpak first (works on both Debian/Ubuntu)
   if command -v flatpak &>/dev/null; then
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo 2>/dev/null || true
     flatpak install -y flathub org.telegram.desktop 2>/dev/null || echo "[$SCRIPT_NAME] Failed to install Telegram via flatpak."
   else
-    # Try apt as fallback
-    if sudo apt-get install -y telegram-desktop 2>/dev/null; then
-      echo "[$SCRIPT_NAME] Telegram installed via apt."
-    else
-      echo "[$SCRIPT_NAME] Failed to install Telegram. Install flatpak or enable non-free repos."
-    fi
-  fi
-  # Create desktop entry if not auto-created
-  if [ ! -f /usr/share/applications/telegram.desktop ] && [ -f /usr/bin/telegram-desktop ]; then
-    sudo bash -c 'cat > /usr/share/applications/telegram.desktop << EOF'
-[Desktop Entry]
-Version=1.0
-Type=Application
-Terminal=false
-Name=Telegram
-GenericName=Messaging App
-Comment=Telegram Desktop Client
-Exec=/usr/bin/telegram-desktop --autostart
-Icon=telegram
-Categories=Network;InstantMessaging;
-StartupWMClass=Telegram
-StartupNotify=true
-EOF'
+    echo "[$SCRIPT_NAME] Flatpak not found. Install flatpak first: sudo apt install flatpak"
   fi
 else
   echo "[$SCRIPT_NAME] Telegram already installed, skipping."
@@ -91,58 +68,27 @@ fi
 # Spotify
 if ! command -v spotify &>/dev/null && ! dpkg -l | grep -q spotify-client; then
   echo "[$SCRIPT_NAME] Installing Spotify..."
-  curl -sS https://download.spotify.com/debian/pubkey_7A3AE62FAFD4A51F.gpg | sudo gpg --dearmor -o /usr/share/keyrings/spotify.gpg
-  echo "deb [signed-by=/usr/share/keyrings/spotify.gpg] https://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+  # Download and convert GPG key properly
+  sudo rm -f /usr/share/keyrings/spotify.gpg
+  curl -sS https://download.spotify.com/debian/pubkey_5384CE82BA52C83A.asc | sudo gpg --dearmor -o /usr/share/keyrings/spotify.gpg || {
+    echo "[$SCRIPT_NAME] Failed to download Spotify GPG key"
+    exit 1
+  }
+  echo "deb [signed-by=/usr/share/keyrings/spotify.gpg] https://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list > /dev/null
   sudo apt-get update -qq
   sudo apt-get install -y spotify-client
-  # Create desktop entry if not auto-created
-  if [ ! -f /usr/share/applications/spotify.desktop ] && [ -f /usr/bin/spotify ]; then
-    sudo bash -c 'cat > /usr/share/applications/spotify.desktop << EOF
-[Desktop Entry]
-Version=1.0
-Type=Application
-Terminal=false
-Name=Spotify
-GenericName=Music Player
-Comment=Spotify Music Player
-Exec=/usr/bin/spotify %U
-Icon=spotify-client
-Categories=Audio;Music;Player;
-StartupWMClass=Spotify
-StartupNotify=true
-EOF'
-  fi
 else
   echo "[$SCRIPT_NAME] Spotify already installed, skipping."
 fi
 
-# Whatsie - WhatsApp desktop client
-if ! command -v whatsie &>/dev/null && ! dpkg -l | grep -q whatsie; then
+# Whatsie - WhatsApp desktop client (using flatpak)
+if ! command -v whatsie &>/dev/null && ! flatpak list | grep -q com.ktechpit.whatsie 2>/dev/null; then
   echo "[$SCRIPT_NAME] Installing Whatsie..."
-  WHATSIE_VERSION=$(curl -s "https://api.github.com/repos/whatsie/whatsie/releases/latest" | grep -oP '"tag_name":\s*"v\K[^"]*')
-  if [ -z "$WHATSIE_VERSION" ]; then
-    echo "[$SCRIPT_NAME] Failed to get Whatsie version"
+  if command -v flatpak &>/dev/null; then
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo 2>/dev/null || true
+    flatpak install -y flathub com.ktechpit.whatsie 2>/dev/null || echo "[$SCRIPT_NAME] Failed to install Whatsie via flatpak."
   else
-    curl -Lo /tmp/whatsie.deb "https://github.com/whatsie/whatsie/releases/download/v${WHATSIE_VERSION}/whatsie_${WHATSIE_VERSION}_linux_amd64.deb"
-    sudo apt-get install -y /tmp/whatsie.deb
-    rm -f /tmp/whatsie.deb
-    # Create desktop entry
-    if [ ! -f /usr/share/applications/whatsie.desktop ] && [ -f /usr/bin/whatsie ]; then
-      sudo bash -c 'cat > /usr/share/applications/whatsie.desktop << EOF
-[Desktop Entry]
-Version=1.0
-Type=Application
-Terminal=false
-Name=Whatsie
-GenericName=WhatsApp Desktop Client
-Comment=WhatsApp Web Desktop Client
-Exec=/usr/bin/whatsie
-Icon=whatsie
-Categories=Network;InstantMessaging;
-StartupWMClass=Whatsie
-StartupNotify=true
-EOF'
-    fi
+    echo "[$SCRIPT_NAME] Flatpak not found. Install flatpak first: sudo apt install flatpak"
   fi
 else
   echo "[$SCRIPT_NAME] Whatsie already installed, skipping."
@@ -161,24 +107,12 @@ if ! command -v vial &>/dev/null && ! dpkg -l | grep -q vial; then
       chmod +x /tmp/vial.AppImage
       sudo mv /tmp/vial.AppImage /usr/local/bin/vial
       # Create desktop entry
-      sudo bash -c 'cat > /usr/share/applications/vial.desktop << EOF
-[Desktop Entry]
-Version=1.0
-Type=Application
-Terminal=false
-Name=Vial
-GenericName=Keyboard Configurator
-Comment=QMK Keyboard Configurator
-Exec=/usr/local/bin/vial
-Icon=vial
-Categories=Utility;
-StartupWMClass=Vial
-StartupNotify=true
-EOF'
+      sudo mkdir -p /usr/share/applications
+      echo -e "[Desktop Entry]\nName=Vial\nComment=QMK Keyboard Configurator\nExec=/usr/local/bin/vial\nIcon=vial\nType=Application\nCategories=Utility;Settings;\nTerminal=false" | sudo tee /usr/share/applications/vial.desktop > /dev/null
     fi
   fi
 else
   echo "[$SCRIPT_NAME] Vial already installed, skipping."
 fi
 
-echo "[$SCRIPT_NAME] All extra applications installed."
+echo "[$SCRIPT_NAME] All extra applications processed."
