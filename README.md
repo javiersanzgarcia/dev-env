@@ -41,7 +41,7 @@ Nothing currently in progress.
 | `17-docker` | Install Docker + docker-compose |
 | `18-kubernetes` | Install kubectl, helm, k9s, minikube, kubectx |
 | `19-cloud-cli` | Install AWS, Azure, GCP CLIs + Terraform |
-| `20-extras` | Install Calibre, Telegram, Spotify, Whatsie + configure Calibre library |
+| `20-extras` | Install Calibre, Telegram, Spotify, Whatsie, Vial + configure Calibre library |
 | `21-cleanup` | Clean temp files, apt cache, and downloaded installers |
 | `58-dotfiles`         | Stow configs + install LazyVIM from fork                                 |
 | `59-zsh`              | Install zsh, oh-my-zsh, powerlevel10k, plugins + link dotfiles           |
