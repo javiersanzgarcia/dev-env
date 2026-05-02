@@ -47,11 +47,12 @@ Scripts automatically create GNOME desktop entries for: DBeaver, Postman, Intell
 | `19-cloud-cli` | Install AWS, Azure, GCP CLIs + Terraform |
 | `20-extras`           | Install Calibre, Telegram, Spotify, Whatsie, Vial + configure Calibre library (`--check` to verify) |
 | `21-libreoffice`      | Install LibreOffice                                                      |
-| `22-cleanup`         | Clean temp files, apt cache, and downloaded installers                      |
+| `22-steam`            | Install Steam (via apt)                                                  |
 | `58-dotfiles`         | Stow configs + install LazyVIM from fork                                 |
 | `59-zsh`              | Install zsh, oh-my-zsh, powerlevel10k, plugins + link dotfiles           |
-| `98-steam`            | Install Steam (via apt)                                                  |
-| `99-gnome-extensions` | Install and configure GNOME extensions (Ubuntu/Debian)                   |
+| `97-gnome-extensions` | Install and configure GNOME extensions (Ubuntu/Debian)                   |
+| `98-gnome-button-layout` | Configure GNOME window buttons + Dash to Dock as Mac-style dock      |
+| `99-cleanup`         | Clean temp files, apt cache, and downloaded installers                      |
 
 ## Wallpapers
 
