@@ -4,3 +4,12 @@ set -euo pipefail
 sudo add-apt-repository -y ppa:mkasberg/ghostty-ubuntu
 sudo apt-get update
 sudo apt -y install ghostty
+
+echo "Installing Warp terminal..."
+if ! command -v warp &>/dev/null; then
+  WARP_VERSION=$(curl -s "https://api.github.com/repos/warpdotdev/warp/releases/latest" | grep -Po '"tag_name":\s*"\K[^"]*')
+  WARP_URL="https://github.com/warpdotdev/warp/releases/download/${WARP_VERSION}/warp_${WARP_VERSION}_amd64.deb"
+  wget -q "$WARP_URL" -O /tmp/warp.deb
+  sudo apt install -y /tmp/warp.deb
+  rm -f /tmp/warp.deb
+fi
