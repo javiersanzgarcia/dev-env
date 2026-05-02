@@ -2,14 +2,14 @@
 set -euo pipefail
 
 version="v0.12.0"
-if [ -n "$NVIM_VERSION" ]; then
+if [ -n "${NVIM_VERSION:-}" ]; then
   version="$NVIM_VERSION"
 fi
 
 echo "version: \"$version\""
 
-rm -f /usr/local/bin/nvim
-rm -rf /usr/local/share/nvim/
+sudo rm -f /usr/local/bin/nvim
+sudo rm -rf /usr/local/share/nvim/
 mv ~/.local/share/nvim{,.bak} 2>/dev/null || true
 mv ~/.local/state/nvim{,.bak} 2>/dev/null || true
 mv ~/.cache/nvim{,.bak} 2>/dev/null || true
@@ -27,7 +27,7 @@ git -C ~/neovim fetch --all
 
 git -C ~/neovim checkout "$version"
 
-make -C ~/neovim clean
+make -C ~/neovim clean || true
 make -C ~/neovim CMAKE_BUILD_TYPE=Release
 make -C ~/neovim CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/neovim"
 sudo make -C ~/neovim install
@@ -38,6 +38,6 @@ cd luarocks-3.11.1 || exit
 ./configure && make && sudo make install
 sudo luarocks install luacheck --force
 
-rm -r ~/neovim/build/
+rm -rf ~/neovim/build/
 
 echo 'Neovim installed, if this script is launched single, add export PATH="$HOME/neovim/bin:$PATH" and please reload .zshrc'
