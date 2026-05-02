@@ -10,7 +10,7 @@ else
   echo "Snap not found, installing via tarball..."
 
   latest_json=$(curl -s "https://data.services.jetbrains.com/products/releases?code=IIC&latest=true&type=release")
-  download_link=$(echo "$latest_json" | grep -oP '"link"\s*:\s*"\Khttps://.*?linux.*?\.tar\.gz')
+  download_link=$(echo "$latest_json" | python3 -c "import sys, json; data=json.load(sys.stdin); print(data['IIC'][0]['downloads']['linux']['link'])" 2>/dev/null)
 
   if [ -z "$download_link" ]; then
     echo "Failed to get download link"

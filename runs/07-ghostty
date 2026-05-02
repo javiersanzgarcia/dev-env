@@ -13,12 +13,18 @@ fi
 
 if ! command -v warp &>/dev/null; then
   echo "[$SCRIPT_NAME] Installing Warp terminal..."
-  WARP_VERSION=$(curl -s "https://api.github.com/repos/warpdotdev/warp/releases/latest" | grep -Po '"tag_name":\s*"\K[^"]*')
-  WARP_URL="https://github.com/warpdotdev/warp/releases/download/${WARP_VERSION}/warp_${WARP_VERSION}_amd64.deb"
-  wget -q "$WARP_URL" -O /tmp/warp.deb
-  sudo apt install -y /tmp/warp.deb
-  rm -f /tmp/warp.deb
-  echo "[$SCRIPT_NAME] Warp installed."
+  WARP_VERSION=$(curl -s "https://api.github.com/repos/warpdotdev/warp/releases/latest" | grep -Po '"tag_name":\s*"\K[^"]*' || echo "")
+  if [ -z "$WARP_VERSION" ]; then
+    echo "[$SCRIPT_NAME] Could not determine Warp version, skipping."
+  else
+    WARP_URL="https://github.com/warpdotdev/warp/releases/download/${WARP_VERSION}/warp_${WARP_VERSION}_amd64.deb"
+    wget -q "$WARP_URL" -O /tmp/warp.deb || echo "[$SCRIPT_NAME] Failed to download Warp."
+    if [ -f /tmp/warp.deb ]; then
+      sudo apt install -y /tmp/warp.deb || echo "[$SCRIPT_NAME] Failed to install Warp."
+      rm -f /tmp/warp.deb
+    fi
+  fi
+  echo "[$SCRIPT_NAME] Warp installation attempted."
 else
   echo "[$SCRIPT_NAME] Warp already installed, skipping."
 fi
