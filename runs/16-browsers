@@ -96,14 +96,6 @@ if ! command -v vivaldi &>/dev/null; then
 else
   echo "[$SCRIPT_NAME] Vivaldi already installed, skipping."
 fi
-  wget -q "https://downloads.vivaldi.com/stable/vivaldi-stable_${VIVALDI_VERSION}_amd64.deb" -O /tmp/vivaldi.deb || echo "Failed to download Vivaldi"
-  if [ -f /tmp/vivaldi.deb ]; then
-    sudo dpkg -i /tmp/vivaldi.deb || sudo apt-get -f install -y
-    rm /tmp/vivaldi.deb
-  fi
-else
-  echo "[$SCRIPT_NAME] Vivaldi already installed, skipping."
-fi
 
 # Helium
 if ! command -v helium &>/dev/null; then
