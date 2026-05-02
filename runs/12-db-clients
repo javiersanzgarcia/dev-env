@@ -36,22 +36,6 @@ else
         fi
     fi
 fi
-    ARCH=$(uname -m)
-    if [ "$ARCH" = "x86_64" ]; then
-        wget -O /tmp/dbeaver-ce.tar.gz "https://github.com/dbeaver/dbeaver/releases/download/$DBEAVER_VERSION/dbeaver-ce-$DBEAVER_VERSION-linux-x86_64.tar.gz"
-        sudo tar -xzf /tmp/dbeaver-ce.tar.gz -C /opt/
-        sudo ln -sf /opt/dbeaver*/dbeaver /usr/local/bin/dbeaver
-        # Create desktop entry for GNOME
-        if [ -f /opt/dbeaver/dbeaver-ce.desktop ]; then
-            sudo cp /opt/dbeaver/dbeaver-ce.desktop /usr/share/applications/
-            sudo sed -i 's|/usr/share/dbeaver-ce/|/opt/dbeaver/|g' /usr/share/applications/dbeaver-ce.desktop
-        fi
-        rm /tmp/dbeaver-ce.tar.gz
-    else
-        echo "Unsupported architecture: $ARCH"
-        exit 1
-    fi
-fi
 
 echo "Installing NoSQL clients..."
 

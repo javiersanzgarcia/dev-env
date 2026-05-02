@@ -1,48 +1,48 @@
 {
   "[ejs]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[go]": {
-    "editor.defaultFormatter": "golang.go"
+    "editor.defaultFormatter": "golang.go",
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[less]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[scss]": {
     "cSpell.fixSpellingWithRenameProvider": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
-    "editor.suggest.insertMode": "replace"
+    "editor.suggest.insertMode": "replace",
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "angular.suggest.includeCompletionsWithSnippetText": false,
   "angular.view-engine": true,
@@ -55,7 +55,7 @@
       "italic": false,
       "strikethrough": false,
       "tag": "!",
-      "underline": false
+      "underline": false,
     },
     {
       "backgroundColor": "transparent",
@@ -64,7 +64,7 @@
       "italic": false,
       "strikethrough": false,
       "tag": "?",
-      "underline": false
+      "underline": false,
     },
     {
       "backgroundColor": "transparent",
@@ -73,7 +73,7 @@
       "italic": false,
       "strikethrough": true,
       "tag": "//",
-      "underline": false
+      "underline": false,
     },
     {
       "backgroundColor": "transparent",
@@ -82,7 +82,7 @@
       "italic": false,
       "strikethrough": false,
       "tag": "todo",
-      "underline": false
+      "underline": false,
     },
     {
       "backgroundColor": "transparent",
@@ -91,8 +91,8 @@
       "italic": false,
       "strikethrough": false,
       "tag": "*",
-      "underline": false
-    }
+      "underline": false,
+    },
   ],
   "breadcrumbs.enabled": true,
   "breadcrumbs.filePath": "on",
@@ -150,16 +150,16 @@
   "editor.guides.indentation": false,
   "editor.hideCursorInOverviewRuler": true,
   "editor.hover.delay": 1500,
-  "editor.hover.enabled": true,
+  "editor.hover.enabled": "on",
   "editor.language.brackets": [
     ["[", "]"],
     ["(", ")"],
-    ["{", "}"]
+    ["{", "}"],
   ],
   "editor.language.colorizedBracketPairs": [
     ["[", "]"],
     ["(", ")"],
-    ["{", "}"]
+    ["{", "}"],
   ],
   "editor.largeFileOptimizations": false,
   "editor.lightbulb.enabled": "off",
@@ -173,7 +173,7 @@
   "editor.overviewRulerBorder": false,
   "editor.parameterHints.enabled": false,
   "editor.quickSuggestions": {
-    "other": "off"
+    "other": "off",
   },
   "editor.renderControlCharacters": false,
   "editor.renderLineHighlight": "none",
@@ -192,14 +192,14 @@
       {
         "scope": "comment",
         "settings": {
-          "fontStyle": "italic"
-        }
-      }
-    ]
+          "fontStyle": "italic",
+        },
+      },
+    ],
   },
   "editor.wordWrap": "on",
   "emmet.includeLanguages": {
-    "ejs": "html"
+    "ejs": "html",
   },
   "emmet.triggerExpansionOnTab": true,
   "eslint.probe": [
@@ -210,7 +210,7 @@
     "html",
     "vue",
     "markdown",
-    "json"
+    "json",
   ],
   "eslint.validate": [
     "javascript",
@@ -220,11 +220,11 @@
     "html",
     "vue",
     "markdown",
-    "json"
+    "json",
   ],
   "eslint.workingDirectories": [
     "/Users/jsanz/code/ECI/moonshine2",
-    "/Users/jsanz/code/ECI/moonshine2/app/angular/manager"
+    "/Users/jsanz/code/ECI/moonshine2/app/angular/manager",
   ],
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
@@ -232,7 +232,7 @@
   "explorer.decorations.badges": false,
   "extensions.ignoreRecommendations": true,
   "files.associations": {
-    "*.ejs": "html"
+    "*.ejs": "html",
   },
   "files.autoSave": "afterDelay",
   "files.insertFinalNewline": true,
@@ -263,7 +263,7 @@
     "**/public/{[^i],?[^n]}*": true,
     "**/vendor/{[^l],?[^ai]}*": true,
     ".phpunit.result.cache": true,
-    "storage": true
+    "storage": true,
   },
   "search.useIgnoreFiles": false,
   "security.promptForLocalFileProtocolHandling": false,
@@ -287,7 +287,7 @@
   "workbench.colorCustomizations": {
     "[Aura Dracula Spirit (Soft)]": {
       "editorSuggestWidget.selectedBackground": "#3A334B",
-      "sideBar.background": "#191521"
+      "sideBar.background": "#191521",
     },
     "editorCursor.background": "#000000",
     "editorOverviewRuler.addedForeground": "#0000",
@@ -339,10 +339,9 @@
       "tab.inactiveBackground": "#00000000",
       "terminal.background": "#00000000",
       "welcomePage.tileBackground": "#21252b4d",
-      "welcomePage.tileHoverBackground": "#282c3499"
-    }
+      "welcomePage.tileHoverBackground": "#282c3499",
+    },
   },
-  "workbench.colorTheme": "Sweet Dracula",
   "workbench.editor.editorActionsLocation": "hidden",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.highlightModifiedTabs": true,
@@ -357,5 +356,6 @@
   "workbench.tree.indent": 10,
   "workbench.tree.renderIndentGuides": "none",
   "windsurf.marketplaceExtensionGalleryServiceURL": "https://marketplace.visualstudio.com/_apis/public/gallery",
-  "windsurf.marketplaceGalleryItemURL": "https://marketplace.visualstudio.com/items"
+  "windsurf.marketplaceGalleryItemURL": "https://marketplace.visualstudio.com/items",
+  "workbench.colorTheme": "Dracula Theme Soft",
 }

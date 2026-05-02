@@ -11,13 +11,42 @@ fi
 
 echo "[$SCRIPT_NAME] Installing Steam..."
 
-# Enable non-free repo if not already enabled
-if ! grep -q "non-free" /etc/apt/sources.list /etc/apt/sources.list.d/*.list 2>/dev/null; then
-    echo "[$SCRIPT_NAME] Enabling non-free repository..."
-    sudo sed -i 's/main$/main non-free/' /etc/apt/sources.list 2>/dev/null || true
+# Try flatpak first (works on any Debian version)
+if command -v flatpak &>/dev/null; then
+    echo "[$SCRIPT_NAME] Installing Steam via flatpak..."
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo 2>/dev/null || true
+    if flatpak install -y flathub com.valvesoftware.Steam 2>/dev/null; then
+        echo "[$SCRIPT_NAME] Steam installed via flatpak. Launch from applications menu."
+        exit 0
+    else
+        echo "[$SCRIPT_NAME] Flatpak installation failed, trying apt..."
+    fi
 fi
 
-sudo apt -y update
-sudo apt -y install steam
+# Enable i386 architecture (needed for Steam)
+echo "[$SCRIPT_NAME] Enabling i386 architecture..."
+sudo dpkg --add-architecture i386
 
-echo "[$SCRIPT_NAME] Steam installed. Launch from applications menu or run: steam"
+# Enable non-free and contrib repos for Debian
+echo "[$SCRIPT_NAME] Enabling contrib and non-free repositories..."
+if ! grep -q "contrib\|non-free" /etc/apt/sources.list /etc/apt/sources.list.d/*.sources 2>/dev/null; then
+    # For Debian 12+ (bookworm/trixie) using deb822 format
+    if [ -f /etc/apt/sources.list.d/debian.sources ]; then
+        sudo sed -i 's/^Components:.*/Components: main contrib non-free non-free-firmware/' /etc/apt/sources.list.d/debian.sources
+    else
+        # Legacy format
+        sudo sed -i 's/main$/main contrib non-free/' /etc/apt/sources.list 2>/dev/null || true
+    fi
+fi
+
+sudo apt-get update -qq
+
+# Install Steam
+echo "[$SCRIPT_NAME] Installing steam package..."
+if sudo apt-get install -y steam 2>/dev/null; then
+    echo "[$SCRIPT_NAME] Steam installed. Launch from applications menu or run: steam"
+else
+    echo "[$SCRIPT_NAME] Steam package not available in your Debian version."
+    echo "[$SCRIPT_NAME] Please install via flatpak: flatpak install flathub com.valvesoftware.Steam"
+    exit 1
+fi

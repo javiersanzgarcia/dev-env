@@ -1,27 +1,35 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "Installing Cloud CLIs..."
+SCRIPT_NAME="$(basename "$0")"
+echo "[$SCRIPT_NAME] Installing Cloud CLIs..."
+
+# Add Google Cloud SDK to PATH if exists
+if [ -d "$HOME/google-cloud-sdk/bin" ]; then
+    export PATH="$HOME/google-cloud-sdk/bin:$PATH"
+fi
 
 # AWS CLI v2
-echo "Installing AWS CLI..."
 if ! command -v aws &> /dev/null; then
+    echo "[$SCRIPT_NAME] Installing AWS CLI..."
     curl -fsSL "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o /tmp/awscliv2.zip
     unzip -q /tmp/awscliv2.zip -d /tmp
     sudo /tmp/aws/install
     rm -rf /tmp/awscliv2.zip /tmp/aws
+else
+    echo "[$SCRIPT_NAME] AWS CLI already installed, skipping."
 fi
 
 # Azure CLI
 if ! command -v az &> /dev/null; then
-    echo "Installing Azure CLI..."
+    echo "[$SCRIPT_NAME] Installing Azure CLI..."
     rm -f /tmp/packages.microsoft.gpg
     curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --yes --dearmor -o /tmp/packages.microsoft.gpg
     sudo install -o root -g root -m 644 /tmp/packages.microsoft.gpg /etc/apt/trusted.gpg.d/
     # Use bookworm (stable) as fallback for unsupported Debian versions like trixie
     DEB_CODENAME=$(lsb_release -cs)
     if ! curl -fsSL "https://packages.microsoft.com/repos/azure-cli/dists/${DEB_CODENAME}/Release" &>/dev/null; then
-        echo "Debian $DEB_CODENAME not supported by Azure CLI repo, using bookworm"
+        echo "[$SCRIPT_NAME] Debian $DEB_CODENAME not supported by Azure CLI repo, using bookworm"
         DEB_CODENAME="bookworm"
     fi
     echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli $DEB_CODENAME main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
@@ -29,25 +37,35 @@ if ! command -v az &> /dev/null; then
     sudo apt -y install azure-cli
     rm /tmp/packages.microsoft.gpg
 else
-    echo "Azure CLI already installed, skipping."
+    echo "[$SCRIPT_NAME] Azure CLI already installed, skipping."
 fi
 
 # Google Cloud SDK
-echo "Installing Google Cloud SDK..."
-if ! command -v gcloud &> /dev/null; then
+# Check if already installed (check known install path)
+if [ -f "$HOME/google-cloud-sdk/bin/gcloud" ]; then
+    echo "[$SCRIPT_NAME] Google Cloud SDK already installed, skipping."
+else
+    echo "[$SCRIPT_NAME] Installing Google Cloud SDK..."
     curl -fsSL https://sdk.cloud.google.com | bash
-    # Add to PATH
-    echo 'export PATH="$HOME/google-cloud-sdk/bin:$PATH"' >> ~/.zshrc
+    # Add to PATH persistently
+    for rc in ~/.bashrc ~/.zshrc ~/.zshenv; do
+        if [ -f "$rc" ] && ! grep -q 'google-cloud-sdk/bin' "$rc"; then
+            echo 'export PATH="$HOME/google-cloud-sdk/bin:$PATH"' >> "$rc"
+        fi
+    done
+    export PATH="$HOME/google-cloud-sdk/bin:$PATH"
 fi
 
 # Terraform (for infrastructure as code)
-echo "Installing Terraform..."
 if ! command -v terraform &> /dev/null; then
+    echo "[$SCRIPT_NAME] Installing Terraform..."
     TERRAFORM_VERSION=$(curl -s https://releases.hashicorp.com/terraform/ | grep -oP 'terraform/\K[0-9]+\.[0-9]+\.[0-9]+' | head -1)
     wget -q "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" -O /tmp/terraform.zip
     unzip -q /tmp/terraform.zip -d /tmp
     sudo mv /tmp/terraform /usr/local/bin/
     rm /tmp/terraform.zip
+else
+    echo "[$SCRIPT_NAME] Terraform already installed, skipping."
 fi
 
 echo "Cloud CLIs installed: aws, az, gcloud, terraform"

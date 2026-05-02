@@ -68,12 +68,12 @@ install_extension() {
         local extension_url
         extension_url="https://extensions.gnome.org/extension-info/?uuid=$uuid&shell_version=$GNOME_VERSION"
         local ext_info
-        ext_info=$(curl -fsSL "$extension_url" 2>/dev/null || echo "")
+        ext_info=$(curl -fsSL --max-time 10 "$extension_url" 2>/dev/null || echo "")
 
         if [ -z "$ext_info" ]; then
             # Try without shell version
             extension_url="https://extensions.gnome.org/extension-info/?uuid=$uuid"
-            ext_info=$(curl -fsSL "$extension_url" 2>/dev/null || echo "")
+            ext_info=$(curl -fsSL --max-time 10 "$extension_url" 2>/dev/null || echo "")
         fi
 
         if [ -z "$ext_info" ]; then
@@ -95,7 +95,7 @@ install_extension() {
         local zip_url="https://extensions.gnome.org/download-extension/$uuid.shell-extension.zip?version_tag=$pk"
         local tmp_file
         tmp_file=$(mktemp)
-        curl -fsSL "$zip_url" -o "$tmp_file" 2>/dev/null
+        curl -fsSL --max-time 30 "$zip_url" -o "$tmp_file" 2>/dev/null
 
         if [ -f "$tmp_file" ]; then
             unzip -qo "$tmp_file" -d "$HOME/.local/share/gnome-shell/extensions/$uuid" 2>/dev/null
