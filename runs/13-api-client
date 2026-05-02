@@ -11,6 +11,22 @@ else
     wget -q https://dl.pstmn.io/download/latest/linux64 -O /tmp/postman.tar.gz
     sudo tar -xzf /tmp/postman.tar.gz -C /opt/
     sudo ln -sf /opt/Postman/Postman /usr/local/bin/postman
+    # Create desktop entry for GNOME
+    sudo bash -c 'cat > /usr/share/applications/postman.desktop << "EOF"
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Name=Postman
+GenericName=API Development Environment
+Comment=Postman API Development Environment
+Exec=/opt/Postman/Postman
+Icon=/opt/Postman/app/resources/app/assets/icon.png
+Categories=Development;IDE;
+StartupWMClass=Postman
+StartupNotify=true
+Keywords=API;REST;HTTP;JSON;
+EOF'
     rm /tmp/postman.tar.gz
 fi
 
