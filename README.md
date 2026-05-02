@@ -42,10 +42,10 @@ Scripts automatically create GNOME desktop entries for: DBeaver, Postman, Intell
 | `14-git-tools`        | Install GitUI, git-delta, gh                                             |
 | `15-password-manager` | Install Bitwarden CLI, 1Password CLI, pass, KeePassXC (GUI) |
 | `16-browsers` | Install all browsers (Firefox, Chromium, Chrome, Brave, Waterfox, Vivaldi, Helium) + desktop entries |
-| `17-docker` | Install Docker + docker-compose |
+| `17-docker` | Install Docker Desktop |
 | `18-kubernetes` | Install kubectl, helm, k9s, minikube, kubectx |
 | `19-cloud-cli` | Install AWS, Azure, GCP CLIs + Terraform |
-| `20-extras`           | Install Calibre, Telegram, Spotify, Whatsie, Vial + configure Calibre library |
+| `20-extras`           | Install Calibre, Telegram, Spotify, Whatsie, Vial + configure Calibre library (`--check` to verify) |
 | `21-libreoffice`      | Install LibreOffice                                                      |
 | `22-cleanup`         | Clean temp files, apt cache, and downloaded installers                      |
 | `58-dotfiles`         | Stow configs + install LazyVIM from fork                                 |
