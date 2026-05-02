@@ -4,8 +4,8 @@ set -euo pipefail
 SCRIPT_NAME="98-gnome-button-layout"
 
 if ! command -v gsettings &>/dev/null; then
-    echo "[$SCRIPT_NAME] gsettings not found, skipping."
-    exit 0
+  echo "[$SCRIPT_NAME] gsettings not found, skipping."
+  exit 0
 fi
 
 echo "[$SCRIPT_NAME] Setting GNOME window button layout..."
@@ -14,16 +14,19 @@ echo "[$SCRIPT_NAME] Window button layout set to: minimize, maximize, close"
 
 echo "[$SCRIPT_NAME] Configuring Dash to Dock as Mac-style dock..."
 if command -v dconf &>/dev/null; then
-    dconf write /org/gnome/shell/extensions/dash-to-dock/dock-position "'BOTTOM'"
-    dconf write /org/gnome/shell/extensions/dash-to-dock/dock-fixed true
-    dconf write /org/gnome/shell/extensions/dash-to-dock/autohide false
-    dconf write /org/gnome/shell/extensions/dash-to-dock/intellihide true
-    dconf write /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size "48"
-    dconf write /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top false
-    dconf write /org/gnome/shell/extensions/dash-to-dock/click-action "'MINIMIZE_OR_PREVIEW'"
-    dconf write /org/gnome/shell/extensions/dash-to-dock/multi-monitor false
-    dconf write /org/gnome/shell/extensions/dash-to-dock/extend-height false
-    echo "[$SCRIPT_NAME] Dash to Dock configured as Mac-style bottom dock"
+  dconf write /org/gnome/shell/extensions/dash-to-dock/dock-position "'BOTTOM'"
+  dconf write /org/gnome/shell/extensions/dash-to-dock/dock-fixed true
+  dconf write /org/gnome/shell/extensions/dash-to-dock/autohide false
+  dconf write /org/gnome/shell/extensions/dash-to-dock/intellihide true
+  dconf write /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size "36"
+  dconf write /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top false
+  dconf write /org/gnome/shell/extensions/dash-to-dock/click-action "'MINIMIZE_OR_PREVIEW'"
+  dconf write /org/gnome/shell/extensions/dash-to-dock/multi-monitor false
+  dconf write /org/gnome/shell/extensions/dash-to-dock/extend-height false
+  dconf write /org/gnome/shell/extensions/dash-to-dock/background-opacity "0.2"
+  dconf write /org/gnome/shell/extensions/dash-to-dock/transparency-mode "'ADAPTIVE'"
+  dconf write /org/gnome/shell/extensions/dash-to-dock/background-type "'ADAPTIVE'"
+  echo "[$SCRIPT_NAME] Dash to Dock configured as Mac-style bottom dock with transparency"
 else
-    echo "[$SCRIPT_NAME] dconf not found, skipping Dash to Dock configuration"
+  echo "[$SCRIPT_NAME] dconf not found, skipping Dash to Dock configuration"
 fi
