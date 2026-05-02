@@ -37,7 +37,7 @@ Nothing currently in progress.
 | `13-api-client`       | Install Postman                                                          |
 | `14-git-tools`        | Install GitUI, git-delta, gh                                             |
 | `15-password-manager` | Install Bitwarden CLI, 1Password CLI, pass |
-| `16-browsers` | Install all browsers (Firefox, Chromium, Chrome, Brave, Waterfox, Vivaldi) |
+| `16-browsers` | Install all browsers (Firefox, Chromium, Chrome, Brave, Waterfox, Vivaldi, Helium) |
 | `17-docker` | Install Docker + docker-compose |
 | `18-kubernetes` | Install kubectl, helm, k9s, minikube, kubectx |
 | `19-cloud-cli` | Install AWS, Azure, GCP CLIs + Terraform |

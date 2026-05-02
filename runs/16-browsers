@@ -38,6 +38,17 @@ wget -q https://downloads.vivaldi.com/stable/vivaldi-stable_1.44.0.1145-1_amd64.
 sudo dpkg -i /tmp/vivaldi.deb || sudo apt-get -f install -y
 rm /tmp/vivaldi.deb
 
+# Helium
+echo "Installing Helium..."
+if ! command -v helium &>/dev/null; then
+  HELIUM_VERSION=$(curl -s "https://api.github.com/repos/imputnet/helium-linux/releases/latest" | grep -Po '"tag_name":\s*"\K[^"]*')
+  HELIUM_DEB="helium-bin_${HELIUM_VERSION#v}-1_amd64.deb"
+  HELIUM_URL="https://github.com/imputnet/helium-linux/releases/download/${HELIUM_VERSION}/${HELIUM_DEB}"
+  wget -q "$HELIUM_URL" -O /tmp/helium.deb
+  sudo dpkg -i /tmp/helium.deb || sudo apt-get -f install -y
+  rm /tmp/helium.deb
+fi
+
 echo ""
 echo "All browsers installed:"
 echo "  - Firefox: firefox"
@@ -46,3 +57,4 @@ echo "  - Chrome: google-chrome"
 echo "  - Brave: brave-browser"
 echo "  - Waterfox: waterfox"
 echo "  - Vivaldi: vivaldi"
+echo "  - Helium: helium"
