@@ -20,7 +20,7 @@ ExecStart=$script_dir/env/wallpapers/rotate.sh
 Environment=DISPLAY=:0
 Environment=XDG_RUNTIME_DIR=/run/user/$(id -u)
 Restart=always
-RestartSec=300
+RestartSec=30
 
 [Install]
 WantedBy=default.target
