@@ -78,6 +78,7 @@ export BUILDER_VERSION=randomVersionHash
 [[ -s "/root/.gvm/scripts/gvm" ]] && source "/root/.gvm/scripts/gvm"
 
 # eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH="$HOME/.atuin/bin:$PATH"
 eval "$(atuin init zsh)"
 
 eval "$(zoxide init --hook prompt zsh)"
