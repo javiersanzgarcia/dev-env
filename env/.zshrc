@@ -42,7 +42,7 @@ source $ZSH/oh-my-zsh.sh
 alias top="btop"
 alias man="tldr"
 alias du="dust"
-alias cat="bat"
+alias cat="batcat"
 alias ls="lsd"
 alias ll="lsd -lah"
 alias lj="lsd -latGhr"
@@ -64,7 +64,7 @@ function openNvim {
 
 export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libdbus-1.so.3"
 
-export PATH="$HOME/neovim/bin:$PATH"
+export PATH="$HOME/neovim/bin:$HOME/.cargo/bin:$PATH"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
