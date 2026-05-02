@@ -1,8 +1,11 @@
+lazygit
 lazygit.tar.gz
-
+node_modules/
+*.log
+env/wallpapers/
 env/dotfiles/github-copilot/.config/github-copilot/apps.json
 
-!env/dotfiles/Windsurf/.config/Windsurf/
+!/env/dotfiles/Windsurf/.config/Windsurf/
 
 env/dotfiles/Windsurf/.config/Windsurf/*
 !/env/dotfiles/Windsurf/.config/Windsurf/User/
