@@ -18,6 +18,10 @@ You can also filter, for an specific file inside of runs directory, for example:
 
 Nothing currently in progress.
 
+## Desktop Integration
+
+Scripts automatically create GNOME desktop entries for: DBeaver, Postman, IntelliJ CE, and KeePassXC. These will appear in your applications menu after installation.
+
 ## Run scripts
 
 | Script                | Description                                                              |
@@ -36,8 +40,8 @@ Nothing currently in progress.
 | `12-db-clients`       | Install DBeaver + MongoDB Compass |
 | `13-api-client`       | Install Postman                                                          |
 | `14-git-tools`        | Install GitUI, git-delta, gh                                             |
-| `15-password-manager` | Install Bitwarden CLI, 1Password CLI, pass |
-| `16-browsers` | Install all browsers (Firefox, Chromium, Chrome, Brave, Waterfox, Vivaldi, Helium) |
+| `15-password-manager` | Install Bitwarden CLI, 1Password CLI, pass, KeePassXC (GUI) |
+| `16-browsers` | Install all browsers (Firefox, Chromium, Chrome, Brave, Waterfox, Vivaldi, Helium) + desktop entries |
 | `17-docker` | Install Docker + docker-compose |
 | `18-kubernetes` | Install kubectl, helm, k9s, minikube, kubectx |
 | `19-cloud-cli` | Install AWS, Azure, GCP CLIs + Terraform |

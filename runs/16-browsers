@@ -15,7 +15,11 @@ fi
 # Chromium
 if ! command -v chromium &>/dev/null; then
   echo "[$SCRIPT_NAME] Installing Chromium..."
-  sudo apt -y install chromium-browser
+  if grep -q "Ubuntu" /etc/os-release 2>/dev/null; then
+    sudo apt -y install chromium-browser
+  else
+    sudo apt -y install chromium
+  fi
 else
   echo "[$SCRIPT_NAME] Chromium already installed, skipping."
 fi
@@ -23,8 +27,7 @@ fi
 # Google Chrome
 if ! command -v google-chrome &>/dev/null; then
   echo "[$SCRIPT_NAME] Installing Google Chrome..."
-  CHROME_URL=$(curl -s "https://dl.google.com/linux/direct/direct_linux.deb" -w "%{url_effective}" -o /dev/null)
-  wget -q "$CHROME_URL" -O /tmp/chrome.deb
+  wget -q "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" -O /tmp/chrome.deb
   sudo dpkg -i /tmp/chrome.deb || sudo apt-get -f install -y
   rm /tmp/chrome.deb
 else
@@ -34,11 +37,11 @@ fi
 # Brave
 if ! command -v brave-browser &>/dev/null; then
   echo "[$SCRIPT_NAME] Installing Brave..."
-  sudo apt -y install apt-transport-https curl
-  curl -fsSL https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo gpg --dearmor -o /usr/share/keyrings/brave-core.gpg
-  echo "deb [signed-by=/usr/share/keyrings/brave-core.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser.list
-  sudo apt -y update
-  sudo apt -y install brave-browser
+  sudo apt-get install -y curl
+  sudo curl -fsSL https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo gpg --dearmor -o /usr/share/keyrings/brave-browser-archive-keyring.gpg
+  echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser.list
+  sudo apt-get update
+  sudo apt-get install -y brave-browser
 else
   echo "[$SCRIPT_NAME] Brave already installed, skipping."
 fi
