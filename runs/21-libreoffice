@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_NAME="$(basename "$0")"
+echo "[$SCRIPT_NAME] Starting..."
+
+if ! command -v libreoffice &>/dev/null; then
+  echo "[$SCRIPT_NAME] Installing LibreOffice..."
+  sudo apt -y install libreoffice
+else
+  echo "[$SCRIPT_NAME] LibreOffice already installed, skipping."
+fi
+
+# Create desktop entry if not exists
+if [ ! -f /usr/share/applications/libreoffice.desktop ] && [ -f /usr/share/applications/libreoffice-writer.desktop ]; then
+  echo "[$SCRIPT_NAME] Desktop entries should be auto-created by apt."
+fi
+
+echo "[$SCRIPT_NAME] Done. Run with: libreoffice"
