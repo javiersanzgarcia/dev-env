@@ -11,6 +11,9 @@ env/dotfiles/Code/User/*
 !env/dotfiles/Code/User/keybindings.json
 env/dotfiles/Code/User/History/
 env/dotfiles/Code/User/globalStorage/
+# Allow state files for extension state to persist
+!env/dotfiles/Code/User/globalStorage/storage.json
+!env/dotfiles/Code/User/globalStorage/state.vscdb
 env/dotfiles/Code/User/sync/
 env/dotfiles/Code/User/workspaceStorage/
 env/dotfiles/Code/User/snippets/
