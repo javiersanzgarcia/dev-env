@@ -229,9 +229,6 @@
   "html.format.enable": false,
   "html.format.wrapAttributes": "force",
   "markdown-preview-enhanced.breakOnSingleNewLine": false,
-  "markdown-preview-enhanced.codeBlockTheme": "one-dark.css",
-  "markdown-preview-enhanced.mermaidTheme": "dark",
-  "markdown-preview-enhanced.previewTheme": "one-dark.css",
   "markdown-preview-enhanced.printBackground": true,
   "redhat.telemetry.enabled": false,
   "search.exclude": {
@@ -268,7 +265,7 @@
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.highlightModifiedTabs": true,
-  "workbench.preferredDarkColorTheme": "Night Owl",
+  "workbench.preferredDarkColorTheme": "Dracula Theme Soft",
   "workbench.sideBar.location": "left",
   "workbench.startupEditor": "none",
   "workbench.tips.enabled": false,

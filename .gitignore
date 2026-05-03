@@ -5,10 +5,15 @@ node_modules/
 env/wallpapers/
 env/dotfiles/github-copilot/.config/github-copilot/apps.json
 
-!/env/dotfiles/Windsurf/.config/Windsurf/
-
-env/dotfiles/Windsurf/.config/Windsurf/*
-!/env/dotfiles/Windsurf/.config/Windsurf/User/
-env/dotfiles/Windsurf/.config/Windsurf/User/History/
-env/dotfiles/Windsurf/.config/Windsurf/User/globalStorage/
-env/dotfiles/Windsurf/.config/Windsurf/User/workspaceStorage/
+# VSCode dotfiles - only track essential files
+env/dotfiles/Code/User/*
+!env/dotfiles/Code/User/settings.json
+!env/dotfiles/Code/User/keybindings.json
+env/dotfiles/Code/User/History/
+env/dotfiles/Code/User/globalStorage/
+env/dotfiles/Code/User/sync/
+env/dotfiles/Code/User/workspaceStorage/
+env/dotfiles/Code/User/snippets/
+env/dotfiles/Code/User/mcp.json
+env/dotfiles/Code/User/chatLanguageModels.json
+.vscode/
