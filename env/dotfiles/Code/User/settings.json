@@ -1,4 +1,8 @@
 {
+  "[coffeescript]": {
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.defaultColorDecorators": "never",
+  },
   "[ejs]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
@@ -261,8 +265,4 @@
   "workbench.sideBar.location": "left",
   "workbench.startupEditor": "none",
   "workbench.tips.enabled": false,
-  "[coffeescript]": {
-    "diffEditor.ignoreTrimWhitespace": false,
-    "editor.defaultColorDecorators": "never",
-  },
 }
