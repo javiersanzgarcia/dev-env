@@ -10,9 +10,17 @@ for i in *; do
         echo "Stowing $i"
         # Remove existing config dirs to avoid stow conflicts
         rm -fr "$HOME"/.config/$i
-        # For Code, also clean User dir which may have VSCode-generated files
+        # For Code, clean User dir which may have VSCode-generated files
         if [ "$i" = "Code" ]; then
             rm -fr "$HOME"/.config/Code/User
+            # Remove any VSCode-generated files that might conflict with stow
+            rm -f "$HOME"/.config/Code/User/chatLanguageModels.json
+            rm -f "$HOME"/.config/Code/User/mcp.json
+            rm -rf "$HOME"/.config/Code/User/sync
+            rm -rf "$HOME"/.config/Code/User/globalStorage
+            rm -rf "$HOME"/.config/Code/User/History
+            rm -rf "$HOME"/.config/Code/User/workspaceStorage
+            rm -rf "$HOME"/.config/Code/User/snippets
         fi
 stow --restow --target=$HOME $i
     fi
