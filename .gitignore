@@ -18,3 +18,4 @@ env/dotfiles/Code/User/chatLanguageModels.json
 # Track these files explicitly
 !env/dotfiles/Code/User/settings.json
 !env/dotfiles/Code/User/keybindings.json
+state.vscdb
