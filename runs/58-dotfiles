@@ -17,7 +17,8 @@ for i in *; do
             rm -f "$HOME"/.config/Code/User/chatLanguageModels.json
             rm -f "$HOME"/.config/Code/User/mcp.json
             rm -rf "$HOME"/.config/Code/User/sync
-            rm -rf "$HOME"/.config/Code/User/globalStorage
+            # Don't remove globalStorage - let stow handle the symlinks
+            # rm -rf "$HOME"/.config/Code/User/globalStorage
             rm -rf "$HOME"/.config/Code/User/History
             rm -rf "$HOME"/.config/Code/User/workspaceStorage
             rm -rf "$HOME"/.config/Code/User/snippets

@@ -6,9 +6,6 @@ env/wallpapers/
 env/dotfiles/github-copilot/.config/github-copilot/apps.json
 
 # VSCode dotfiles - only track essential files
-env/dotfiles/Code/User/*
-!env/dotfiles/Code/User/settings.json
-!env/dotfiles/Code/User/keybindings.json
 env/dotfiles/Code/User/History/
 env/dotfiles/Code/User/globalStorage/*
 !env/dotfiles/Code/User/globalStorage/storage.json
@@ -18,3 +15,6 @@ env/dotfiles/Code/User/workspaceStorage/
 env/dotfiles/Code/User/snippets/
 env/dotfiles/Code/User/mcp.json
 env/dotfiles/Code/User/chatLanguageModels.json
+# Track these files explicitly
+!env/dotfiles/Code/User/settings.json
+!env/dotfiles/Code/User/keybindings.json
