@@ -22,11 +22,6 @@
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+j",
-    "command": "editor.action.copyLinesDownAction",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
     "key": "alt+f",
     "command": "editor.action.formatDocument",
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
@@ -55,11 +50,6 @@
     "command": "workbench.action.toggleMaximizedPanel"
   },
   {
-    "key": "Escape",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminalFocus"
-  },
-  {
     "key": "alt+n",
     "command": "workbench.action.terminal.new",
     "when": "terminalFocus"
@@ -72,11 +62,6 @@
   {
     "key": "alt+l",
     "command": "workbench.action.terminal.focusPrevious",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "alt+k",
-    "command": "workbench.action.terminal.clear",
     "when": "terminalFocus"
   },
   {
@@ -175,5 +160,15 @@
   {
     "key": "ctrl+alt+o",
     "command": "opencode.openNewTerminal"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+Escape",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminalFocus"
   }
 ]
