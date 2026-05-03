@@ -25,6 +25,26 @@ else
   echo "[$SCRIPT_NAME] Rust already installed, skipping."
 fi
 
+if ! command -v go &>/dev/null; then
+  echo "[$SCRIPT_NAME] Installing Go..."
+  GO_VERSION=$(curl -s https://go.dev/VERSION?m=text | head -1)
+  curl -fsSL "https://go.dev/dl/${GO_VERSION}.linux-amd64.tar.gz" -o /tmp/go.tar.gz
+  sudo rm -rf /usr/local/go
+  sudo tar -C /usr/local -xzf /tmp/go.tar.gz
+  rm /tmp/go.tar.gz
+  export PATH="/usr/local/go/bin:$PATH"
+else
+  echo "[$SCRIPT_NAME] Go already installed, skipping."
+fi
+
+if ! command -v svn &>/dev/null; then
+  echo "[$SCRIPT_NAME] Installing SVN..."
+  sudo apt-get install -y subversion
+else
+  echo "[$SCRIPT_NAME] SVN already installed, skipping."
+fi
+
+export PATH="/usr/local/go/bin:$HOME/.cargo/bin:$PATH"
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 if ! command -v tldr &>/dev/null; then

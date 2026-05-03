@@ -8,7 +8,12 @@ cd env/dotfiles || exit 1
 for i in *; do
     if [ -d "$i" ]; then
         echo "Stowing $i"
+        # Remove existing config dirs to avoid stow conflicts
         rm -fr "$HOME"/.config/$i
+        # For Code, also clean User dir which may have VSCode-generated files
+        if [ "$i" = "Code" ]; then
+            rm -fr "$HOME"/.config/Code/User
+        fi
 stow --restow --target=$HOME $i
     fi
 done
