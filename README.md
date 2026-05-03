@@ -34,7 +34,7 @@ Scripts automatically create GNOME desktop entries for: DBeaver, Postman, Intell
 | `06-node`             | Install latest Node.js via NVM                                           |
 | `07-ghostty`          | Install Ghostty terminal                                                 |
 | `08-intellij`         | Install IntelliJ Community Edition (snap or tarball)                     |
-| `09-windsurf`         | Install Windsurf + extensions                                            |
+| `09-vscode`           | Install VSCode + extensions                                              |
 | `10-wallpapers`       | GNOME wallpaper rotation via systemd user service (5min interval)        |
 | `11-opencode`         | Install opencode CLI                                                     |
 | `12-db-clients`       | Install DBeaver + MongoDB Compass |

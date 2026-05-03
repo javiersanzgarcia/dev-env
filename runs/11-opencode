@@ -24,15 +24,11 @@ for rc in ~/.bashrc ~/.zshrc ~/.zshenv; do
 done
 
 echo ""
-echo "To use opencode inside Windsurf instead of Cascade:"
-echo "  1. Open Windsurf integrated terminal (Ctrl+~)"
+echo "To use opencode inside VSCode:"
+echo "  1. Open VSCode integrated terminal (Ctrl+`)"
 echo "  2. Run 'opencode' - extension auto-installs"
 echo ""
 echo "Shortcuts:"
 echo "  Ctrl+Esc     - Toggle opencode panel"
 echo "  Ctrl+Shift+Esc - New opencode session"
 echo "  Alt+Ctrl+K   - Insert file reference (@file)"
-echo ""
-echo "To use Windsurf models in opencode (requires Windsurf running + logged in):"
-echo "  Install: bun add -g opencode-windsurf-auth@beta"
-echo "  Docs:    https://github.com/rsvedant/opencode-windsurf-auth"
