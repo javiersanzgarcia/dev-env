@@ -1,0 +1,12 @@
+[
+  {
+    "key": "ctrl+alt+o",
+    "command": "workbench.action.toggleSecondarySideBar",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+alt+shift+o",
+    "command": "opencode.openNewTerminal",
+    "when": "!terminalFocus"
+  }
+]

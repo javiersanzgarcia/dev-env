@@ -1,6 +1,6 @@
 [
   {
-    "key": "ctrl+alt+o",
+    "key": "ctrl+shift+o",
     "command": "opencode.openNewTerminal"
   }
 ]

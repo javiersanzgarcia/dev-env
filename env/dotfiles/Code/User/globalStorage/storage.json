@@ -1,0 +1,81 @@
+{
+    "telemetry.sqmId": "",
+    "telemetry.machineId": "dfd4355fe781252687f2e2bb4898410fae47a9d9a40a5dd6641a9dfb4a7e456d",
+    "telemetry.devDeviceId": "d826cb63-53f9-4835-953b-e9e0e858ec56",
+    "backupWorkspaces": {
+        "workspaces": [],
+        "folders": [
+            {
+                "folderUri": "file:///home/pracker/code/dev-env"
+            },
+            {
+                "folderUri": "file:///home/pracker/code"
+            }
+        ],
+        "emptyWindows": []
+    },
+    "windowControlHeight": 46,
+    "profileAssociations": {
+        "workspaces": {
+            "file:///home/pracker/code/dev-env": "__default__profile__",
+            "file:///home/pracker/code": "__default__profile__"
+        },
+        "emptyWindows": {}
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#282a36",
+    "windowSplash": {
+        "zoomLevel": 1.5,
+        "baseTheme": "vs-dark",
+        "colorInfo": {
+            "foreground": "#f6f6f4",
+            "background": "#282a36",
+            "editorBackground": "#282a36",
+            "titleBarBackground": "#760a76",
+            "activityBarBackground": "#540754",
+            "sideBarBackground": "#262626",
+            "statusBarBackground": "#540754",
+            "statusBarNoFolderBackground": "#540754"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 35,
+            "activityBarWidth": 48,
+            "sideBarWidth": 505,
+            "auxiliaryBarWidth": 0,
+            "statusBarHeight": 22,
+            "windowBorder": false
+        }
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///home/pracker/code/dev-env",
+            "backupPath": "/home/pracker/.config/Code/Backups/8e4be861b5419ddaabd508f4347832b6",
+            "uiState": {
+                "mode": 1,
+                "x": 0,
+                "y": 0,
+                "width": 1720,
+                "height": 1349
+            }
+        },
+        "openedWindows": []
+    },
+    "windowSplashWorkspaceOverride": {
+        "layoutInfo": {
+            "sideBarWidth": 505,
+            "auxiliaryBarWidth": 300,
+            "workspaces": {
+                "02aae6b682aaa5b0539ad903b4d23fd7": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "548a744376bf9da63ff01b6cd18a7da3": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                }
+            }
+        }
+    }
+}
