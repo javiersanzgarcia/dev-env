@@ -1,58 +1,58 @@
 {
   "[ejs]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[java]": {
     "editor.defaultFormatter": "redhat.java",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[less]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[lua]": {
     "editor.defaultFormatter": "sumneko.lua",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[scss]": {
     "cSpell.fixSpellingWithRenameProvider": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
-    "editor.suggest.insertMode": "replace"
+    "editor.suggest.insertMode": "replace",
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "better-comments.multilineComments": true,
   "better-comments.tags": [
@@ -63,7 +63,7 @@
       "italic": false,
       "strikethrough": false,
       "tag": "!",
-      "underline": false
+      "underline": false,
     },
     {
       "backgroundColor": "transparent",
@@ -72,7 +72,7 @@
       "italic": false,
       "strikethrough": false,
       "tag": "?",
-      "underline": false
+      "underline": false,
     },
     {
       "backgroundColor": "transparent",
@@ -81,7 +81,7 @@
       "italic": false,
       "strikethrough": true,
       "tag": "//",
-      "underline": false
+      "underline": false,
     },
     {
       "backgroundColor": "transparent",
@@ -90,7 +90,7 @@
       "italic": false,
       "strikethrough": false,
       "tag": "todo",
-      "underline": false
+      "underline": false,
     },
     {
       "backgroundColor": "transparent",
@@ -99,8 +99,8 @@
       "italic": false,
       "strikethrough": false,
       "tag": "*",
-      "underline": false
-    }
+      "underline": false,
+    },
   ],
   "breadcrumbs.enabled": true,
   "breadcrumbs.filePath": "on",
@@ -157,12 +157,12 @@
   "editor.language.brackets": [
     ["[", "]"],
     ["(", ")"],
-    ["{", "}"]
+    ["{", "}"],
   ],
   "editor.language.colorizedBracketPairs": [
     ["[", "]"],
     ["(", ")"],
-    ["{", "}"]
+    ["{", "}"],
   ],
   "editor.largeFileOptimizations": false,
   "editor.lightbulb.enabled": "off",
@@ -180,7 +180,7 @@
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "emmet.includeLanguages": {
-    "ejs": "html"
+    "ejs": "html",
   },
   "eslint.probe": [
     "javascript",
@@ -190,7 +190,7 @@
     "html",
     "vue",
     "markdown",
-    "json"
+    "json",
   ],
   "eslint.validate": [
     "javascript",
@@ -200,15 +200,15 @@
     "html",
     "vue",
     "markdown",
-    "json"
+    "json",
   ],
   "eslint.workingDirectories": [
     "/Users/jsanz/code/ECI/standaloneManager/moonshine2/app/angular/manager",
-    "/Users/jsanz/code/ECI/standaloneManager/moonshine2"
+    "/Users/jsanz/code/ECI/standaloneManager/moonshine2",
   ],
   "explorer.confirmDelete": false,
   "files.associations": {
-    "*.ejs": "html"
+    "*.ejs": "html",
   },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
@@ -230,7 +230,7 @@
     "**/public/{[^i],?[^n]}*": true,
     "**/vendor/{[^l],?[^ai]}*": true,
     ".phpunit.result.cache": true,
-    "storage": true
+    "storage": true,
   },
   "search.useIgnoreFiles": false,
   "security.workspace.trust.untrustedFiles": "open",
@@ -256,5 +256,7 @@
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.sideBar.location": "left",
   "workbench.startupEditor": "none",
-  "workbench.tips.enabled": false
+  "workbench.tips.enabled": false,
+  "workbench.openInAgents.enabled": false,
+  "window.commandCenter": false,
 }

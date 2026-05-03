@@ -162,13 +162,17 @@
     "command": "opencode.openNewTerminal"
   },
   {
-    "key": "ctrl+j",
+    "key": "ctrl+o",
+    "command": "opencode.openTerminal"
+  },
+  {
+    "key": "ctrl+d",
     "command": "editor.action.copyLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+Escape",
+    "key": "ctrl+j",
     "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminalFocus"
+    "when": "editorFocus || terminalFocus || filesExplorerFocus || searchViewletFocus"
   }
 ]

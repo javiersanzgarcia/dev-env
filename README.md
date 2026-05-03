@@ -80,13 +80,17 @@ To use opencode inside VSCode:
 1. Open VSCode's integrated terminal (`Ctrl+``)
 2. Run `opencode` — the extension auto-installs automatically
 
-Once installed, use these shortcuts:
+Once installed, use these commands (bind them in Keyboard Shortcuts):
 
-| Shortcut         | Action                          | ~   |
-| ---------------- | ------------------------------- | --- |
-| `Ctrl+Esc`       | Toggle opencode panel           |
-| `Ctrl+Shift+Esc` | Start a new opencode session    |
-| `Alt+Ctrl+K`     | Insert file reference (`@file`) |
+| Command                        | Action                          |
+| ------------------------------ | ------------------------------- |
+| `opencode.openTerminal`        | Open/focus opencode terminal    |
+| `opencode.openNewTerminal`     | Start a new opencode session    |
+| `opencode.addFilepathToTerminal`| Insert file reference (`@file`) |
+
+**Note:** `Ctrl+Esc` toggle is for the desktop app only, not the VSCode extension.
+
+**Linux clipboard workaround:** If you get "Cannot read clipboard" error on paste, use `Ctrl+Shift+V` instead of `Ctrl+V`.
 
 **Linux clipboard workaround:** If you get "Cannot read clipboard" error on paste, use `Ctrl+Shift+V` instead of `Ctrl+V`.
 
