@@ -82,18 +82,30 @@ To use opencode inside VSCode:
 
 Once installed, use these commands (bind them in Keyboard Shortcuts):
 
-| Command                        | Action                          |
-| ------------------------------ | ------------------------------- |
-| `opencode.openTerminal`        | Open/focus opencode terminal    |
-| `opencode.openNewTerminal`     | Start a new opencode session    |
-| `opencode.addFilepathToTerminal`| Insert file reference (`@file`) |
+| Command                          | Action                          |
+| -------------------------------- | ------------------------------- |
+| `opencode.openTerminal`          | Open/focus opencode terminal    |
+| `opencode.openNewTerminal`       | Start a new opencode session    |
+| `opencode.addFilepathToTerminal` | Insert file reference (`@file`) |
 
 **Note:** `Ctrl+Esc` toggle is for the desktop app only, not the VSCode extension.
 
 **Linux clipboard workaround:** If you get "Cannot read clipboard" error on paste, use `Ctrl+Shift+V` instead of `Ctrl+V`.
 
-**Linux clipboard workaround:** If you get "Cannot read clipboard" error on paste, use `Ctrl+Shift+V` instead of `Ctrl+V`.
+## VSCode Configuration
 
-## License
+VSCode Settings Sync is activated to keep extensions and editor state synchronized across devices. This eliminates manual reconfiguration when switching machines, and syncs:
 
-MIT
+- User settings (`settings.json`) and keybindings (`keybindings.json`)
+- Installed extensions and their state
+- UI layouts (sidebar, activity bar, panel positions)
+- Authentication sessions for logged-in users
+
+### Backup Conclusions
+
+Key takeaways for configuration backups:
+
+- `settings.json` alone does not preserve full VSCode state
+- UI state, extension data, and user sessions are stored in `~/.config/Code/User/globalStorage/` and internal state files
+- Settings Sync is the recommended method for cross-device persistence
+- Manual backups require copying both `~/.config/Code/User/` and `~/.config/Code/User/globalStorage/` directories
