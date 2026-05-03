@@ -19,13 +19,32 @@ for i in *; do
             rm -rf "$HOME"/.config/Code/User/sync
             # Don't remove globalStorage - let stow handle the symlinks
             # rm -rf "$HOME"/.config/Code/User/globalStorage
+            # Backup state.vscdb before stow (state.vscdb is not versionable)
+            if [ -f "$HOME/.config/Code/User/globalStorage/state.vscdb" ]; then
+                cp "$HOME/.config/Code/User/globalStorage/state.vscdb" \
+                   "$HOME/.config/Code/User/globalStorage/state.vscdb.backup"
+            fi
+            # Backup extensions list
+            if command -v code &> /dev/null; then
+                code --list-extensions > "$HOME/.config/Code/User/globalStorage/extensions-backup.txt"
+            fi
             rm -rf "$HOME"/.config/Code/User/History
             rm -rf "$HOME"/.config/Code/User/workspaceStorage
             rm -rf "$HOME"/.config/Code/User/snippets
         fi
 stow --restow --target=$HOME $i
+        # Remove state.vscdb symlink and restore local version
+        if [ "$i" = "Code" ]; then
+            if [ -L "$HOME/.config/Code/User/globalStorage/state.vscdb" ]; then
+                rm -f "$HOME/.config/Code/User/globalStorage/state.vscdb"
+                if [ -f "$HOME/.config/Code/User/globalStorage/state.vscdb.backup" ]; then
+                    cp "$HOME/.config/Code/User/globalStorage/state.vscdb.backup" \
+                       "$HOME/.config/Code/User/globalStorage/state.vscdb"
+                fi
+            fi
+        fi
     fi
-done
+ done
 
 cd ../.. || exit 1
 

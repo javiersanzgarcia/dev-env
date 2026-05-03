@@ -9,7 +9,6 @@ env/dotfiles/github-copilot/.config/github-copilot/apps.json
 env/dotfiles/Code/User/History/
 env/dotfiles/Code/User/globalStorage/*
 !env/dotfiles/Code/User/globalStorage/storage.json
-!env/dotfiles/Code/User/globalStorage/state.vscdb
 env/dotfiles/Code/User/sync/
 env/dotfiles/Code/User/workspaceStorage/
 env/dotfiles/Code/User/snippets/
@@ -18,4 +17,3 @@ env/dotfiles/Code/User/chatLanguageModels.json
 # Track these files explicitly
 !env/dotfiles/Code/User/settings.json
 !env/dotfiles/Code/User/keybindings.json
-state.vscdb
