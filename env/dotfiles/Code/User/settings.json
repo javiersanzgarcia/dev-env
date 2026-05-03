@@ -257,6 +257,7 @@
   "window.customTitleBarVisibility": "auto",
   "window.newWindowDimensions": "inherit",
   "window.zoomLevel": 1.5,
+  "workbench.browser.showInTitleBar": false,
   "workbench.colorTheme": "Dracula Theme",
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
